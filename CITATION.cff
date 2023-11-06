@@ -1,0 +1,25 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: CIMR L2 Sea Ice Thickness ATBD
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Roberto	
+    family-names: Fernandez-Moran
+    affiliation: University of Valencia
+    email: roberto.fernandez@uv.es
+  - given-names: María	
+    family-names: Piles
+    email: maria.piles@uv.es
+    affiliation: University of Valencia
+repository-code: 'https://github.com/CIMR-Algos/SoilMoisture_ATBD'
+url: >-
+  https://cimr-algos.github.io/SoilMoisture_ATBD/intro.html
+keywords:
+  - Copernicus Imaging Microwave Radiometer (CIMR)
+  - ESA DEVALGO
+version: '1'
