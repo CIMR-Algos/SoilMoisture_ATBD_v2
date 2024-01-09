@@ -46,20 +46,26 @@ This relationship between soil moisture and soil dielectric constant (and conseq
 
 Prior to implementing the soil moisture retrieval, a preliminary step is to perform a water body correction to the brightness temperature data for cases where a significant percentage of the grid cells contain open water. As it is well known, brightness temperature values notably decrease when the water fraction increases {cite:p}`Ulaby2014`, leading to an overestimation of the retrieved SM values {cite:p}`ye2015` and inducing artificial seasonal cycles of VOD {cite:p}`bousquet2021`. It is therefore important to correct the CIMR brightness temperatures for the presence of water, to the extent feasible, prior to using them as inputs to the Level-2 Soil Moisture retrieval. This correction needs to be performed using the CIMR Hydrology Target mask ([RD-1] MRD-854), as part of the optimal interpolation or re-sampling process (in the CIMR RGB toolbox). The hydrology target mask will include information from both permanent and transitory water surfaces that shall be identified with the surface water seasonality information provided by the CIMR Surface Water Fraction (SWF) product as well as ancillary information.  
 
-The procedure to acquire soil moisture (SM) and vegetation optical depth (VOD, also denoted as τ) requires the minimization of the cost function F, as shown in {eq}`cost_fun`. The method to minimize F is the Trust Region Reflective (TRR) algorithm {cite:p}`branch1999subspace`.
+The procedure to acquire soil moisture (SM) and vegetation optical depth (VOD, also denoted as $\tau$) requires the minimization of the cost function F, as shown in {eq}`cost_fun`. The method to minimize F is the Trust Region Reflective (TRR) algorithm {cite:p}`branch1999subspace`.
 
 ```{math}
 :label: cost_fun
-F(SM, \tau) = \frac{(TB_p^{obs} - TB_p)^2}{\sigma(TB)^2} + \sum_{i=1}^2\frac{(P_{i}^{ini} - P_i)^2}{\sigma(P_i)^2}
+F(SM, \tau) = \frac{(TB_p^{obs} - TB_p)^2}{\sigma(TB)^2} + \frac{(\tau^{ini} - \tau)^2}{\sigma(\tau)^2}
 ```
 
-where the term $TB_p^\text{obs}$ refers to the observed value, while $\sigma(TB)$ denotes the standard deviation associated with the brightness temperature measurements (a constant value of 1 K is used). Additionally, $TB_p(\theta)$ is the brightness temperature calculated using Equation {eq}`TB-tauomega`. The equation also incorporates a regularization term, where $P_i$ ($i = 1, 2$) represents the retrieved parameter value (SM, VOD), $P_i^\text{ini}$ ($i = 1, 2$) is an a priori estimate of the parameter $P_i$, and $\sigma(P_i)$ is the standard deviation associated with this estimate.
-
-An initial constant value of 0.2 m$^3$/m$^3$ is assumed for SM and $\sigma(SM)$, while the value of $\tau_{NAD}$ is set to an initial value calculated from previous runs. The $\sigma(\tau_{NAD})$ is computed as shown in Equation {eq}`sigma_tau`.
+where the term $TB_p^\text{obs}$ refers to the observed value, while $\sigma(TB)$ denotes the standard deviation associated with the brightness temperature measurements (a constant value of 1 K is used). Additionally, $TB_p(\theta)$ is the brightness temperature calculated using Equation {eq}`TB-tauomega`. The equation also incorporates a regularization term, where $\tau$ represents the retrieved VOD, $\tau^\text{ini}$ is an a priori VOD estimate, and $\sigma(\tau)$ is its associated standard deviation. $\tau$ is set to an initial value calculated from previous runs and $\sigma(\tau)$ is computed as shown in Equation {eq}`sigma_tau`.
 
 ```{math}
 :label: sigma_tau
-\sigma(\tau_{NAD}) = \min(0.1 + 0.3 \cdot \tau_{NAD}, 0.3)
+\sigma(\tau_{NAD}) = \min(0.1 + 0.3 \cdot \tau_{NAD}, 0.3) 
+```
+
+
+<!-- An initial constant value of 0.2 m$^3$/m$^3$ is assumed for SM and $\sigma(SM)$, while the value of $\tau_{NAD}$ is set to an initial value calculated from previous runs. The $\sigma(\tau_{NAD})$ is computed as shown in Equation {eq}`sigma_tau`.
+
+```{math}
+:label: sigma_tau
+\sigma(\tau_{NAD}) = \min(0.1 + 0.3 \cdot \tau_{NAD}, 0.3) -->
 ```
 
 ## CIMR Level-1b re-sampling approach
@@ -88,7 +94,7 @@ A zeroth-order radiative transfer model, also known as the tau-omega model, is u
 
 ## Level-2 end to end algorithm functional flow diagram
 
-```{figure} /images/flow_diagram_SM.png
+```{figure} /images/flow_diagram_SM_v2.png
 --- 
 name: flow_diagram_SM
 ---
