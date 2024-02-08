@@ -17,6 +17,8 @@ The retrieval of soil moisture from CIMR surface TB observations relies on a wid
 TB_p = T_s e_p \exp{(-\tau_p \sec \theta)} + T_c (1 - \omega_p)[1 - \exp(-\tau_p \sec \theta)][1 + r_p \exp(-\tau_p \sec \theta)]
 ```
 
+$$TB_p = T_s e_p \exp{(-\tau_p \sec \theta)} + T_c (1 - \omega_p)[1 - \exp(-\tau_p \sec \theta)][1 + r_p \exp(-\tau_p \sec \theta)]$$
+
 Where the subscript p refers to polarization (V or H), Ts denotes the soil temperature and Tc stands for the canopy temperature, $𝜏_p$ represents the nadir vegetation opacity, $\omega_p$ corresponds to the vegetation single scattering albedo ($\omega$), and $r_p$ is the soil reflectivity of a rough surface. The reflectivity is connected to the emissivity ($e_p$) through the relation $e_p = (1 - r_p)$. It must be noted that $\omega_p$ will be treated here as an effective parameter {cite:p}`KURUM201366`.
 
 According to Beer's law, the overlying canopy layer's transmissivity or vegetation attenuation factor , $\gamma$, is given by $\gamma = \exp(-𝜏_p \sec \theta)$. Equation {eq}`TB-tauomega` assumes that vegetation multiple scattering and reflection at the vegetation-air interface are negligible. 
@@ -72,15 +74,7 @@ where the term $TB_p^\text{obs}$ refers to the observed value, while $\sigma(TB)
 
 The CIMR Level-2 Soil Moisture retrieval algorithm will provide two soil moisture products: the first based on the inversion of L-band only TBs at its native resolution (<60 km, Hydroclimatological), the second one based on the inversion of L-band at an enhanced spatial resolution (~10 to 25 km Hydrometeorological). The enhanced L-band targets an effective mean spatial resolution of 15 km and is based on sharpening techniques that exploit the C-band and X-band channels ({cite:p}`Santi2010`, {cite:p}`Zhang2024`). 
 
-The CIMR Level-1b re-sampling and re-mapping involves three stages, which are illustrated in Figure {numref}`resampling`. In a first stage, the Level1-b TBs will be remapped on common location using a Backus-Gilbert or Scatterometer Image Reconstruction analysis (at CIMR RGB Toolbox). The objective of this first step is to optimize L-band reconstruction to provide the highest possible spatial resolution at the lowest noise level {cite:p}`Long2019` (TB_L product). In a second stage, which is exclusive to the TB_L_E product, an sharpening algorithm will be applied to combine the 60 km L-band with 15 km C/X-bands to estimate an equivalent 15 km L-band. The effective resolution of the TB_L and TB_L_E products will be evaluated and compared (e.g. as in {cite:p}`Long2023`). In a third stage, both products will be posted on an Earth-based map projection grid. CIMR Level-2 Soil Moisture products with an effective spatial resolution of <60 km (L-band only) and ~15 km (after sharpening using C/X bands) are planned to be projected on an EASE2 grid with a kernel of 3 km (then multiples thereof). The CIMR radiometer is conically scanning and its high degree of oversampling provides flexibility in resampling the data, supporting the use of a finer grid (posting resolution) than the TB effective resolution {cite:p}`Long2023`. At L-band, CIMR TB measurements are collected with an along-scan spacing of approximately 8 km, while there is an overlap of 29 % in the along-track direction (no spacing). In order to preserve as much information as possible as well as to represent the "effective" spatial resolution of each product, gridding resolutions of 9 and 36 km are hence initially proposed for the two soil moisture products. Further gridding resolutions will be considered upon characterization of the tradeoff between noise and spatial resolution of the 2-D gridded images.    
-
-
-```{figure} /images/Level1b_resampling_gridding.png
---- 
-name: resampling
----
-Conceptual flow of Level-1b resampling to exploit CIMR oversampling, multifrequency and nested spatial resolution and achieve global hydroclimatology and hydrometeorology soil moisture observational requirements of 60 and 15 km spatial resolution daily.
-```
+The CIMR Level-1b re-sampling and re-mapping involves three stages, which are illustrated in Figure {numref}`resampling`. In a first stage, the Level1-b TBs will be remapped on common location using a Backus-Gilbert or Scatterometer Image Reconstruction analysis (at CIMR RGB Toolbox). The objective of this first step is to optimize L-band reconstruction to provide the highest possible spatial resolution at the lowest noise level {cite:p}`Long2019` (TB_L product). In a second stage, which is exclusive to the TB_L_E product, an sharpening algorithm will be applied to combine the 60 km L-band with 15 km C/X-bands to estimate an equivalent 15 km L-band. The effective resolution of the TB_L and TB_L_E products will be evaluated and compared (e.g. as in {cite:p}`Long2023`). In a third stage, both products will be posted on an Earth-based map projection grid. CIMR Level-2 Soil Moisture products with an effective spatial resolution of <60 km (L-band only) and ~15 km (after sharpening using C/X bands) are planned to be projected on an EASE2 grid with a kernel of 3 km (then multiples thereof). The CIMR radiometer is conically scanning and its high degree of oversampling provides flexibility in resampling the data, supporting the use of a finer grid (posting resolution) than the TB effective resolution {cite:p}`Long2023`. At L-band, CIMR TB measurements are collected with an along-scan spacing of approximately 8 km, while there is an overlap of 29 % in the along-track direction (no spacing). In order to preserve as much information as possible as well as to represent the "effective" spatial resolution of each product, gridding resolutions of 9 and 36 km are hence initially proposed for the two soil moisture products. Further gridding resolutions will be considered upon characterization of the tradeoff between noise and spatial resolution of the 2-D gridded images.
 
 ## Algorithm Assumptions and Simplifications
 
@@ -108,6 +102,7 @@ Functional flow diagram of Level-2 Soil moisture and VOD retrieval algorithm.
 The processing algorithm primarily relies on the CIMR L1B TB product that is calibrated, geolocated and undergoes several corrections, such as atmospheric effects, Faraday rotation and RFI effects. L, C, and X-bands are used as inputs to the Soil Moisture and VOD inversion. At each of these frequencies, fore- and aft-look TB data are merged and corrected for the presence of standing water. L-band undergoes an optimal interpolation or image reconstruction step (at the RGB toolbox). This product, TB_L, is directly used as input to the Level-2 retrieval algorithm to obtain the SM and L-VOD at coarse resolution (< 60km). TB_L is also combined with C and X bands into an enhanced-resolution product TB_L_E, that is used as input to the Level-2 algorithm to obtain SM and L-VOD at an enhanced spatial resolution (~ 15km).
 
 Ku/Ka bands are processed independently to obtain the effective land surface temperature that is used as input in the Soil Moisture and VOD retrieval step, together with other static ancillary data. This temperature can be initially derived from CIMR Ka band using the linear regression formulation of Holmes {cite:p}`holmes2009`, although the use of the CIMR LST product or ECMWF will also be considered.
+
 
 
 ### Analyze surface quality and surface conditions
@@ -144,24 +139,24 @@ The static global maps for CIMR H and ω are computed through a weighted method.
 
 ```{table} Values of ω and $H$
 :name: wandH
-| ID | MODIS IGBP land classification | SMAP MTDCA ω | SMAP DCA ω | CIMR ω | SMOS-IC $H$ | CIMR $H$ |
-|----|--------------------------------|------------|----------|-------|------------|-----------------|
-| 1  | Evergreen Needleleaf Forests   | 0.07       | 0.07     | 0.06  | 0.30       | 0.40            |
-| 2  | Evergreen Broadleaf Forests    | 0.08       | 0.07     | 0.06  | 0.30       | 0.40            |
-| 3  | Deciduous Needleleaf Forests   | 0.06       | 0.07     | 0.06  | 0.30       | 0.40            |
-| 4  | Deciduous Broadleaf Forests    | 0.07       | 0.07     | 0.06  | 0.30       | 0.40            |
-| 5  | Mixed Forests                  | 0.07       | 0.07     | 0.06  | 0.30       | 0.40            |
-| 6  | Closed Shrublands              | 0.08       | 0.08     | 0.10  | 0.27       | 0.27            |
-| 7  | Open Shrublands                | 0.06       | 0.07     | 0.08  | 0.17       | 0.10            |
-| 8  | Woody Savannas                 | 0.08       | 0.08     | 0.06  | 0.30       | 0.40            |
-| 9  | Savannas                       | 0.07       | 0.10     | 0.10  | 0.23       | 0.23            |
-| 10 | Grasslands                     | 0.06       | 0.07     | 0.10  | 0.12       | 0.50            |
-| 11 | Permanent Wetlands             | 0.16       | 0.10     | 0.10  | 0.19       | 0.19            |
-| 12 | Croplands - Average            | 0.10       | 0.06     | 0.12  | 0.17       | 0.40           |
-| 13 | Urban and Built-up Lands       | 0.08       | 0.08     | 0.10  | 0.21       | 0.21           |
-| 14 | Crop-land/Natural Vegetation Mosaics | 0.09 | 0.10 | 0.12 | 0.22 | 0.50   |
-| 15 | Snow and Ice                   | 0.11       | 0.00     | 0.10  | 0.12       | 0.12            |
-| 16 | Barren                         | 0.02       | 0.00     | 0.12  | 0.02       | 0.10            |
+| ID  | MODIS IGBP land classification       | SMAP MTDCA ω | SMAP DCA ω | CIMR ω | SMOS-IC $H$ | CIMR $H$ |
+| --- | ------------------------------------ | ------------ | ---------- | ------ | ----------- | -------- |
+| 1   | Evergreen Needleleaf Forests         | 0.07         | 0.07       | 0.06   | 0.30        | 0.40     |
+| 2   | Evergreen Broadleaf Forests          | 0.08         | 0.07       | 0.06   | 0.30        | 0.40     |
+| 3   | Deciduous Needleleaf Forests         | 0.06         | 0.07       | 0.06   | 0.30        | 0.40     |
+| 4   | Deciduous Broadleaf Forests          | 0.07         | 0.07       | 0.06   | 0.30        | 0.40     |
+| 5   | Mixed Forests                        | 0.07         | 0.07       | 0.06   | 0.30        | 0.40     |
+| 6   | Closed Shrublands                    | 0.08         | 0.08       | 0.10   | 0.27        | 0.27     |
+| 7   | Open Shrublands                      | 0.06         | 0.07       | 0.08   | 0.17        | 0.10     |
+| 8   | Woody Savannas                       | 0.08         | 0.08       | 0.06   | 0.30        | 0.40     |
+| 9   | Savannas                             | 0.07         | 0.10       | 0.10   | 0.23        | 0.23     |
+| 10  | Grasslands                           | 0.06         | 0.07       | 0.10   | 0.12        | 0.50     |
+| 11  | Permanent Wetlands                   | 0.16         | 0.10       | 0.10   | 0.19        | 0.19     |
+| 12  | Croplands - Average                  | 0.10         | 0.06       | 0.12   | 0.17        | 0.40     |
+| 13  | Urban and Built-up Lands             | 0.08         | 0.08       | 0.10   | 0.21        | 0.21     |
+| 14  | Crop-land/Natural Vegetation Mosaics | 0.09         | 0.10       | 0.12   | 0.22        | 0.50     |
+| 15  | Snow and Ice                         | 0.11         | 0.00       | 0.10   | 0.12        | 0.12     |
+| 16  | Barren                               | 0.02         | 0.00       | 0.12   | 0.02        | 0.10     |
 ```
 
 Furthermore, a CIMR Hydrology Target mask, applied in Level-2 data processing, provides a ≤1 km resolution and covers both permanent and transitory inland water surfaces. The mask incorporates data from the MERIT Hydro {cite:p}`yamazaki2019merit` and the Global Lakes and Wetlands Database {cite:p}`lehner2004development`, and it will be updated up to four times annually to account for potential seasonal changes. Its calculation involves a previous estimation of the Surface Water Fraction (SWF) data.
