@@ -1,0 +1,107 @@
+REGION: nh-ease2-750 {
+       NAME:           Lambert Azimuthal Equal Area grid (75.0 km)
+       PCS_ID:         nh-ease2-750
+       PCS_DEF:        proj=laea, lat_0=90, lon_0=0, x_0=0, y_0=0, datum=WGS84, units=m
+       XSIZE:          144
+       YSIZE:          144
+       AREA_EXTENT:    (-5400000.0, -5400000.0, 5400000.0, 5400000.0)
+};
+
+REGION: sh-ease2-750 {
+       NAME:           Lambert Azimuthal Equal Area grid (75.0 km)
+       PCS_ID:         sh-ease2-750
+       PCS_DEF:        proj=laea, lat_0=-90, lon_0=0, x_0=0, y_0=0, datum=WGS84, units=m
+       XSIZE:          144
+       YSIZE:          144
+       AREA_EXTENT:    (-5400000.0, -5400000.0, 5400000.0, 5400000.0)
+};
+
+REGION: nh-ease2-250 {
+       NAME:           Lambert Azimuthal Equal Area (25.0 km)
+       PCS_ID:         nh-ease2-250
+       PCS_DEF:        proj=laea, lat_0=90, lon_0=0, x_0=0, y_0=0, datum=WGS84
+       XSIZE:          432
+       YSIZE:          432
+       AREA_EXTENT:    (-5400000.0,-5400000.0,5400000.0,5400000.0)
+};
+
+REGION: sh-ease2-250 {
+       NAME:           Lambert Azimuthal Equal Area (25.0 km)
+       PCS_ID:         sh-ease2-250
+       PCS_DEF:        proj=laea, lat_0=-90, lon_0=0, x_0=0, y_0=0, datum=WGS84
+       XSIZE:          432
+       YSIZE:          432
+       AREA_EXTENT:    (-5400000.0,-5400000.0,5400000.0,5400000.0)
+};
+
+REGION: nh-ease2-125 {
+       NAME:           Lambert Azimuthal Equal Area (12.5 km)
+       PCS_ID:         nh-ease2-125
+       PCS_DEF:        proj=laea, lat_0=90, lon_0=0, x_0=0, y_0=0, datum=WGS84
+       XSIZE:          864
+       YSIZE:          864
+       AREA_EXTENT:    (-5400000.0,-5400000.0,5400000.0,5400000.0)
+};
+
+REGION: sh-ease2-125 {
+       NAME:           Lambert Azimuthal Equal Area (12.5 km)
+       PCS_ID:         sh-ease2-125
+       PCS_DEF:        proj=laea, lat_0=-90, lon_0=0, x_0=0, y_0=0, datum=WGS84
+       XSIZE:          864
+       YSIZE:          864
+       AREA_EXTENT:    (-5400000.0,-5400000.0,5400000.0,5400000.0)
+};
+
+REGION: nh-ease2-050 {
+       NAME:           Lambert Azimuthal Equal Area (5.0 km)
+       PCS_ID:         nh-ease2-050
+       PCS_DEF:        proj=laea, lat_0=90, lon_0=0, x_0=0, y_0=0, datum=WGS84
+       XSIZE:          2160
+       YSIZE:          2160
+       AREA_EXTENT:    (-5400000.0,-5400000.0,5400000.0,5400000.0)
+};
+
+REGION: sh-ease2-050 {
+       NAME:           Lambert Azimuthal Equal Area (5.0 km)
+       PCS_ID:         sh-ease2-050
+       PCS_DEF:        proj=laea, lat_0=-90, lon_0=0, x_0=0, y_0=0, datum=WGS84
+       XSIZE:          2160
+       YSIZE:          2160
+       AREA_EXTENT:    (-5400000.0,-5400000.0,5400000.0,5400000.0)
+};
+
+REGION: nh-ease2-025 {
+       NAME:           Lambert Azimuthal Equal Area (2.5 km)
+       PCS_ID:         nh-ease2-025
+       PCS_DEF:        proj=laea, lat_0=90, lon_0=0, x_0=0, y_0=0, datum=WGS84
+       XSIZE:          4320
+       YSIZE:          4320
+       AREA_EXTENT:    (-5400000.0,-5400000.0,5400000.0,5400000.0)
+};
+
+REGION: sh-ease2-025 {
+       NAME:           Lambert Azimuthal Equal Area (2.5 km)
+       PCS_ID:         sh-ease2-025
+       PCS_DEF:        proj=laea, lat_0=-90, lon_0=0, x_0=0, y_0=0, datum=WGS84
+       XSIZE:          4320
+       YSIZE:          4320
+       AREA_EXTENT:    (-5400000.0,-5400000.0,5400000.0,5400000.0)
+};
+
+REGION: global-ease2-360 {
+       NAME:           Global Equal Area grid (36.0 km)
+       PCS_ID:         global-ease2-360
+       PCS_DEF:        proj=cea, lat_ts=30, lon_0=0, x_0=0, y_0=0, datum=WGS84, units=m
+       XSIZE:          964
+       YSIZE:          406
+       AREA_EXTENT:    (-17367530.44, -7314540.83, 17367530.44, 7314540.83)
+};
+
+REGION: global-ease2-090 {
+       NAME:           Global Equal Area grid (9.0 km)
+       PCS_ID:         global-ease2-090
+       PCS_DEF:        proj=cea, lat_ts=30, lon_0=0, x_0=0, y_0=0, datum=WGS84, units=m
+       XSIZE:          3856
+       YSIZE:          1624
+       AREA_EXTENT:    (-17367530.44, -7314540.83, 17367530.44, 7314540.83)
+};
