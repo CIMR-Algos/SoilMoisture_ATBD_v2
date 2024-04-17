@@ -1,0 +1,11 @@
+#Python 3.11
+numpy
+xarray
+pyresample
+matplotlib
+basemap
+cartopy
+scipy
+scikit-learn
+netcdf4
+h5netcdf
