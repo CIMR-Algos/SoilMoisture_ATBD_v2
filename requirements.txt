@@ -1,4 +1,4 @@
-#Python~=3.11.5
+#Python 3.11.5
 numpy
 xarray
 pyresample
@@ -7,3 +7,5 @@ basemap
 cartopy
 scipy
 scikit-learn
+netcdf4
+h5netcdf
