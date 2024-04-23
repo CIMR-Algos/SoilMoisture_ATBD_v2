@@ -1,7 +1,7 @@
 
 from scipy.optimize import least_squares
 import numpy as np
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import root_mean_squared_error
 
 
 def sm_retrieval(l1x, params, aux, flag, verbose=True):
@@ -55,7 +55,7 @@ def sm_retrieval(l1x, params, aux, flag, verbose=True):
         e_im = zepmy
         return e_real
 
-    def _fresnel_roughness(e_real, theta, h, Q, n):
+    def _fresnel_roughness(e_real, theta, h, q, n):
         cost = np.cos(np.radians(theta))
         sint = np.sin(np.radians(theta))
         # Fresnel reflectivity
@@ -67,14 +67,14 @@ def sm_retrieval(l1x, params, aux, flag, verbose=True):
         rh = (rh_num / rh_den)**2
         # Roughness correction after Wang & Choudhury, 1981
         coef = np.exp(-h * cost**n)
-        rvr = ((1-Q)*rv + Q*rh) * coef
-        rhr = ((1-Q)*rh + Q*rv) * coef
+        rvr = ((1-q)*rv + q*rh) * coef
+        rhr = ((1-q)*rh + q*rv) * coef
         return rvr, rhr
 
-    def _tau_omega(r, gamma, omega, T):
+    def _tau_omega(r, gamma, omega, t_eff):
         # soil, vegetation, and soil-vegetation-interaction emission
-        soil = (1 - r) * gamma * T
-        veg = (1 - gamma) * (1 - omega) * T
+        soil = (1 - r) * gamma * t_eff
+        veg = (1 - gamma) * (1 - omega) * t_eff
         veg_soil = veg * r * gamma
         # combine all contributions
         tb = soil + veg + veg_soil
@@ -89,23 +89,23 @@ def sm_retrieval(l1x, params, aux, flag, verbose=True):
         # calculate real part of soil dielectric constant
         e_real = _mironov(f, sm, cf)
         # calculate rough surface soil reflectivity
-        rv, rh = _fresnel_roughness(e_real, theta, h, Q, n)
+        rv, rh = _fresnel_roughness(e_real, theta, h, q, n)
         # calculate total emission of soil and vegetation (V,  H polarization)
-        tbv = _tau_omega(rv, gamma, omega, T)
-        tbh = _tau_omega(rh, gamma, omega, T)
+        tbv = _tau_omega(rv, gamma, omega, t_eff)
+        tbh = _tau_omega(rh, gamma, omega, t_eff)
         return tbv, tbh
 
     def _cost_function(x):
         # J_TB
         tbv, tbh = _forward_model(x)
-        J_tbv = (tbv - ytar[0])**2 / TB_std**2
-        J_tbh = (tbh - ytar[1])**2 / TB_std**2
+        j_tbv = (tbv - ytar[0])**2 / tb_std**2
+        j_tbh = (tbh - ytar[1])**2 / tb_std**2
         # J_tau
         tau_std = np.min([0.1 + 0.3*x[0], 0.3])
-        J_tau = (x[0] - tau_ini)**2 / tau_std**2
+        j_tau = (x[0] - tau_ini)**2 / tau_std**2
         # total
-        J = J_tbh + J_tbv + J_tau
-        return J
+        j_total = j_tbh + j_tbv + j_tau
+        return j_total
 
 
     # Look for L-band data in "L1X" file
@@ -145,9 +145,9 @@ def sm_retrieval(l1x, params, aux, flag, verbose=True):
     sm_ini = params['sm_ini']
     bound = params['bounds']
     theta = params['theta']
-    TB_std = params['TB_std']
+    tb_std = params['TB_std']
     f = params['f']
-    Q = params['Q']
+    q = params['Q']
     n = params['n']
 
     # Loop over each pixel of AOI
@@ -201,7 +201,7 @@ def sm_retrieval(l1x, params, aux, flag, verbose=True):
                 omega = aux['omega'][i_aux, j_aux]
                 h = aux['h'][i_aux, j_aux]
                 cf = aux['cf'][i_aux, j_aux]
-                T = aux['LST'][i_aux, j_aux]
+                t_eff = aux['LST'][i_aux, j_aux]
                 tau_ini = aux['tau_ini'][i_aux, j_aux]
 
                 x0 = np.array([tau_ini, sm_ini])
@@ -220,7 +220,7 @@ def sm_retrieval(l1x, params, aux, flag, verbose=True):
 
                 # calculate rmse of TBV,TBH and optimal solution
                 yopt = np.array(_forward_model(solution.x))
-                rmse_tb[i, j] = mean_squared_error(ytar, yopt, squared=False)
+                rmse_tb[i, j] = root_mean_squared_error(ytar, yopt)
 
         # define output dictionary
         output = {}
