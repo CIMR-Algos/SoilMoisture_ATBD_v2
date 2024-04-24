@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.metrics import root_mean_squared_error
 
 
-def sm_retrieval(l1x, params, aux, flag, verbose=True):
+def sm_ret(l1x, params, aux, flag, bounds=None, verbose=True):
 
     def _mironov(f, sm, cf):
         #  Mironov's soil dielectric model
@@ -143,7 +143,6 @@ def sm_retrieval(l1x, params, aux, flag, verbose=True):
 
     # initialize parameters
     sm_ini = params['sm_ini']
-    bound = params['bounds']
     theta = params['theta']
     tb_std = params['TB_std']
     f = params['f']
@@ -207,19 +206,26 @@ def sm_retrieval(l1x, params, aux, flag, verbose=True):
                 x0 = np.array([tau_ini, sm_ini])
                 ytar = np.concatenate(([tbv], [tbh]))
 
-                # find solution of optimization
-                solution = least_squares(_cost_function, x0, method='trf',
-                                         jac='3-point', bounds=bound,
-                                         ftol=1e-4, xtol=1e-4, max_nfev=1000)
-                ret_sm[i, j] = solution.x[1]
-                ret_vod[i, j] = solution.x[0]
+                # optimization
+                if bounds == None:
+                    sol = least_squares(_cost_function, x0, method='trf',
+                                        jac='3-point', ftol=1e-4, xtol=1e-4, 
+                                        max_nfev=1000)                
+                else:
+                    sol = least_squares(_cost_function, x0, method='trf',
+                                        jac='3-point', bounds=bounds,
+                                        ftol=1e-4, xtol=1e-4, max_nfev=1000)
+                
+                # extract sm and vod from solution
+                ret_sm[i, j] = sol.x[1]
+                ret_vod[i, j] = sol.x[0]
 
                 # retrieval flag if not successful
-                if solution.success == False:
+                if sol.success == False:
                     flag_ret[i, j] = 2
 
                 # calculate rmse of TBV,TBH and optimal solution
-                yopt = np.array(_forward_model(solution.x))
+                yopt = np.array(_forward_model(sol.x))
                 rmse_tb[i, j] = root_mean_squared_error(ytar, yopt)
 
         # define output dictionary
