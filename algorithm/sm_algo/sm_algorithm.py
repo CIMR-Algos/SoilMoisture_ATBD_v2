@@ -138,8 +138,8 @@ def sm_ret(l1x, params, aux, flag, bounds=None, verbose=True):
     ret_sm = np.ones(shape, dtype='f8') * -999
     ret_vod = np.ones(shape, dtype='f8') * -999
     rmse_tb = np.ones(shape, dtype='f8') * -999
-    flag_surf = np.zeros(shape, dtype='i8')
-    flag_ret = np.zeros(shape, dtype='i8')
+    flag_surf = np.zeros(shape, dtype='int16')
+    flag_ret = np.zeros(shape, dtype='int16')
 
     # initialize parameters
     sm_ini = params['sm_ini']
