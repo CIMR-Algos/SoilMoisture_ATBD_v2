@@ -179,12 +179,12 @@ def sm_ret(l1x, params, aux, flag, bounds=None, verbose=True):
             if flag['Precip Rate'][i_aux, j_aux] > 1:
                 flag_surf[i, j] = flag_surf[i, j] + 2**4
 
-            # Snow Fraction [-]
+            # Frozen Fraction [-]
             if flag['Frozen Fraction'][i_aux, j_aux] > 0.05:
                 flag_surf[i, j] = flag_surf[i, j] + 2**5
 
-            # Frozen Fraction [-]
-            if flag['Urban Fraction'][i_aux, j_aux] > 0.05:
+            # Snow Fraction [-]
+            if flag['Snow Fraction'][i_aux, j_aux] > 0.05:
                 flag_surf[i, j] = flag_surf[i, j] + 2**6
 
             # DEM Standard Deviation [degree]
