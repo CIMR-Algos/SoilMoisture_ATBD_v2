@@ -17,8 +17,10 @@ plim_09 = plim_36 * 4
 # Zoomed plot limits within global EASE grids
 plim_36_zoom = np.array([103, 120, 463, 501-11])
 plim_09_zoom = plim_36_zoom * 4
+plim_01_zoom = plim_36_zoom * 36
 plim_tc_36_zoom = np.array([21, 21+17, 0, 501-463-11])
 plim_tc_09_zoom = plim_tc_36_zoom * 4
+plim_tc_01_zoom = plim_tc_36_zoom * 36
 
 # AOIs within Testcard
 aoi1 = [13, 21, 21+1+14, 21+1+7]    # Bare Soil
@@ -27,6 +29,7 @@ aoi3 = [3, 11, 21+1+7, 21+1]      # Cropland
 aoi4 = [3, 11, 21+1+14, 21+1+7]    # Mixed
 aois_36 = np.array([aoi1, aoi2, aoi3, aoi4])
 aois_09 = aois_36 * 4
+aois_01 = aois_36 * 36
 
 # Zoomed AOIs within Testcard
 aoi1_zoom = [13, 21, 1+14, 1+7]    # Bare Soil
@@ -35,6 +38,7 @@ aoi3_zoom = [3, 11, 1+7, 1]      # Cropland
 aoi4_zoom = [3, 11, 1+14, 1+7]    # Mixed
 aois_36_zoom = np.array([aoi1_zoom, aoi2_zoom, aoi3_zoom, aoi4_zoom])
 aois_09_zoom = aois_36_zoom * 4
+aois_01_zoom = aois_36_zoom * 36
 
 # Legend and ticks for land use
 leg_lu = ['Forest', 'Mixed', 'Cropland', 'Grassland', 'Bare Soil', 'Water']
@@ -45,7 +49,7 @@ cmap_flags = colors.ListedColormap([[1, 1, 1],
                                     [0.8, 0.9, 1], 
                                     [0.7, 0.75, 1], 
                                     [0.75, 1, 0.7]])
-leg_flag = ['No Flag', 'Water Fract', 'Coastline', 'Vegetation']
+leg_flag = ['No Flag', 'Water Fract', 'Coastline', 'Dense Veg.']
 plt_range_flags = [0, 4]
 
 
@@ -122,6 +126,12 @@ def plot_tc(plotdata, title, grid, plot_range, colormap=None, zoom=False):
             plim = plim_tc_09_zoom
         else:
             aois = aois_09  
+    elif grid == 1:
+        if zoom:
+            aois = aois_01_zoom
+            plim = plim_tc_01_zoom
+        else:
+            aois = aois_01 
     else:
         raise ValueError('Grid not known (expected 9 or 36)')
          
