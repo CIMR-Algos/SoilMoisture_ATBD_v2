@@ -1,0 +1,1 @@
+This repository holds the ATBD (JupyterBook) v2 for a prototype Level-2 Soil Moisture product for the CIMR mission.
