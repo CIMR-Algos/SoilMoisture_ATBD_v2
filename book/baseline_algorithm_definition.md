@@ -10,7 +10,7 @@ In the case of L-band frequencies, the atmosphere is virtually transparent, with
 
 ## Forward Model
 
-The retrieval of soil moisture and microwave vegetation parameters from CIMR surface TB observations relies on a widely recognized approximation to the radiative transfer equation referred to as the tau-omega model {cite:p}`Mo1982`, which, in this case, is referred to as the forward model. In tau-omega, the total upwelling emission is composed of a soil contribution, a vegetation contribution and a soil-scattered vegetation contribution. It assumes a weakly scattering medium (e.g. no multiple scattering). τ [Np] is the vegetation optical depth (VOD) that quantifies the total attenuation within the canopy, while ω [−] is the vegetation single scattering albedo, i.e., the ratio of scattering to extinction, ranging from zero to one ({cite:p}`Mo1982`;{cite:p}`Ulaby2015`). The tau-omega model is formulated as:
+The retrieval of soil moisture and microwave vegetation parameters from CIMR surface TB observations relies on a widely recognized approximation to the radiative transfer equation referred to as the tau-omega model {cite:p}`Mo1982`, which, in this case, is referred to as the forward model. In tau-omega, the total upwelling emission is composed of a soil contribution, a vegetation contribution and a soil-scattered vegetation contribution. It assumes a weakly scattering medium (e.g. no multiple scattering). $τ$ is the vegetation optical depth (VOD) that quantifies the total attenuation within the canopy, while $ω$ is the vegetation single scattering albedo, i.e., the ratio of scattering to extinction, ranging from zero to one ({cite:p}`Mo1982`;{cite:p}`Ulaby2015`). The tau-omega model is formulated as:
 
 ```{math}
 :label: TB-tauomega
