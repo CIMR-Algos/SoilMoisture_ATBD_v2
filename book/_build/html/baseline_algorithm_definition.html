@@ -1,10 +1,12 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-content_root="./" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Baseline Algorithm Definition &#8212; CIMR DEVALGO ATBD Template</title>
   
@@ -16,42 +18,41 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="_static/watermark.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/styles.css?v=3437f865" />
+    <link rel="stylesheet" type="text/css" href="_static/watermark.css?v=80f188f4" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script kind="utterances">
 
     var commentsRunWhenDOMLoaded = cb => {
@@ -87,13 +88,11 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'baseline_algorithm_definition';</script>
@@ -101,390 +100,111 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Algorithm Input and Output Data Definition (IODD)" href="algorithm_input_output_data_definition.html" />
     <link rel="prev" title="Level-2 product definition" href="L2_product_definition.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="docsearch:language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
-  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
   <label class="overlay overlay-primary" for="__primary"></label>
-
   
-  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
   <label class="overlay overlay-secondary" for="__secondary"></label>
-
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
-      
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    </div>
+</form></div>
   </div>
-
   
-  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
-  <label class="sidebar-toggle primary-toggle" for="__primary">
-      <span class="fa-solid fa-bars"></span>
-  </label>
-  <div id="navbar-start">
-    
-    
-  
-
-
-<a class="navbar-brand logo" href="intro.html">
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <img src="_static/logo.jpg" class="logo__image only-light" alt="Logo image">
-    <img src="_static/logo.jpg" class="logo__image only-dark" alt="Logo image">
-  
-  
-</a>
-    
-  </div>
-
-  
-  <div class="col-lg-9 navbar-header-items">
-    <div id="navbar-center" class="mr-auto">
-      
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="abstract.html">
-                        Abstract
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="applicable_ref_docs.html">
-                        Applicable and Reference Documents
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="acronyms.html">
-                        Acronyms
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="definitions.html">
-                        Definitions
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="introduction_purpose_scope.html">
-                        Introduction, purpose and scope
-                      </a>
-                    </li>
-                
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="background_justification_algorithm.html">
-                        Background and justification of selected algorithm
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="L2_product_definition.html">
-                        Level-2 product definition
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
-                        Baseline Algorithm Definition
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="algorithm_input_output_data_definition.html">
-                        Algorithm Input and Output Data Definition (IODD)
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="algorithm_performance_assessment.html">
-                        Algorithm Performance Assessment
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="references.html">
-                        References
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="annex.html">
-                        Annex
-                      </a>
-                    </li>
-                
-                </div>
-            </div>
-            
-    </ul>
-</nav>
-      </div>
-      
-    </div>
-
-    <div id="navbar-end">
-      
-        <div class="navbar-end-item navbar-persistent--container">
-          
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
-        </div>
-      
-      
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-      </ul>
-      </div>
-      
-    </div>
-  </div>
-
-
-  
-  
-    <div class="navbar-persistent--mobile">
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
-    </div>
-  
-
-  
-  <label class="sidebar-toggle secondary-toggle" for="__secondary">
-      <span class="fa-solid fa-outdent"></span>
-  </label>
-  
-
-</div>
-  </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
+      
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
+
   
   <div class="sidebar-header-items sidebar-primary__section">
     
     
-      <div class="sidebar-header-items__center">
-      
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="abstract.html">
-                        Abstract
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="applicable_ref_docs.html">
-                        Applicable and Reference Documents
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="acronyms.html">
-                        Acronyms
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="definitions.html">
-                        Definitions
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="introduction_purpose_scope.html">
-                        Introduction, purpose and scope
-                      </a>
-                    </li>
-                
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="background_justification_algorithm.html">
-                        Background and justification of selected algorithm
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="L2_product_definition.html">
-                        Level-2 product definition
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
-                        Baseline Algorithm Definition
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="algorithm_input_output_data_definition.html">
-                        Algorithm Input and Output Data Definition (IODD)
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="algorithm_performance_assessment.html">
-                        Algorithm Performance Assessment
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="references.html">
-                        References
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="annex.html">
-                        Annex
-                      </a>
-                    </li>
-                
-                </div>
-            </div>
-            
-    </ul>
-</nav>
-      </div>
-      
-      </div>
     
-
-    
-    
-    <div class="sidebar-header-items__end">
-      
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-      </ul>
-      </div>
-      
-    </div>
     
   </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
 
   
-  <div class="sidebar-start-items sidebar-primary__section">
-    <div class="sidebar-start-items__item">
-  
-
 
 <a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="CIMR DEVALGO ATBD Template - Home"/>
+    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="CIMR DEVALGO ATBD Template - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
 
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <img src="_static/logo.jpg" class="logo__image only-light" alt="Logo image">
-    <img src="_static/logo.jpg" class="logo__image only-dark" alt="Logo image">
-  
-  
-</a>
-    </div>
-    <div class="sidebar-start-items__item">
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    </div>
-    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -510,60 +230,50 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav>
+</nav></div>
     </div>
-  </div>
   
-
   
-  <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
-    </div>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-
   
   <div id="rtd-footer-container"></div>
 
+
       </div>
+      
       <main id="main-content" class="bd-main">
         
         
 
 <div class="sbt-scroll-pixel-helper"></div>
 
-        <div class="bd-content">
-          <div class="bd-article-container">
-            
-            <div class="bd-header-article">
-                
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
-            <span class="fa-solid fa-bars"></span>
-        </label>
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
 
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
+<div class="article-header-buttons">
 
-</button>
+
 <a href="https://github.com/CIMR-Algos/ATBD-Template" target="_blank"
-   class="btn btn-sm"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
@@ -575,16 +285,21 @@ title="Source repository"
 
 
 
+
+
+
 <div class="dropdown dropdown-download-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
+      
+      
+      
       <li><a href="_sources/baseline_algorithm_definition.md" target="_blank"
-   class="btn btn-sm dropdown-item"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
@@ -593,14 +308,16 @@ title="Download source file"
   </span>
 <span class="btn__text-container">.md</span>
 </a>
-</a>
+</li>
+      
+      
+      
       
       <li>
-<button onclick="printPdf(this)"
-  class="btn btn-sm dropdown-item"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
@@ -609,18 +326,58 @@ title="Print to PDF"
   </span>
 <span class="btn__text-container">.pdf</span>
 </button>
-</a>
+</li>
       
   </ul>
 </div>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
-            <span class="fa-solid fa-list"></span>
-        </label>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
-            </div>
-            
-            
+</div>
+              
+              
 
 <div id="jb-print-docs-body" class="onlyprint">
     <h1>Baseline Algorithm Definition</h1>
@@ -633,104 +390,64 @@ title="Print to PDF"
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#forward-model">
-   Forward Model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#retrieval-method">
-   Retrieval Method
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cimr-level-1b-re-sampling-approach">
-   CIMR Level-1b re-sampling approach
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#algorithm-assumptions-and-simplifications">
-   Algorithm Assumptions and Simplifications
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#level-2-end-to-end-algorithm-functional-flow-diagram">
-   Level-2 end to end algorithm functional flow diagram
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functional-description-of-each-algorithm-step">
-   Functional description of each Algorithm step
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pre-processing-of-input-tb">
-     Pre-processing of input TB
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#analyze-surface-quality-and-surface-conditions">
-     Analyze surface quality and surface conditions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#input-data">
-     Input data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#output-data">
-     Output data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ancillary-data">
-     Ancillary data
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-model">Forward Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-method">Retrieval Method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cimr-level-1b-re-sampling-approach">CIMR Level-1b re-sampling approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-assumptions-and-simplifications">Algorithm Assumptions and Simplifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-2-end-to-end-algorithm-functional-flow-diagram">Level-2 end to end algorithm functional flow diagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-description-of-each-algorithm-step">Functional description of each Algorithm step</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing-of-input-tb">Pre-processing of input TB</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-surface-quality-and-surface-conditions">Analyze surface quality and surface conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">Input data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-data">Output data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ancillary-data">Ancillary data</a></li>
 </ul>
-
+</li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
 
-            <article class="bd-article" role="main">
               
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="baseline-algorithm-definition">
-<h1>Baseline Algorithm Definition<a class="headerlink" href="#baseline-algorithm-definition" title="Permalink to this heading">#</a></h1>
+<h1>Baseline Algorithm Definition<a class="headerlink" href="#baseline-algorithm-definition" title="Link to this heading">#</a></h1>
 <p>Extensive research in the passive microwave soil moisture field has led to the development of numerous soil moisture retrievals that can be applied to CIMR TB data. The ESA’s SMOS mission currently operates an aperture synthesis L-band radiometer that produces TB data at various incidence angles for identical ground locations. The core SMOS retrieval algorithm utilizes the tau-omega model and takes advantage of SMOS’s ability to capture multiple incidence angles for soil moisture estimation. SMAP retrievals, on the other hand, are also based on the tau-omega model but employ the constant incidence angle TB data provided by the SMAP radiometer, an approach more similar to the forthcoming CIMR mission. Consequently, we propose a retrieval algorithm that incorporates elements from both the SMOS-IC and the SMAP multi-temporal dual-channel algorithm.</p>
 <p>A microwave radiometer’s primary function is to detect the inherent thermal radiation that originates from a surface. Under the Rayleigh-Jeans approximation, the intensity of the observed emission at microwave frequencies is directly proportional to the product of the surface’s temperature and emissivity, commonly referred to as the brightness temperature (TB).</p>
 <p>When the microwave sensor orbits the Earth, several factors contribute to the observed TB. These include the soil’s emitted energy (attenuated by overlying vegetation), the emission from vegetation itself, downwelling atmospheric emission and cosmic background emission (reflected by the surface and attenuated by vegetation), and upwelling atmospheric emission.</p>
 <p>In the case of L-band frequencies, the atmosphere is virtually transparent, with an atmospheric transmissivity (<span class="math notranslate nohighlight">\(τ_{atm}\)</span>) of approximately 1. The cosmic background, or <span class="math notranslate nohighlight">\(T_{sky}\)</span>, is around 2.7 K. Additionally, atmospheric emission is minimal.</p>
 <section id="forward-model">
-<h2>Forward Model<a class="headerlink" href="#forward-model" title="Permalink to this heading">#</a></h2>
+<h2>Forward Model<a class="headerlink" href="#forward-model" title="Link to this heading">#</a></h2>
 <p>The retrieval of soil moisture from CIMR surface TB observations relies on a widely recognized approximation to the radiative transfer equation referred to as the tau-omega model, which, in this case, is referred to as the forward model. In tau-omega, a soil layer covered by vegetation attenuates the soil’s emission while contributing its own emission to the overall radiative flux. Given that scattering within vegetation is generally negligible at L band frequencies, the vegetation can be predominantly treated as an absorbing layer <span id="id1">[<a class="reference internal" href="references.html#id28" title="Y. Kerr, P. Waldteufel, P. Richaume, I. Davenport, P. Ferrazoli, and J.-P. Wigneron. Smos level 2 processor soil moisture algorithm theoretical basis document (atbd). Technical Report SO-TN-ESL-SM-GS-0001, CESBIO, SM-ESL (CBSA), Toulouse, France, 2006.">Kerr <em>et al.</em>, 2006</a>, <a class="reference internal" href="references.html#id29" title="Peggy O'Neill, Rajat Bindlish, Steven Chan, Julian Chaubell, Eni Njoku, and Tom Jackson. Soil moisture active passive (smap) algorithm theoretical basis document: level 2 &amp; 3 soil moisture (passive) data products. Technical Report JPL D-66480, NASA Goddard Space Flight Center and Jet Propulsion Laboratory, California Institute of Technology, Greenbelt, MD and Pasadena, CA and Beltsville, MD, August 2020.">O'Neill <em>et al.</em>, 2020</a>]</span>. Thus, TB can be expressed as follows:</p>
 <div class="math notranslate nohighlight" id="equation-tb-tauomega">
-<span class="eqno">(1)<a class="headerlink" href="#equation-tb-tauomega" title="Permalink to this equation">#</a></span>\[TB_p = T_s e_p \exp{(-\tau_p \sec \theta)} + T_c (1 - \omega_p)[1 - \exp(-\tau_p \sec \theta)][1 + r_p \exp(-\tau_p \sec \theta)]\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-tb-tauomega" title="Link to this equation">#</a></span>\[TB_p = T_s e_p \exp{(-\tau_p \sec \theta)} + T_c (1 - \omega_p)[1 - \exp(-\tau_p \sec \theta)][1 + r_p \exp(-\tau_p \sec \theta)]\]</div>
+<div class="math notranslate nohighlight">
+\[TB_p = T_s e_p \exp{(-\tau_p \sec \theta)} + T_c (1 - \omega_p)[1 - \exp(-\tau_p \sec \theta)][1 + r_p \exp(-\tau_p \sec \theta)]\]</div>
 <p>Where the subscript p refers to polarization (V or H), Ts denotes the soil temperature and Tc stands for the canopy temperature, <span class="math notranslate nohighlight">\(𝜏_p\)</span> represents the nadir vegetation opacity, <span class="math notranslate nohighlight">\(\omega_p\)</span> corresponds to the vegetation single scattering albedo (<span class="math notranslate nohighlight">\(\omega\)</span>), and <span class="math notranslate nohighlight">\(r_p\)</span> is the soil reflectivity of a rough surface. The reflectivity is connected to the emissivity (<span class="math notranslate nohighlight">\(e_p\)</span>) through the relation <span class="math notranslate nohighlight">\(e_p = (1 - r_p)\)</span>. It must be noted that <span class="math notranslate nohighlight">\(\omega_p\)</span> will be treated here as an effective parameter <span id="id2">[<a class="reference internal" href="references.html#id33" title="Mehmet Kurum. Quantifying scattering albedo in microwave emission of vegetated terrain. Remote Sensing of Environment, 129:66-74, 2013. URL: https://www.sciencedirect.com/science/article/pii/S0034425712004099, doi:https://doi.org/10.1016/j.rse.2012.10.021.">Kurum, 2013</a>]</span>.</p>
 <p>According to Beer’s law, the overlying canopy layer’s transmissivity or vegetation attenuation factor , <span class="math notranslate nohighlight">\(\gamma\)</span>, is given by <span class="math notranslate nohighlight">\(\gamma = \exp(-𝜏_p \sec \theta)\)</span>. Equation <a class="reference internal" href="#equation-tb-tauomega">(1)</a> assumes that vegetation multiple scattering and reflection at the vegetation-air interface are negligible.</p>
 <p>Surface roughness is modeled as <span class="math notranslate nohighlight">\(r_p  = r^*_p \exp(-H_R)\)</span>, where <span class="math notranslate nohighlight">\(H_R\)</span> parameterizes the intensity of the roughness effects, <span class="math notranslate nohighlight">\(r^*_p\)</span> stands for the reflectivity of a plane surface. Nadir vegetation opacity is related to the total vegetation water content (VWC, in kg/m<span class="math notranslate nohighlight">\(^2\)</span>) by <span class="math notranslate nohighlight">\(\tau_p = b_p·VWC\)</span>, with the coefficient <span class="math notranslate nohighlight">\(b_p\)</span> dependent on vegetation type and microwave frequency (and polarization) <span id="id3">[<a class="reference internal" href="references.html#id30" title="Adriaan A. Van De Griend and Jean-Pierre Wigneron. The b-factor as a function of frequency and canopy type at h-polarization. IEEE Transactions on Geoscience and Remote Sensing, 42(4):786-794, 2004. Cited by: 132. doi:10.1109/TGRS.2003.821889.">Van De Griend and Wigneron, 2004</a>]</span>.</p>
 <p>The surface reflectance <span class="math notranslate nohighlight">\(r_p\)</span> is characterized by the Fresnel equations, which detail the actions of an electromagnetic wave when interacting with a smooth surface. When an electromagnetic wave encounters a surface that separates two media with different dielectric properties (e.g., air and soil), part of the wave’s energy is reflected at the surface, and part is transmitted through it. The Fresnel equations are used to calculate the amount of energy reflected based on the incident angle of the wave and the dielectric properties of the involved media. For horizontal polarization, the wave’s electric field aligns parallel to the reflecting surface and perpendicular to the propagation direction. In contrast, for vertical polarization, the electric field of the wave has a component perpendicular to the surface. Equations <a class="reference internal" href="#equation-rh-theta">(2)</a><a class="reference internal" href="#equation-rv-theta">(3)</a> show the Fresnel equations for both horizontal and vertical polarizations.</p>
 <div class="math notranslate nohighlight" id="equation-rh-theta">
-<span class="eqno">(2)<a class="headerlink" href="#equation-rh-theta" title="Permalink to this equation">#</a></span>\[r_H(\theta) = \left| \frac{\cos\theta - \sqrt{\epsilon - \sin^2\theta}}{\cos\theta + \sqrt{\epsilon - \sin^2\theta}} \right|^2\]</div>
+<span class="eqno">(2)<a class="headerlink" href="#equation-rh-theta" title="Link to this equation">#</a></span>\[r_H(\theta) = \left| \frac{\cos\theta - \sqrt{\epsilon - \sin^2\theta}}{\cos\theta + \sqrt{\epsilon - \sin^2\theta}} \right|^2\]</div>
 <div class="math notranslate nohighlight" id="equation-rv-theta">
-<span class="eqno">(3)<a class="headerlink" href="#equation-rv-theta" title="Permalink to this equation">#</a></span>\[r_V(\theta) = \left| \frac{\epsilon\cos\theta - \sqrt{\epsilon - \sin^2\theta}}{\epsilon\cos\theta + \sqrt{\epsilon - \sin^2\theta}} \right|^2\]</div>
+<span class="eqno">(3)<a class="headerlink" href="#equation-rv-theta" title="Link to this equation">#</a></span>\[r_V(\theta) = \left| \frac{\epsilon\cos\theta - \sqrt{\epsilon - \sin^2\theta}}{\epsilon\cos\theta + \sqrt{\epsilon - \sin^2\theta}} \right|^2\]</div>
 <p>where <span class="math notranslate nohighlight">\(\theta\)</span> represents the CIMR incidence angle, while <span class="math notranslate nohighlight">\(\epsilon\)</span> denotes the soil layer’s complex dielectric constant.</p>
 <p>It is important to note that an increase in soil moisture is accompanied by a proportional increase in the soil dielectric constant (<span class="math notranslate nohighlight">\(\epsilon\)</span>). For instance, liquid water has a dielectric constant of 80, while dry soil possesses a dielectric constant of 5. Furthermore, it should be acknowledged that a low dielectric constant is not uniquely indicative of dry soil conditions. Frozen soil, regardless of water content, exhibits a dielectric constant similar to that of dry soil. Consequently, a freeze/thaw flag is required to resolve this ambiguity. Since TB is proportional to emissivity for a given surface soil temperature, TB decreases as soil moisture increases. In the CIMR algorithm, <span class="math notranslate nohighlight">\(\epsilon\)</span> is expressed as a function of SM, soil clay fraction and soil temperature using the model developed by Mironov <span id="id4">[<a class="reference internal" href="references.html#id43" title="V. Mironov, Y. Kerr, S. Member, J. Wigneron, and S. Member. Temperature- and texture-dependent dielectric model for moist soils at 1.4 ghz. IEEE Geosci. Remote Sens. Lett., 10:1–5, 2012.">Mironov <em>et al.</em>, 2012</a>]</span>.</p>
 <p>This relationship between soil moisture and soil dielectric constant (and consequently microwave emissivity and brightness temperature) establishes the basis for passive remote sensing of soil moisture. With CIMR observations of TB and information on <span class="math notranslate nohighlight">\(T_s\)</span> and <span class="math notranslate nohighlight">\(T_c\)</span>, <span class="math notranslate nohighlight">\(H_R\)</span>, and <span class="math notranslate nohighlight">\(\omega_p\)</span> from ancillary sources, soil moisture (SM) and vegetation optical depth (VOD) can be retrieved. The procedure for this retrieval is detailed in the following section, ‘Retrieval Method’.</p>
 </section>
 <section id="retrieval-method">
-<h2>Retrieval Method<a class="headerlink" href="#retrieval-method" title="Permalink to this heading">#</a></h2>
+<h2>Retrieval Method<a class="headerlink" href="#retrieval-method" title="Link to this heading">#</a></h2>
 <p>Prior to implementing the soil moisture retrieval, a preliminary step is to perform a water body correction to the brightness temperature data for cases where a significant percentage of the grid cells contain open water. As it is well known, brightness temperature values notably decrease when the water fraction increases <span id="id5">[<a class="reference internal" href="references.html#id5" title="Fawwaz T. Ulaby and David G. Long. Microwave Radar and Radiometric Remote Sensing. University of Michigan Press, 2014. doi:10.3998/0472119356.">Ulaby and Long, 2014</a>]</span>, leading to an overestimation of the retrieved SM values <span id="id6">[<a class="reference internal" href="references.html#id8" title="N Ye, J P Walker, J Guerschman, D Ryu, and R J Gurney. Standing water effect on soil moisture retrieval from L-band passive microwave observations. Remote Sens. Environ., 169:232–242, 2015. URL: https://www.sciencedirect.com/science/article/pii/S0034425715301012, doi:https://doi.org/10.1016/j.rse.2015.08.013.">Ye <em>et al.</em>, 2015</a>]</span> and inducing artificial seasonal cycles of VOD <span id="id7">[<a class="reference internal" href="references.html#id3" title="Emma Bousquet, Arnaud Mialon, Nemesio Rodriguez-Fernandez, Catherine Prigent, Fabien H Wagner, and Yann H Kerr. Influence of surface water variations on VOD and biomass estimates from passive microwave sensors. Remote Sens. Environ., 257:112345, 2021. URL: https://www.sciencedirect.com/science/article/pii/S0034425721000638, doi:https://doi.org/10.1016/j.rse.2021.112345.">Bousquet <em>et al.</em>, 2021</a>]</span>. It is therefore important to correct the CIMR brightness temperatures for the presence of water, to the extent feasible, prior to using them as inputs to the Level-2 Soil Moisture retrieval. This correction needs to be performed using the CIMR Hydrology Target mask ([RD-1] MRD-854), as part of the optimal interpolation or re-sampling process (in the CIMR RGB toolbox). The hydrology target mask will include information from both permanent and transitory water surfaces that shall be identified with the surface water seasonality information provided by the CIMR Surface Water Fraction (SWF) product as well as ancillary information.</p>
 <p>The procedure to acquire soil moisture (SM) and vegetation optical depth (VOD, also denoted as <span class="math notranslate nohighlight">\(\tau\)</span>) requires the minimization of the cost function F, as shown in <a class="reference internal" href="#equation-cost-fun">(4)</a>. The method to minimize F is the Trust Region Reflective (TRR) algorithm <span id="id8">[<a class="reference internal" href="references.html#id38" title="M. A. Branch, T. F. Coleman, and Y. Li. A subspace, interior, and conjugate gradient method for large-scale bound-constrained minimization problems. SIAM Journal on Scientific Computing, 21(1):1–23, 1999.">Branch <em>et al.</em>, 1999</a>]</span>.</p>
 <div class="math notranslate nohighlight" id="equation-cost-fun">
-<span class="eqno">(4)<a class="headerlink" href="#equation-cost-fun" title="Permalink to this equation">#</a></span>\[F(SM, \tau) = \frac{(TB_p^{obs} - TB_p)^2}{\sigma_{TB}^2} + \frac{(\tau^{ini} - \tau)^2}{\sigma_\tau^2}\]</div>
+<span class="eqno">(4)<a class="headerlink" href="#equation-cost-fun" title="Link to this equation">#</a></span>\[F(SM, \tau) = \frac{(TB_p^{obs} - TB_p)^2}{\sigma_{TB}^2} + \frac{(\tau^{ini} - \tau)^2}{\sigma_\tau^2}\]</div>
 <p>where the term <span class="math notranslate nohighlight">\(TB_p^\text{obs}\)</span> refers to the observed value, while <span class="math notranslate nohighlight">\(\sigma(TB)\)</span> denotes the standard deviation associated with the brightness temperature measurements (a constant value of 1 K is used). Additionally, <span class="math notranslate nohighlight">\(TB_p(\theta)\)</span> is the brightness temperature calculated using Equation <a class="reference internal" href="#equation-tb-tauomega">(1)</a>. The equation also incorporates a regularization term, where <span class="math notranslate nohighlight">\(\tau\)</span> represents the retrieved VOD, <span class="math notranslate nohighlight">\(\tau^\text{ini}\)</span> is an a priori estimate calculated from previous runs, and <span class="math notranslate nohighlight">\(\sigma_\tau\)</span> is its associated standard deviation computed as shown in Equation <a class="reference internal" href="#equation-sigma-tau">(5)</a>.</p>
 <div class="math notranslate nohighlight" id="equation-sigma-tau">
-<span class="eqno">(5)<a class="headerlink" href="#equation-sigma-tau" title="Permalink to this equation">#</a></span>\[\sigma_\tau = \min(0.1 + 0.3 \cdot \tau, 0.3) \]</div>
+<span class="eqno">(5)<a class="headerlink" href="#equation-sigma-tau" title="Link to this equation">#</a></span>\[\sigma_\tau = \min(0.1 + 0.3 \cdot \tau, 0.3) \]</div>
 <!-- An initial constant value of 0.2 m$^3$/m$^3$ is assumed for SM and $\sigma(SM)$, while the value of $\tau_{NAD}$ is set to an initial value calculated from previous runs. The $\sigma(\tau_{NAD})$ is computed as shown in Equation {eq}`sigma_tau`.
 
 ```{math}
@@ -739,41 +456,35 @@ title="Print to PDF"
 ```-->
 </section>
 <section id="cimr-level-1b-re-sampling-approach">
-<h2>CIMR Level-1b re-sampling approach<a class="headerlink" href="#cimr-level-1b-re-sampling-approach" title="Permalink to this heading">#</a></h2>
+<h2>CIMR Level-1b re-sampling approach<a class="headerlink" href="#cimr-level-1b-re-sampling-approach" title="Link to this heading">#</a></h2>
 <p>The CIMR Level-2 Soil Moisture retrieval algorithm will provide two soil moisture products: the first based on the inversion of L-band only TBs at its native resolution (&lt;60 km, Hydroclimatological), the second one based on the inversion of L-band at an enhanced spatial resolution (~10 to 25 km Hydrometeorological). The enhanced L-band targets an effective mean spatial resolution of 15 km and is based on sharpening techniques that exploit the C-band and X-band channels (<span id="id9">[<a class="reference internal" href="references.html#id26" title="E Santi. An application of the SFIM technique to enhance the spatial resolution of spaceborne microwave radiometers. Int. J. Remote Sens., 31(9):2419–2428, 2010. URL: https://doi.org/10.1080/01431160903005725, doi:10.1080/01431160903005725.">Santi, 2010</a>]</span>, <span id="id10">[<a class="reference internal" href="references.html#id4" title="M.S. Zhang, F. Alnassar, M. Piles, and D. Entekhabi. L-band Sharpening with C-band using SMAP and AMSR2 Radiometry Data for Future Application to CIMR. Remote Sens. Environ., submitted 2024.">Zhang <em>et al.</em>, submitted 2024</a>]</span>).</p>
-<p>The CIMR Level-1b re-sampling and re-mapping involves three stages, which are illustrated in Figure <a class="reference internal" href="#resampling"><span class="std std-numref">Fig. 3</span></a>. In a first stage, the Level1-b TBs will be remapped on common location using a Backus-Gilbert or Scatterometer Image Reconstruction analysis (at CIMR RGB Toolbox). The objective of this first step is to optimize L-band reconstruction to provide the highest possible spatial resolution at the lowest noise level <span id="id11">[<a class="reference internal" href="references.html#id6" title="David G. Long, Mary J. Brodzik, and Molly A. Hardman. Enhanced-resolution smap brightness temperature image products. IEEE Transactions on Geoscience and Remote Sensing, 57(7):4151-4163, 2019. doi:10.1109/TGRS.2018.2889427.">Long <em>et al.</em>, 2019</a>]</span> (TB_L product). In a second stage, which is exclusive to the TB_L_E product, an sharpening algorithm will be applied to combine the 60 km L-band with 15 km C/X-bands to estimate an equivalent 15 km L-band. The effective resolution of the TB_L and TB_L_E products will be evaluated and compared (e.g. as in <span id="id12">[<a class="reference internal" href="references.html#id7" title="David G Long, Mary J Brodzik, and Molly Hardman. Evaluating the effective resolution of enhanced resolution SMAP brightness temperature image products. Front. Remote Sens., 2023. URL: https://www.frontiersin.org/articles/10.3389/frsen.2023.1073765, doi:10.3389/frsen.2023.1073765.">Long <em>et al.</em>, 2023</a>]</span>). In a third stage, both products will be posted on an Earth-based map projection grid. CIMR Level-2 Soil Moisture products with an effective spatial resolution of &lt;60 km (L-band only) and ~15 km (after sharpening using C/X bands) are planned to be projected on an EASE2 grid with a kernel of 3 km (then multiples thereof). The CIMR radiometer is conically scanning and its high degree of oversampling provides flexibility in resampling the data, supporting the use of a finer grid (posting resolution) than the TB effective resolution <span id="id13">[<a class="reference internal" href="references.html#id7" title="David G Long, Mary J Brodzik, and Molly Hardman. Evaluating the effective resolution of enhanced resolution SMAP brightness temperature image products. Front. Remote Sens., 2023. URL: https://www.frontiersin.org/articles/10.3389/frsen.2023.1073765, doi:10.3389/frsen.2023.1073765.">Long <em>et al.</em>, 2023</a>]</span>. At L-band, CIMR TB measurements are collected with an along-scan spacing of approximately 8 km, while there is an overlap of 29 % in the along-track direction (no spacing). In order to preserve as much information as possible as well as to represent the “effective” spatial resolution of each product, gridding resolutions of 9 and 36 km are hence initially proposed for the two soil moisture products. Further gridding resolutions will be considered upon characterization of the tradeoff between noise and spatial resolution of the 2-D gridded images.</p>
-<figure class="align-default" id="resampling">
-<img alt="_images/Level1b_resampling_gridding.png" src="_images/Level1b_resampling_gridding.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Conceptual flow of Level-1b resampling to exploit CIMR oversampling, multifrequency and nested spatial resolution and achieve global hydroclimatology and hydrometeorology soil moisture observational requirements of 60 and 15 km spatial resolution daily.</span><a class="headerlink" href="#resampling" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p>The CIMR Level-1b re-sampling and re-mapping involves three stages, which are illustrated in Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">resampling</span></code>. In a first stage, the Level1-b TBs will be remapped on common location using a Backus-Gilbert or Scatterometer Image Reconstruction analysis (at CIMR RGB Toolbox). The objective of this first step is to optimize L-band reconstruction to provide the highest possible spatial resolution at the lowest noise level <span id="id11">[<a class="reference internal" href="references.html#id6" title="David G. Long, Mary J. Brodzik, and Molly A. Hardman. Enhanced-resolution smap brightness temperature image products. IEEE Transactions on Geoscience and Remote Sensing, 57(7):4151-4163, 2019. doi:10.1109/TGRS.2018.2889427.">Long <em>et al.</em>, 2019</a>]</span> (TB_L product). In a second stage, which is exclusive to the TB_L_E product, an sharpening algorithm will be applied to combine the 60 km L-band with 15 km C/X-bands to estimate an equivalent 15 km L-band. The effective resolution of the TB_L and TB_L_E products will be evaluated and compared (e.g. as in <span id="id12">[<a class="reference internal" href="references.html#id7" title="David G Long, Mary J Brodzik, and Molly Hardman. Evaluating the effective resolution of enhanced resolution SMAP brightness temperature image products. Front. Remote Sens., 2023. URL: https://www.frontiersin.org/articles/10.3389/frsen.2023.1073765, doi:10.3389/frsen.2023.1073765.">Long <em>et al.</em>, 2023</a>]</span>). In a third stage, both products will be posted on an Earth-based map projection grid. CIMR Level-2 Soil Moisture products with an effective spatial resolution of &lt;60 km (L-band only) and ~15 km (after sharpening using C/X bands) are planned to be projected on an EASE2 grid with a kernel of 3 km (then multiples thereof). The CIMR radiometer is conically scanning and its high degree of oversampling provides flexibility in resampling the data, supporting the use of a finer grid (posting resolution) than the TB effective resolution <span id="id13">[<a class="reference internal" href="references.html#id7" title="David G Long, Mary J Brodzik, and Molly Hardman. Evaluating the effective resolution of enhanced resolution SMAP brightness temperature image products. Front. Remote Sens., 2023. URL: https://www.frontiersin.org/articles/10.3389/frsen.2023.1073765, doi:10.3389/frsen.2023.1073765.">Long <em>et al.</em>, 2023</a>]</span>. At L-band, CIMR TB measurements are collected with an along-scan spacing of approximately 8 km, while there is an overlap of 29 % in the along-track direction (no spacing). In order to preserve as much information as possible as well as to represent the “effective” spatial resolution of each product, gridding resolutions of 9 and 36 km are hence initially proposed for the two soil moisture products. Further gridding resolutions will be considered upon characterization of the tradeoff between noise and spatial resolution of the 2-D gridded images.</p>
 </section>
 <section id="algorithm-assumptions-and-simplifications">
-<h2>Algorithm Assumptions and Simplifications<a class="headerlink" href="#algorithm-assumptions-and-simplifications" title="Permalink to this heading">#</a></h2>
+<h2>Algorithm Assumptions and Simplifications<a class="headerlink" href="#algorithm-assumptions-and-simplifications" title="Link to this heading">#</a></h2>
 <p>The CIMR algorithm incorporates several simplifications, which are detailed below.</p>
 <p>For both ascending and descending satellite passes, it is assumed that the air, vegetation, and near-surface soil are in thermal equilibrium, given that the canopy temperature (<span class="math notranslate nohighlight">\(T_c\)</span>) can be approximated to the soil temperature (<span class="math notranslate nohighlight">\(T_s\)</span>) <span id="id14">[<a class="reference internal" href="references.html#id21" title="R. Fernandez-Moran, J.-P. Wigneron, G. De Lannoy, E. Lopez-Baeza, M. Parrens, A. Mialon, A. Mahmoodi, A. Al-Yaari, S. Bircher, A. Al Bitar, and others. A new calibration of the effective scattering albedo and soil roughness parameters in the smos sm retrieval algorithm. International Journal of Applied Earth Observation and Geoinformation, 62:27–38, 2017. doi:10.1016/j.jag.2017.05.013.">Fernandez-Moran <em>et al.</em>, 2017</a>, <a class="reference internal" href="references.html#id34" title="B.K. Hornbuckle and A.W. England. Diurnal variation of vertical temperature gradients within a field of maize: implications for satellite microwave radiometry. IEEE Geoscience and Remote Sensing Letters, 2(1):74-77, 2005. doi:10.1109/LGRS.2004.841370.">Hornbuckle and England, 2005</a>]</span>. In this context, we can represent both temperatures with a single effective temperature (<span class="math notranslate nohighlight">\(T_{eff}\)</span>).</p>
 <p>Regarding soil roughness parameterization, the formulation used is simplified to represent soil roughness with a single parameter, <span class="math notranslate nohighlight">\(H\)</span>, derived from the full formulation proposed by Wang and Choudhury <span id="id15">[<a class="reference internal" href="references.html#id35" title="J.R. Wang and B.J. Choudhury. Remote sensing of soil moisture content over bare field at 1.4 ghz frequency. Journal of Geophysical Research, 86:5277-5282, 1981.">Wang and Choudhury, 1981</a>]</span>. For simplification purposes, both soil roughness and vegetation scattering albedo are considered time invariant, despite their values varying on a global scale.</p>
 <p>A zeroth-order radiative transfer model, also known as the tau-omega model, is utilized by CIMR to estimate soil moisture. This model is a zero-order solution of the microwave radiative transfer equations, which neglects multiple reflections within the vegetation canopy. Some studies have attempted to address this limitation by utilizing higher-order radiative transfer models, such as the Two Stream Emission Model (2S-EM) <span id="id16">[<a class="reference internal" href="references.html#id36" title="M. Schwank, R. Naderpour, and C. Mätzler. &quot;tau-omega&quot;- and two-stream emission models used for passive l-band retrievals: application to close-range measurements over a forest. Remote Sensing, 10(12):1868, 2018. doi:10.3390/rs10121868.">Schwank <em>et al.</em>, 2018</a>]</span>, or the approach proposed by Feldman <span id="id17">[<a class="reference internal" href="references.html#id37" title="Andrew F. Feldman, Ruzbeh Akbar, and Dara Entekhabi. Characterization of higher-order scattering from vegetation with smap measurements. Remote Sensing of Environment, 219:324-338, 2018. URL: https://www.sciencedirect.com/science/article/pii/S0034425718304760, doi:10.1016/j.rse.2018.10.022.">Feldman <em>et al.</em>, 2018</a>]</span>. Feldman’s approach proposes to quantify higher order scattering through the First Order Scattering Model (First Order RTM), introducing an additional term for multiple scattering (<span class="math notranslate nohighlight">\(Ω_1\)</span>) alongside the zeroth order scattering term (ω), using a ray-tracing method.</p>
 </section>
 <section id="level-2-end-to-end-algorithm-functional-flow-diagram">
-<h2>Level-2 end to end algorithm functional flow diagram<a class="headerlink" href="#level-2-end-to-end-algorithm-functional-flow-diagram" title="Permalink to this heading">#</a></h2>
+<h2>Level-2 end to end algorithm functional flow diagram<a class="headerlink" href="#level-2-end-to-end-algorithm-functional-flow-diagram" title="Link to this heading">#</a></h2>
 <figure class="align-default" id="flow-diagram-sm">
 <img alt="_images/flow_diagram_SM_v2.png" src="_images/flow_diagram_SM_v2.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Functional flow diagram of Level-2 Soil moisture and VOD retrieval algorithm.</span><a class="headerlink" href="#flow-diagram-sm" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Functional flow diagram of Level-2 Soil moisture and VOD retrieval algorithm.</span><a class="headerlink" href="#flow-diagram-sm" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="functional-description-of-each-algorithm-step">
-<h2>Functional description of each Algorithm step<a class="headerlink" href="#functional-description-of-each-algorithm-step" title="Permalink to this heading">#</a></h2>
+<h2>Functional description of each Algorithm step<a class="headerlink" href="#functional-description-of-each-algorithm-step" title="Link to this heading">#</a></h2>
 <section id="pre-processing-of-input-tb">
-<h3>Pre-processing of input TB<a class="headerlink" href="#pre-processing-of-input-tb" title="Permalink to this heading">#</a></h3>
+<h3>Pre-processing of input TB<a class="headerlink" href="#pre-processing-of-input-tb" title="Link to this heading">#</a></h3>
 <p>The processing algorithm primarily relies on the CIMR L1B TB product that is calibrated, geolocated and undergoes several corrections, such as atmospheric effects, Faraday rotation and RFI effects. L, C, and X-bands are used as inputs to the Soil Moisture and VOD inversion. At each of these frequencies, fore- and aft-look TB data are merged and corrected for the presence of standing water. L-band undergoes an optimal interpolation or image reconstruction step (at the RGB toolbox). This product, TB_L, is directly used as input to the Level-2 retrieval algorithm to obtain the SM and L-VOD at coarse resolution (&lt; 60km). TB_L is also combined with C and X bands into an enhanced-resolution product TB_L_E, that is used as input to the Level-2 algorithm to obtain SM and L-VOD at an enhanced spatial resolution (~ 15km).</p>
 <p>Ku/Ka bands are processed independently to obtain the effective land surface temperature that is used as input in the Soil Moisture and VOD retrieval step, together with other static ancillary data. This temperature can be initially derived from CIMR Ka band using the linear regression formulation of Holmes <span id="id18">[<a class="reference internal" href="references.html#id31" title="T. R. H. Holmes, R. A. M. De Jeu, M. Owe, and A. J. Dolman. Land surface temperature from ka band (37 ghz) passive microwave observations. J. Geophys. Res. Atmos., 2009.">Holmes <em>et al.</em>, 2009</a>]</span>, although the use of the CIMR LST product or ECMWF will also be considered.</p>
 </section>
 <section id="analyze-surface-quality-and-surface-conditions">
-<h3>Analyze surface quality and surface conditions<a class="headerlink" href="#analyze-surface-quality-and-surface-conditions" title="Permalink to this heading">#</a></h3>
+<h3>Analyze surface quality and surface conditions<a class="headerlink" href="#analyze-surface-quality-and-surface-conditions" title="Link to this heading">#</a></h3>
 <p>Ancillary data will be employed to help to determine whether masks are in effect for strong topography, urban, snow/ice, frozen soil.</p>
 <!---
 ##### Mathematical description
@@ -782,13 +493,13 @@ SubSubsection Text
 -->
 </section>
 <section id="input-data">
-<h3>Input data<a class="headerlink" href="#input-data" title="Permalink to this heading">#</a></h3>
-<p>The input data for the model consists of two primary parameters. The first is the Level 1b Brightness Temperature (L1B TB), which is observed by CIMR at L, C, and X-bands, covering both horizontal and vertical polarizations. This data represents a full swath or swath section with dimensions <em>(Nscans, Npos)</em> in a 2D array format. The second parameter, TB<span class="math notranslate nohighlight">\(_{err}\)</span>, represents the error associated with the Brightness Temperature. This error information is also organized with the same dimensions, <em>(Nscans, Npos)</em>. This information is showed in <a class="reference internal" href="algorithm_input_output_data_definition.html"><span class="doc std std-doc">IODD</span></a>.</p>
+<h3>Input data<a class="headerlink" href="#input-data" title="Link to this heading">#</a></h3>
+<p>The input data for the model consists of two primary parameters. The first is the Level 1b Brightness Temperature (L1B TB), which is observed by CIMR at L, C, and X-bands, covering both horizontal and vertical polarizations. This data represents a full swath or swath section with dimensions <em>(Nscans, Npos)</em> in a 2D array format. The second parameter, TB<span class="math notranslate nohighlight">\(_{err}\)</span>, represents the error associated with the Brightness Temperature. This error information is also organized with the same dimensions, <em>(Nscans, Npos)</em>. This information is showed in <a class="reference internal" href="algorithm_input_output_data_definition.html"><span class="std std-doc">IODD</span></a>.</p>
 </section>
 <section id="output-data">
-<h3>Output data<a class="headerlink" href="#output-data" title="Permalink to this heading">#</a></h3>
+<h3>Output data<a class="headerlink" href="#output-data" title="Link to this heading">#</a></h3>
 <p>The model outputs include key parameters such as soil moisture and vegetation optical depth at both the L-band (&lt; 60km) and the L-band enhanced (~ 15km) resolution. The output data is produced in two nested EASE2 grids of 36 km and 9 km. Additional information like brightness temperature, geographical data, albedo, and data flags supplement these outputs. Data flags enable users to examine (a) the surface conditions of a grid cell, (b) the potential impact of RFI, and (c) the quality of soil moisture estimate when retrieval is attempted.</p>
-<p>More details can be found in <a class="reference internal" href="algorithm_input_output_data_definition.html"><span class="doc std std-doc">IODD</span></a>.</p>
+<p>More details can be found in <a class="reference internal" href="algorithm_input_output_data_definition.html"><span class="std std-doc">IODD</span></a>.</p>
 <!--
 ##### Auxiliary data
 
@@ -796,11 +507,11 @@ SubSubsection Text
 -->
 </section>
 <section id="ancillary-data">
-<h3>Ancillary data<a class="headerlink" href="#ancillary-data" title="Permalink to this heading">#</a></h3>
+<h3>Ancillary data<a class="headerlink" href="#ancillary-data" title="Link to this heading">#</a></h3>
 <p>Two sets of Land Surface Temperature will be included as ancillary data: the one estimated from CIMR Ka/Ku bands and the one from ECMWF. This will allow for some flexibility in the design and validation phase of the algorithm prototype.</p>
 <p>The static global maps for CIMR H and ω are computed through a weighted method. This approach takes into consideration the fraction of the MODIS IGBP land cover class that is contained within a given CIMR pixel. The data used for these computations are derived from the IGBP classification as identified in the study conducted by Fernandez-Moran <span id="id19">[<a class="reference internal" href="references.html#id21" title="R. Fernandez-Moran, J.-P. Wigneron, G. De Lannoy, E. Lopez-Baeza, M. Parrens, A. Mialon, A. Mahmoodi, A. Al-Yaari, S. Bircher, A. Al Bitar, and others. A new calibration of the effective scattering albedo and soil roughness parameters in the smos sm retrieval algorithm. International Journal of Applied Earth Observation and Geoinformation, 62:27–38, 2017. doi:10.1016/j.jag.2017.05.013.">Fernandez-Moran <em>et al.</em>, 2017</a>]</span>. In Table <a class="reference internal" href="#wandh"><span class="std std-ref">Values of ω and H</span></a>, different values of ω and <span class="math notranslate nohighlight">\(H\)</span> are listed according to land cover type. Based on these criteria, static global maps of ω and <span class="math notranslate nohighlight">\(H\)</span> have been produced as part of the ancillary dataset.</p>
 <table class="table" id="wandh">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">Values of ω and <span class="math notranslate nohighlight">\(H\)</span></span><a class="headerlink" href="#wandh" title="Permalink to this table">#</a></caption>
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Values of ω and <span class="math notranslate nohighlight">\(H\)</span></span><a class="headerlink" href="#wandh" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>ID</p></th>
 <th class="head"><p>MODIS IGBP land classification</p></th>
@@ -969,112 +680,71 @@ SubSubsection Text
     </script>
     <script>kernelName = 'python3'</script>
 
-            </article>
-            
+                </article>
+              
 
-            
-            
-            <footer class="bd-footer-article">
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="L2_product_definition.html" title="previous page">
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="L2_product_definition.html"
+       title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-          <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Level-2 product definition</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Level-2 product definition</p>
       </div>
-  </a>
-  <a class='right-next' id="next-link" href="algorithm_input_output_data_definition.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Algorithm Input and Output Data Definition (IODD)</p>
-  </div>
-  <i class="fa-solid fa-angle-right"></i>
-  </a>
+    </a>
+    <a class="right-next"
+       href="algorithm_input_output_data_definition.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Algorithm Input and Output Data Definition (IODD)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
-            </footer>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-model">Forward Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-method">Retrieval Method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cimr-level-1b-re-sampling-approach">CIMR Level-1b re-sampling approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-assumptions-and-simplifications">Algorithm Assumptions and Simplifications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-2-end-to-end-algorithm-functional-flow-diagram">Level-2 end to end algorithm functional flow diagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-description-of-each-algorithm-step">Functional description of each Algorithm step</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing-of-input-tb">Pre-processing of input TB</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-surface-quality-and-surface-conditions">Analyze surface quality and surface conditions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">Input data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-data">Output data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ancillary-data">Ancillary data</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
           </div>
-          
-          
-          
-            <div class="bd-sidebar-secondary bd-toc">
-              
-<div class="toc-item">
-  
-<div class="tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-</div>
-<nav id="bd-toc-nav" class="page-toc">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#forward-model">
-   Forward Model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#retrieval-method">
-   Retrieval Method
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cimr-level-1b-re-sampling-approach">
-   CIMR Level-1b re-sampling approach
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#algorithm-assumptions-and-simplifications">
-   Algorithm Assumptions and Simplifications
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#level-2-end-to-end-algorithm-functional-flow-diagram">
-   Level-2 end to end algorithm functional flow diagram
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functional-description-of-each-algorithm-step">
-   Functional description of each Algorithm step
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pre-processing-of-input-tb">
-     Pre-processing of input TB
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#analyze-surface-quality-and-surface-conditions">
-     Analyze surface quality and surface conditions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#input-data">
-     Input data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#output-data">
-     Output data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ancillary-data">
-     Ancillary data
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-</nav>
-</div>
-
-            </div>
-          
-          
-        </div>
-        <footer class="bd-footer-content">
-          <div class="bd-footer-content__inner">
+          <footer class="bd-footer-content">
             
 <div class="bd-footer-content__inner container">
   
@@ -1088,12 +758,11 @@ By CIMR DEVALGO team
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
-    <p class="last-updated">
-Last updated on None.<br>
-</p>
+    
   </div>
   
   <div class="footer-item">
@@ -1109,19 +778,18 @@ ESA is not responsible in any way for the content of this document.
   </div>
   
 </div>
-          </div>
-        </footer>
+          </footer>
         
 
       </main>
     </div>
   </div>
-
   
-    
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
