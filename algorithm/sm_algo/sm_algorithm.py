@@ -137,8 +137,8 @@ def sm_ret(l1x, params, aux, flag, bounds=None, verbose=True):
     ret_sm = np.ones(shape, dtype='f8') * -999
     ret_vod = np.ones(shape, dtype='f8') * -999
     rmse_tb = np.ones(shape, dtype='f8') * -999
-    flag_surf = np.ones(shape, dtype='int16') * -999
-    flag_ret = np.ones(shape, dtype='int16') * -999
+    flag_scene = np.ones(shape, dtype='int16') * -999
+    flag_status = np.ones(shape, dtype='int16') * -999
 
     # initialize parameters
     sm_ini = params['sm_ini']
@@ -160,45 +160,45 @@ def sm_ret(l1x, params, aux, flag, bounds=None, verbose=True):
 
             # Water fraction critical level (no retrieval attempted)
             if flag['Water Fraction'][i_aux, j_aux] > params['wf_th']:
-                flag_ret[i, j] = 1
+                flag_status[i, j] = 1
 
             elif flag['Water Fraction'][i_aux, j_aux] <= params['wf_th']:
 
                 # initialize flag arrays to zero (retrieval attempted)
-                flag_surf[i, j] = 0
-                flag_ret[i, j] = 0
+                flag_scene[i, j] = 0
+                flag_status[i, j] = 0
 
                 # Water fraction [-]
                 if flag['Water Fraction'][i_aux, j_aux] >= 0.05:
-                    flag_surf[i, j] = flag_surf[i, j] + 2**0
+                    flag_scene[i, j] = flag_scene[i, j] + 2**0
 
                 # Distance to Coast [km]
                 if flag['Coast Distance'][i_aux, j_aux] < 36:
-                    flag_surf[i, j] = flag_surf[i, j] + 2**1
+                    flag_scene[i, j] = flag_scene[i, j] + 2**1
 
                 # Vegetation Cover [kg/m²]
                 if flag['VWC'][i_aux, j_aux] > 5:
-                    flag_surf[i, j] = flag_surf[i, j] + 2**2
+                    flag_scene[i, j] = flag_scene[i, j] + 2**2
 
                 # Urban Fraction [-]
                 if flag['Urban Fraction'][i_aux, j_aux] > 0.25:
-                    flag_surf[i, j] = flag_surf[i, j] + 2**3
+                    flag_scene[i, j] = flag_scene[i, j] + 2**3
 
                 # Precip Rate [mm/h]
                 if flag['Precip Rate'][i_aux, j_aux] > 1:
-                    flag_surf[i, j] = flag_surf[i, j] + 2**4
+                    flag_scene[i, j] = flag_scene[i, j] + 2**4
 
                 # Frozen Fraction [-]
                 if flag['Frozen Fraction'][i_aux, j_aux] > 0.05:
-                    flag_surf[i, j] = flag_surf[i, j] + 2**5
+                    flag_scene[i, j] = flag_scene[i, j] + 2**5
 
                 # Snow Fraction [-]
                 if flag['Snow Fraction'][i_aux, j_aux] > 0.05:
-                    flag_surf[i, j] = flag_surf[i, j] + 2**6
+                    flag_scene[i, j] = flag_scene[i, j] + 2**6
 
                 # DEM Standard Deviation [degree]
                 if flag['DEM STD'][i_aux, j_aux] > 3:
-                    flag_surf[i, j] = flag_surf[i, j] + 2**7
+                    flag_scene[i, j] = flag_scene[i, j] + 2**7
 
                 # extract TBs and parameters
                 tbv = l1x_tbv[i, j]
@@ -229,7 +229,7 @@ def sm_ret(l1x, params, aux, flag, bounds=None, verbose=True):
 
                 # retrieval flag if not successful
                 if sol.success == False:
-                    flag_ret[i, j] = 2
+                    flag_status[i, j] = 2
 
                 # calculate rmse of TBV,TBH and optimal solution
                 yopt = np.array(_forward_model(sol.x))
@@ -239,8 +239,8 @@ def sm_ret(l1x, params, aux, flag, bounds=None, verbose=True):
         output = {}
         output['sm'] = ret_sm
         output['vod'] = ret_vod
-        output['flag_surf'] = flag_surf
-        output['flag_ret'] = flag_ret
+        output['flag_scene'] = flag_scene
+        output['flag_status'] = flag_status
         output['rmse_tb'] = rmse_tb
         output['_grid'] = l1x[band]['_grid']
 
