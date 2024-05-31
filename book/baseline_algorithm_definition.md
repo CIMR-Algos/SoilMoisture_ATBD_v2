@@ -17,7 +17,7 @@ The retrieval of soil moisture and microwave vegetation parameters from CIMR sur
 TB_p = T_s e_p \exp{(-\tau \sec \theta)} + T_c (1 - \omega)[1 - \exp(-\tau \sec \theta)][1 + r_p \exp(-\tau \sec \theta)]
 ```
 
-Where the subscript p refers to polarization (V or H), Ts denotes the soil temperature and Tc stands for the canopy temperature, and $r_p$ is the soil reflectivity of a rough surface. The reflectivity is connected to the emissivity ($e_p$) through the relation $e_p = (1 - r_p)$. Note that τ and ω are theoretically polarization dependent, but are assumed to be polarization independent across satellite-scale retrieval applications ({cite:p}`Wigneron2017`).  It must be noted that $\omega$ will be treated here as an effective parameter {cite:p}`KURUM201366`.
+Where the subscript p refers to polarization (V or H), $T_s$ denotes the soil temperature and $T_c$ stands for the canopy temperature, and $r_p$ is the soil reflectivity of a rough surface. The reflectivity is connected to the emissivity ($e_p$) through the relation $e_p = (1 - r_p)$. Note that $τ$ and $ω$ are theoretically polarization dependent, but are assumed to be polarization independent across satellite-scale retrieval applications ({cite:p}`Wigneron2017`).  It must be noted that $\omega$ will be treated here as an effective parameter {cite:p}`KURUM201366`.
 
 According to Beer's law, the overlying canopy layer's transmissivity or vegetation attenuation factor , $\gamma$, is given by $\gamma = \exp(-𝜏 \sec \theta)$. Equation {eq}`TB-tauomega` assumes that vegetation multiple scattering and reflection at the vegetation-air interface are negligible. 
 
@@ -37,7 +37,7 @@ where $\theta$ represents the CIMR incidence angle, while $\epsilon$ denotes the
 
 It is important to note that an increase in soil moisture is accompanied by a proportional increase in the soil dielectric constant ($\epsilon$). For instance, liquid water has a dielectric constant of 80, while dry soil possesses a dielectric constant of 5. Furthermore, it should be acknowledged that a low dielectric constant is not uniquely indicative of dry soil conditions. Frozen soil, regardless of water content, exhibits a dielectric constant similar to that of dry soil. Consequently, a freeze/thaw flag is required to resolve this ambiguity. Since TB is proportional to emissivity for a given surface soil temperature, TB decreases as soil moisture increases. In the CIMR algorithm, $\epsilon$ is expressed as a function of SM, soil clay fraction and soil temperature using the model developed by Mironov {cite:p}`mironov2012`.
 
-This relationship between soil moisture and soil dielectric constant (and consequently microwave emissivity and brightness temperature) establishes the basis for passive remote sensing of soil moisture. With CIMR observations of TB and information on $T_s$ and $T_c$, $H_R$, and $\omega$ from ancillary sources, soil moisture (SM) and vegetation optical depth (VOD) can be retrieved. The procedure for this retrieval is detailed in the section 'Retrieval Method'.
+This relationship between soil moisture and soil dielectric constant (and consequently microwave emissivity and brightness temperature) establishes the basis for passive remote sensing of soil moisture. With CIMR observations of TB and information on $T_s$ and $T_c$, $H_R$, and $\omega$ from ancillary sources, soil moisture (SM) and vegetation optical depth (VOD) can be retrieved.
 
 ## Retrieval Method
 
