@@ -107,7 +107,6 @@ def sm_ret(l1x, params, aux, flag, bounds=None, verbose=True):
         j_total = j_tbh + j_tbv + j_tau
         return j_total
 
-
     # Look for L-band data in "L1X" file
     if 'L' in l1x:
         band = 'L'
@@ -134,12 +133,12 @@ def sm_ret(l1x, params, aux, flag, bounds=None, verbose=True):
     else:
         shape = l1x_tbv.shape
 
-    # initialize output arrays
+    # initialize output arrays with fill values
     ret_sm = np.ones(shape, dtype='f8') * -999
     ret_vod = np.ones(shape, dtype='f8') * -999
     rmse_tb = np.ones(shape, dtype='f8') * -999
-    flag_surf = np.zeros(shape, dtype='int16')
-    flag_ret = np.zeros(shape, dtype='int16')
+    flag_surf = np.ones(shape, dtype='int16') * -999
+    flag_ret = np.ones(shape, dtype='int16') * -999
 
     # initialize parameters
     sm_ini = params['sm_ini']
@@ -159,42 +158,49 @@ def sm_ret(l1x, params, aux, flag, bounds=None, verbose=True):
             i_aux = i - aoi[0]
             j_aux = j - aoi[2]
 
-            # Water fraction [-]
-            if flag['Water Fraction'][i_aux, j_aux] >= 0.05:
-                flag_surf[i, j] = flag_surf[i, j] + 2**0
-
-            # Distance to Coast [km]
-            if flag['Coast Distance'][i_aux, j_aux] < 36:
-                flag_surf[i, j] = flag_surf[i, j] + 2**1
-
-            # Vegetation Cover [kg/m²]
-            if flag['VWC'][i_aux, j_aux] > 5:
-                flag_surf[i, j] = flag_surf[i, j] + 2**2
-
-            # Urban Fraction [-]
-            if flag['Urban Fraction'][i_aux, j_aux] > 0.25:
-                flag_surf[i, j] = flag_surf[i, j] + 2**3
-
-            # Precip Rate [mm/h]
-            if flag['Precip Rate'][i_aux, j_aux] > 1:
-                flag_surf[i, j] = flag_surf[i, j] + 2**4
-
-            # Frozen Fraction [-]
-            if flag['Frozen Fraction'][i_aux, j_aux] > 0.05:
-                flag_surf[i, j] = flag_surf[i, j] + 2**5
-
-            # Snow Fraction [-]
-            if flag['Snow Fraction'][i_aux, j_aux] > 0.05:
-                flag_surf[i, j] = flag_surf[i, j] + 2**6
-
-            # DEM Standard Deviation [degree]
-            if flag['DEM STD'][i_aux, j_aux] > 3:
-                flag_surf[i, j] = flag_surf[i, j] + 2**7
-
             # Water fraction critical level (no retrieval attempted)
             if flag['Water Fraction'][i_aux, j_aux] > params['wf_th']:
                 flag_ret[i, j] = 1
+
             elif flag['Water Fraction'][i_aux, j_aux] <= params['wf_th']:
+
+                # initialize flag arrays to zero (retrieval attempted)
+                flag_surf[i, j] = 0
+                flag_ret[i, j] = 0
+
+                # Water fraction [-]
+                if flag['Water Fraction'][i_aux, j_aux] >= 0.05:
+                    flag_surf[i, j] = flag_surf[i, j] + 2**0
+
+                # Distance to Coast [km]
+                if flag['Coast Distance'][i_aux, j_aux] < 36:
+                    flag_surf[i, j] = flag_surf[i, j] + 2**1
+
+                # Vegetation Cover [kg/m²]
+                if flag['VWC'][i_aux, j_aux] > 5:
+                    flag_surf[i, j] = flag_surf[i, j] + 2**2
+
+                # Urban Fraction [-]
+                if flag['Urban Fraction'][i_aux, j_aux] > 0.25:
+                    flag_surf[i, j] = flag_surf[i, j] + 2**3
+
+                # Precip Rate [mm/h]
+                if flag['Precip Rate'][i_aux, j_aux] > 1:
+                    flag_surf[i, j] = flag_surf[i, j] + 2**4
+
+                # Frozen Fraction [-]
+                if flag['Frozen Fraction'][i_aux, j_aux] > 0.05:
+                    flag_surf[i, j] = flag_surf[i, j] + 2**5
+
+                # Snow Fraction [-]
+                if flag['Snow Fraction'][i_aux, j_aux] > 0.05:
+                    flag_surf[i, j] = flag_surf[i, j] + 2**6
+
+                # DEM Standard Deviation [degree]
+                if flag['DEM STD'][i_aux, j_aux] > 3:
+                    flag_surf[i, j] = flag_surf[i, j] + 2**7
+
+                # extract TBs and parameters
                 tbv = l1x_tbv[i, j]
                 tbh = l1x_tbh[i, j]
                 omega = aux['omega'][i_aux, j_aux]
@@ -203,10 +209,11 @@ def sm_ret(l1x, params, aux, flag, bounds=None, verbose=True):
                 t_eff = aux['LST'][i_aux, j_aux]
                 tau_ini = aux['tau_ini'][i_aux, j_aux]
 
+                # initial and target values
                 x0 = np.array([tau_ini, sm_ini])
                 ytar = np.concatenate(([tbv], [tbh]))
 
-                # optimization
+                # SM retrieval
                 if bounds == None:
                     sol = least_squares(_cost_function, x0, method='trf',
                                         jac='3-point', ftol=1e-4, xtol=1e-4, 
