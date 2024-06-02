@@ -168,3 +168,6 @@ data/*
 
 # DS_Store file (MacOS)
 .DS_Store
+
+# colormaps.py file
+**/colormaps.py
