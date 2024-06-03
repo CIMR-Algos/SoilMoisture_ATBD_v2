@@ -12,7 +12,7 @@ The test card has a spatial resolution of 1 km, which is nested within the globa
 --- 
 name: algo_fig1
 ---
-Synthetic soil moisture test card at 1 km (upper, native resolution), 9 km (middle, aggregated) and 36 km (lower, aggegated). Columns indicate the dominant land use, average soil moisture content, and L-band brightness temperatures at V- and H-polarization, respectively. Brightness temperatures at C-, X-, Ku-, Ka-bands are not shown for brevity.
+Synthetic soil moisture test card at 1 km (upper, native resolution), 9 km (middle, aggregated) and 36 km (lower, aggregated). Columns indicate the dominant land use, average soil moisture content, and L-band brightness temperatures at V- and H-polarization, respectively. Brightness temperatures at C-, X-, Ku-, Ka-bands are not shown for brevity.
 ```
 
 {numref}`algo_fig1` shows the synthetic test card for 1 km (native resolution), 9 km, and 36 km resolutions. The soil moisture fields at 9 km and 36 km resolutions will be used as a reference for the performance evaluation. Four areas of interest (AOIs) are indicated by black boxes. These areas indicate four distinct land use classes that contain identical soil moisture patterns.
@@ -27,7 +27,7 @@ We test the prototype algorithm on four simulated L1B files, which represent dis
 
 ### Regridding
 
-The purpose of regridding is to move from L1B TB signatures, provided in swath geometry, to gridded TB signatures, posted on a global EASE2 grid. In a first step, we grid L-band TBs to the 36 km global EASE2 grid, using a Gaussian regridding (Note: More advanced gridding techniques, such as the Backus-Gilbert optimal interpolation technique, are planned to be implemented in a seperate toolbox). In a second step, we sharpen the gridded L-band TBs to the 9 km EASE2 grid. The sharpening is achieved by applying the smoothing filter-based intensity modulation technique (SFIM) {cite:p}`Santi2010`, using L-band TBs at the 36 km grid and C-band TBs at the 36 km and 9 km grids as inputs. 
+The purpose of regridding is to move from L1B TB signatures, provided in swath geometry, to gridded TB signatures, posted on a global EASE2 grid. In a first step, we grid L-band TBs to the 36 km global EASE2 grid, using a Gaussian regridding (Note: More advanced gridding techniques, such as the Backus-Gilbert optimal interpolation technique, are planned to be implemented in a separate toolbox). In a second step, we sharpen the gridded L-band TBs to the 9 km EASE2 grid. The sharpening is achieved by applying the smoothing filter-based intensity modulation technique (SFIM) {cite:p}`Santi2010`, using L-band TBs at the 36 km grid and C-band TBs at the 36 km and 9 km grids as inputs. 
 
 $$ 
 TB_L(9 km) = \frac{TB_L(36 km)}{TB_C(36 km)} TB_C(9 km).
@@ -51,7 +51,7 @@ L-band brightness temperature signatures (sharpened with C-band) posted on a 9 k
 
 ### Soil Moisture Retrieval Results
 
-We apply the prototype soil moisture retrieval algorithm the the gridded L-band TB signatures at 36 km and 9 km. The results are shown in {numref}`algo_fig4` and {numref}`algo_fig5`, respectively. In addition to soil moisture retrievals, we also show outputs for vegetation optical depth (VOD), noting that VOD is not a target variable of the algorithm and will not be subject to performance evaluation. We find that soil moisture patterns are captured well across all land use types. VOD retrievals correspond to expected patterns of different land use classes, noting that cropland and grassland are almost transparent at L-band for the simulations underlying the synthetic test scene. A more detailed assessment of the results is given in the next secion.
+We apply the prototype soil moisture retrieval algorithm the gridded L-band TB signatures at 36 km and 9 km. The results are shown in {numref}`algo_fig4` and {numref}`algo_fig5`, respectively. In addition to soil moisture retrievals, we also show outputs for vegetation optical depth (VOD), noting that VOD is not a target variable of the algorithm and will not be subject to performance evaluation. We find that soil moisture patterns are captured well across all land use types. VOD retrievals correspond to expected patterns of different land use classes, noting that cropland and grassland are almost transparent at L-band for the test card scenario considered here. A more detailed assessment of the results is given in the next section.
 
 ```{figure} /images/algo_fig4.png
 --- 
@@ -73,7 +73,7 @@ We evaluate the prototype algorithm retrievals against the synthetic reference i
 - Errors within the AOIs (black boxes) are generally low, indicating that soil moisture patterns are captured across different land use classes. 
 - The largest errors occur at coastlines, which is expected due to spillover effects of waterbody TB signatures.
 - Biases occur for forest regions, which is expected given the dense vegetation.
-- DEIMOS scenes show enhanced errors at the top and left corner of the scene. These errors are related to spillover effects of the background field used in the L1B orbit simulations, and are not related to the algorithm or processing steps.
+- DEIMOS scenes show enhanced errors at the top and left corner of the scene. These errors are related to spillover effects of the background field used in the L1B orbit simulations and are not related to the algorithm or processing steps.
 - SCEPS scenes show effects of instrument noise (not considered in DEIMOS), which is particularly visible for forest retrievals.
 - Barring minor differences across orbit simulators, the retrieval results are consistent across overpasses.
 

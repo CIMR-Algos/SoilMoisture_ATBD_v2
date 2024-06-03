@@ -35,4 +35,7 @@ Soil Moisture and Ocean Salinity
 
 Vegetation Optical Depth
     Vegetation optical depth (VOD) is a parameter that characterizes the extinction effects due to vegetation, including attenuation and scattering, on microwave radiations propagating through the vegetation canopy. It is related almost linearly to the vegetation water content and indirectly to vegetation water status and biomass
+
+Vegetation Water Content
+    Vegetation water content (VWC) is defined as the total aboveground plant water per unit area. It is a common parameter to describe vegetation cover as seen by microwave sensors.
 ```
