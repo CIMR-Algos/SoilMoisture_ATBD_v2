@@ -7,53 +7,53 @@ from sklearn.metrics import root_mean_squared_error
 def sm_ret(l1x, params, aux, flag, bounds=None, verbose=True):
 
     def _mironov(f, sm, cf):
-        #  Mironov's soil dielectric model
-        #  The code is a direct adaptation of Patricia de Rosnay's Fortran
+        #  Mironov's soil dielectric model: This function is an 
+        #  adaptation of the dielectric model proposed in [1].
+        #
+        #  The code was adapted to Python by M. Link, 2023,
+        #  retrieved from a MATLAB routine by Steven Chan, 03/2011,
+        #  collected originally from Patricia de Rosnay's Fortran
         #  code collected in ECMWF's CMEM v3.0.
-        #  Steven Chan, 03/2011; Adapted to Python by M. Link 2023
-        #  f = frequency [GHz]
-        #  sm = soil moisture [m3/m3]
-        #  cf = clay fraction [-]
+        #
+        #  [1] Mironov, et al., 2009, TGRS, Vol. 47, Issue 7.
+        #
         eps_0 = 8.854e-12
         eps_winf = 4.9
         fHz = f * 1e9
         # RI & NAC of dry soils
-        znd = 1.634 - 0.539 * cf + 0.2748 * cf**2
-        zkd = 0.03952 - 0.04038 * cf
+        nd = 1.634 - 0.539 * cf + 0.2748 * cf**2
+        kd = 0.03952 - 0.04038 * cf
         # Maximum bound water fraction
-        zxmvt = 0.02863 + 0.30673 * cf
+        xmvt = 0.02863 + 0.30673 * cf
         # Bound water parameters
-        zep0b = 79.8 - 85.4 * cf + 32.7 * cf**2
-        ztaub = 1.062e-11 + 3.450e-12 * cf
-        zsigmab = 0.3112 + 0.467 * cf
+        ep0b = 79.8 - 85.4 * cf + 32.7 * cf**2
+        taub = 1.062e-11 + 3.450e-12 * cf
+        sigmab = 0.3112 + 0.467 * cf
         # Unbound (free) water parameters
-        zep0u = 100
-        ztauu = 8.5e-12
-        zsigmau = 0.3631 + 1.217 * cf
+        ep0u = 100
+        tauu = 8.5e-12
+        sigmau = 0.3631 + 1.217 * cf
         # Computation of epsilon water (bound & unbound)
-        zcxb = (zep0b - eps_winf) / (1 + (2*np.pi*fHz*ztaub)**2)
-        zepwbx = eps_winf + zcxb
-        zepwby = zcxb * (2*np.pi*fHz*ztaub) + zsigmab / (2*np.pi*eps_0*fHz)
-        zcxu = (zep0u - eps_winf) / (1 + (2*np.pi*fHz*ztauu)**2)
-        zepwux = eps_winf + zcxu
-        zepwuy = zcxu * (2*np.pi*fHz*ztauu) + zsigmau / (2*np.pi*eps_0*fHz)
+        cxb = (ep0b - eps_winf) / (1 + (2*np.pi*fHz*taub)**2)
+        epwbx = eps_winf + cxb
+        epwby = cxb * (2*np.pi*fHz*taub) + sigmab / (2*np.pi*eps_0*fHz)
+        cxu = (ep0u - eps_winf) / (1 + (2*np.pi*fHz*tauu)**2)
+        epwux = eps_winf + cxu
+        epwuy = cxu * (2*np.pi*fHz*tauu) + sigmau / (2*np.pi*eps_0*fHz)
         # Computation of refractive index of water (bound & unbound)
-        znb = np.sqrt(np.sqrt(zepwbx**2 + zepwby**2) + zepwbx) / np.sqrt(2)
-        zkb = np.sqrt(np.sqrt(zepwbx**2 + zepwby**2) - zepwbx) / np.sqrt(2)
-        znu = np.sqrt(np.sqrt(zepwux**2 + zepwuy**2) + zepwux) / np.sqrt(2)
-        zku = np.sqrt(np.sqrt(zepwux**2 + zepwuy**2) - zepwux) / np.sqrt(2)
-        # Computation of soil refractive index (nm & km): xmv can be a vector
-        zxmvt2 = min(sm,zxmvt)
-        zflag = np.sum(sm >= zxmvt)
-        znm = znd + (znb - 1) * zxmvt2 + (znu - 1) * (sm-zxmvt) * zflag
-        zkm = zkd + zkb * zxmvt2 + zku * (sm-zxmvt) * zflag
-        # Computation of soil dielectric constant:
-        zepmx = znm**2 - zkm**2
-        zepmy = znm * zkm * 2
-        #eps = complex(zepmx, zepmy)
-        e_real = zepmx
-        e_im = zepmy
-        return e_real
+        nb = np.sqrt(np.sqrt(epwbx**2 + epwby**2) + epwbx) / np.sqrt(2)
+        kb = np.sqrt(np.sqrt(epwbx**2 + epwby**2) - epwbx) / np.sqrt(2)
+        nu = np.sqrt(np.sqrt(epwux**2 + epwuy**2) + epwux) / np.sqrt(2)
+        ku = np.sqrt(np.sqrt(epwux**2 + epwuy**2) - epwux) / np.sqrt(2)
+        # Computation of soil refractive index (nm & km)
+        xmvt2 = np.minimum(sm, xmvt)
+        flag = 1 * (sm >= xmvt)
+        nm = nd + (nb - 1) * xmvt2 + (nu - 1) * (sm-xmvt) * flag
+        km = kd + kb * xmvt2 + ku * (sm-xmvt) * flag
+        # Computation of soil dielectric constant
+        epmx = nm**2 - km**2
+        #epmy = nm * km * 2
+        return epmx
 
     def _fresnel_roughness(e_real, theta, h, q, n):
         cost = np.cos(np.radians(theta))
