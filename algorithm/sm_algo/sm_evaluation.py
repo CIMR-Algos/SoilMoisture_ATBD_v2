@@ -52,13 +52,14 @@ cmap_flags = colors.ListedColormap([[1, 1, 1],
 leg_flag = ['No Flag', 'Water Fract', 'Coastline', 'Dense Veg.']
 plt_range_flags = [0, 4]
 
-# load 'colormaps.py' module for soil moisture, if available
-if 'colormaps' in sys.modules:
+# load 'colormaps.py' module if available
+try:
     import colormaps
     cmap_sm = colormaps.get_cm('parula')
-else:
+except ModuleNotFoundError:
     print('Colormaps module not available. Default colormap is used.')
     cmap_sm = 'Blues'
+
 
 
 def _drawaois(aois, symbol, lw):
