@@ -1,6 +1,6 @@
-# Algorithm Performance Assessment (Version 2 ATBD)
+# Algorithm Performance Assessment
 
-This chapter presents a performance assessment of the prototype soil moisture retrieval algorithm based on end-to-end simulations of a synthetic reference scenario. The full python code used in the algorithm and evaluation can be found in the [\algorithm folder of the SM_ATBD_v2 Github Repository](https://github.com/CIMR-Algos/SoilMoisture_ATBD_v2/tree/main/algorithm).
+This chapter presents a performance assessment of the prototype soil moisture retrieval algorithm based on end-to-end simulations of a synthetic reference scenario. The full python code used in the algorithm and evaluation can be found in the [SM_ATBD_v2 Github Repository](https://github.com/CIMR-Algos/SoilMoisture_ATBD_v2/tree/main/algorithm).
 
 ## L1 E2ES Demonstration Reference Scenario (Picasso) scene definition
 
