@@ -130,12 +130,3 @@ We summarize the results of the performance evaluation below:
 - The results are consistent across overpasses. 
 
 **Noting that the algorithm parameters have not been calibrated prior to the evaluation, the results provide a promising outlook on the prototype SM retrieval algorithm for CIMR.**
-
-
-# Version 2 ATBD: Roadmap for future ATBD development
-
-For the development of future versions of the ATBD, one of the focus will be the global calibration of soil roughness across L, C, and X bands. This new calibration will be assessed against the existing calibration based on the SMOS-IC retrieval algorithm {cite:p}`fernandez-moran2017`. The use of CIMR's higher frequency bands for estimating land surface temperature, necessary as an input in the SM algorithm, will be under study. Ka/Ku bands will serve this purpose ({cite:p}`holmes2009,prigent2016toward,jimenez2017inversion`). This approach will be tested against the use of ERA5 skin and soil temperatures, established as the primary temperature ancillary datasets.
-
-To meet the needs of global hydrometeorology (~15 km, daily), the algorithm will produce a single-frequency SM product at the <60 km scale based on L-band TB measurements and a multi-frequency SM product at the <15 km scale by sharpening L-band measurements with higher resolution C/X-band data. Preliminary studies, such as {cite:p}`Zhang2024`, have demonstrated the global applicability of C-band for L-band disaggregation. Techniques like the smoothing filter-based intensity modulation (SFIM) ({cite:p}`Santi2010`) will be central to this process.
-
-For estimating microwave vegetation indices (MMVI), the SM product at <15 km scale may serve as an initial guess to invert the tau-omega model and estimate time-dynamic VOD and ω from CIMR L-, C-, and X-bands (following the work of {cite:p}`Baur2021`, at L-band). These microwave vegetation parameters represent the absorption and scattering properties of microwaves at different canopy depths, which are deeper at lower frequencies. This allows capturing interactions between various wavelengths and canopy components such as branches, stems, and leaves, relating to significant vegetation characteristics like vegetation water content and above-ground biomass.

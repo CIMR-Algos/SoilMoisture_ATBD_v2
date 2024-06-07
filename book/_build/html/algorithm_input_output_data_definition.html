@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Algorithm Input and Output Data Definition (IODD) &#8212; CIMR DEVALGO ATBD Template</title>
   
@@ -44,10 +44,10 @@
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/copybutton.js?v=5eb1bb1e"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -224,7 +224,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 product definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithm Input and Output Data Definition (IODD)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithm_performance_assessment.html">Algorithm Performance Assessment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithm_performance_assessment.html">Algorithm Performance Assessment (Version 2 ATBD)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap for future ATBD development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="annex.html">Annex</a></li>
 </ul>
@@ -392,7 +394,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">Input data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-data">Output data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ancillary-data">Ancillary data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#auxiliary-data">Auxiliary data</a></li>
 </ul>
             </nav>
         </div>
@@ -408,22 +410,22 @@ document.write(`
 <h1>Algorithm Input and Output Data Definition (IODD)<a class="headerlink" href="#algorithm-input-and-output-data-definition-iodd" title="Link to this heading">#</a></h1>
 <section id="input-data">
 <h2>Input data<a class="headerlink" href="#input-data" title="Link to this heading">#</a></h2>
-<table class="table" id="inpdata">
-<caption><span class="caption-number">Table 3 </span><span class="caption-text">Input Data</span><a class="headerlink" href="#inpdata" title="Link to this table">#</a></caption>
+<table class="table" id="indata">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Input Data</span><a class="headerlink" href="#indata" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
 <th class="head"><p>Description</p></th>
-<th class="head"><p>Shape/Amount</p></th>
+<th class="head"><p>Shape</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>L1B TB</p></td>
-<td><p>L1B Brightness Temperature at L, C and X-bands (both H and V polarization)</p></td>
-<td><p><em>Full swath or swath section (Nscans, Npos)</em></p></td>
+<td><p>L1B Brightness Temperature at L, C and X-bands <br> ( H and V polarization)</p></td>
+<td><p>Full swath or swath section <br> (Nscans, Npos)</p></td>
 </tr>
 <tr class="row-odd"><td><p>L1B NeΔT</p></td>
 <td><p>Random radiometric uncertainty of the channels</p></td>
-<td><p><em>Full swath or swath section (Nscans, Npos)</em></p></td>
+<td><p>Full swath or swath section <br> (Nscans, Npos)</p></td>
 </tr>
 </tbody>
 </table>
@@ -436,139 +438,135 @@ document.write(`
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
 <th class="head"><p>Description</p></th>
 <th class="head"><p>Units</p></th>
-<th class="head"><p>Dimensions</p></th>
+<th class="head"><p>Shape</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>lon</p></td>
 <td><p>Longitude [0<span class="math notranslate nohighlight">\(^{\circ}\)</span>, 360<span class="math notranslate nohighlight">\(^{\circ}\)</span>]</p></td>
 <td><p><em>deg East</em></p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 <tr class="row-odd"><td><p>lat</p></td>
 <td><p>Latitude [90<span class="math notranslate nohighlight">\(^{\circ}\)</span>S, 90<span class="math notranslate nohighlight">\(^{\circ}\)</span>N]</p></td>
 <td><p><em>deg North</em></p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 <tr class="row-even"><td><p>time</p></td>
-<td><p>seconds since YYYY-MM-DD 00:00:00 UTC</p></td>
-<td><p><em>seconds</em></p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>Sensing time of L-band</p></td>
+<td><p><em>ms</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 <tr class="row-odd"><td><p>TB_L</p></td>
 <td><p>L1b Brightness Temperature at L-band</p></td>
 <td><p><em>K</em></p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 <tr class="row-even"><td><p>TB_L_E</p></td>
 <td><p>L1b Enhanced Brightness Temperature at L-band</p></td>
 <td><p><em>K</em></p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 <tr class="row-odd"><td><p>SM</p></td>
 <td><p>Soil Moisture</p></td>
 <td><p><em>m<span class="math notranslate nohighlight">\(^{3}\)</span>/m<span class="math notranslate nohighlight">\(^{3}\)</span></em></p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 <tr class="row-even"><td><p>SM_E</p></td>
 <td><p>Enhanced Soil Moisture</p></td>
 <td><p><em>m<span class="math notranslate nohighlight">\(^{3}\)</span>/m<span class="math notranslate nohighlight">\(^{3}\)</span></em></p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 <tr class="row-odd"><td><p>VOD</p></td>
 <td><p>Vegetation Optical Depth</p></td>
 <td><p>-</p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 <tr class="row-even"><td><p>VOD_E</p></td>
 <td><p>Enhanced Vegetation Optical Depth</p></td>
 <td><p>-</p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 <tr class="row-odd"><td><p>albedo</p></td>
 <td><p>Vegetation single scattering albedo</p></td>
 <td><p>-</p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 <tr class="row-even"><td><p>EASE row index</p></td>
 <td><p>Row index in EASE2 grid</p></td>
 <td><p>-</p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 <tr class="row-odd"><td><p>EASE column index</p></td>
 <td><p>Column index in EASE2 grid</p></td>
 <td><p>-</p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 <tr class="row-even"><td><p>TB_L_RMSE</p></td>
 <td><p>RMSE between measured and modeled TB</p></td>
 <td><p><em>K</em></p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 <tr class="row-odd"><td><p>TB_L_E_RMSE</p></td>
 <td><p>RMSE between enhanced and modeled TB</p></td>
 <td><p><em>K</em></p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 <tr class="row-even"><td><p>scene_flags</p></td>
 <td><p>Flag to indicate difficult inversion situations</p></td>
 <td><p><em>8-bit flag</em></p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 <tr class="row-odd"><td><p>status_flag</p></td>
 <td><p>Product quality flag</p></td>
 <td><p><em>n/a</em></p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="ancillary-data">
-<h2>Ancillary data<a class="headerlink" href="#ancillary-data" title="Link to this heading">#</a></h2>
-<table class="table" id="ancdata">
-<caption><span class="caption-number">Table 5 </span><span class="caption-text">Ancillary data</span><a class="headerlink" href="#ancdata" title="Link to this table">#</a></caption>
+<section id="auxiliary-data">
+<h2>Auxiliary data<a class="headerlink" href="#auxiliary-data" title="Link to this heading">#</a></h2>
+<table class="table" id="auxdata">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">Auxiliary data</span><a class="headerlink" href="#auxdata" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
 <th class="head"><p>Description</p></th>
-<th class="head"><p>Shape/Amount</p></th>
+<th class="head"><p>Shape</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>CIMR_SWF</p></td>
-<td><p>CIMR Surface Water Fraction</p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<tr class="row-even"><td><p>LST</p></td>
+<td><p>Land Surface Temperature  (from ECMWF)</p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 <tr class="row-odd"><td><p>CIMR_LST</p></td>
 <td><p>CIMR Land Surface Temperature</p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
-<tr class="row-even"><td><p>LST</p></td>
-<td><p>Land Surface Temperature  (from ECMWF)</p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
-</tr>
-<tr class="row-odd"><td><p>soil_texture</p></td>
+<tr class="row-even"><td><p>soil_texture</p></td>
 <td><p>Clay fraction (from FAO)</p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
-<tr class="row-even"><td><p>LCC</p></td>
-<td><p>IGBP Land Cover type Classification (from MODIS)</p></td>
-<td><p><em>(17, xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<tr class="row-odd"><td><p>LCC</p></td>
+<td><p>Land Cover type Classification</p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
-<tr class="row-odd"><td><p>albedo</p></td>
+<tr class="row-even"><td><p>albedo</p></td>
 <td><p>Vegetation single scattering albedo (from SMOS-IC)</p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
-<tr class="row-even"><td><p>H</p></td>
+<tr class="row-odd"><td><p>H</p></td>
 <td><p>Surface roughness information (from SMOS-IC)</p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
-<tr class="row-odd"><td><p>DEM</p></td>
+<tr class="row-even"><td><p>DEM</p></td>
 <td><p>Digital Elevation Model</p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
-<tr class="row-even"><td><p>hydrology_mask</p></td>
-<td><p>CIMR Hydrology Target mask ([RD-1, MRD-854])</p></td>
-<td><p><em>(xdim<span class="math notranslate nohighlight">\(_{grid}\)</span>, ydim<span class="math notranslate nohighlight">\(_{grid}\)</span>)</em></p></td>
+<tr class="row-odd"><td><p>hydrology_mask</p></td>
+<td><p>CIMR Hydrology Target mask (<a class="reference internal" href="applicable_ref_docs.html"><span class="doc">[RD-1]</span></a>, MRD-854)</p></td>
+<td><p>EASE2 grid <br> (nx,ny)</p></td>
 </tr>
 </tbody>
 </table>
@@ -641,7 +639,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">Input data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-data">Output data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ancillary-data">Ancillary data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#auxiliary-data">Auxiliary data</a></li>
 </ul>
   </nav></div>
 

@@ -10,57 +10,49 @@ In the case of L-band frequencies, the atmosphere is virtually transparent, with
 
 ## Forward Model
 
-The retrieval of soil moisture from CIMR surface TB observations relies on a widely recognized approximation to the radiative transfer equation referred to as the tau-omega model, which, in this case, is referred to as the forward model. In tau-omega, a soil layer covered by vegetation attenuates the soil's emission while contributing its own emission to the overall radiative flux. Given that scattering within vegetation is generally negligible at L band frequencies, the vegetation can be predominantly treated as an absorbing layer {cite:p}`kerr2006smos,oneill2020smap`. Thus, TB can be expressed as follows:
+The retrieval of soil moisture and microwave vegetation parameters from CIMR surface TB observations relies on a widely recognized approximation to the radiative transfer equation referred to as the tau-omega model {cite:p}`Mo1982`, which, in this case, is referred to as the forward model. In tau-omega, the total upwelling emission is composed of a soil contribution, a vegetation contribution and a soil-scattered vegetation contribution. It assumes a weakly scattering medium (e.g. no multiple scattering). $τ$ is the vegetation optical depth (VOD) that quantifies the total attenuation within the canopy, while $ω$ is the vegetation single scattering albedo, i.e., the ratio of scattering to extinction, ranging from zero to one ({cite:p}`Mo1982`;{cite:p}`Ulaby2014`). The tau-omega model is formulated as:
 
 ```{math}
 :label: TB-tauomega
-TB_p = T_s e_p \exp{(-\tau_p \sec \theta)} + T_c (1 - \omega_p)[1 - \exp(-\tau_p \sec \theta)][1 + r_p \exp(-\tau_p \sec \theta)]
+TB_p = T_s e_p \exp{(-\tau \sec \theta)} + T_c (1 - \omega)[1 - \exp(-\tau \sec \theta)][1 + r_p \exp(-\tau \sec \theta)]
 ```
 
-$$TB_p = T_s e_p \exp{(-\tau_p \sec \theta)} + T_c (1 - \omega_p)[1 - \exp(-\tau_p \sec \theta)][1 + r_p \exp(-\tau_p \sec \theta)]$$
+Where the subscript p refers to polarization (V or H), $T_s$ denotes the soil temperature and $T_c$ stands for the canopy temperature, and $r_p$ is the soil reflectivity of a rough surface. The reflectivity is connected to the emissivity ($e_p$) through the relation $e_p = (1 - r_p)$. Note that $τ$ and $ω$ are theoretically polarization dependent, but are assumed to be polarization independent across satellite-scale retrieval applications ({cite:p}`wigneron2007`).  It must be noted that $\omega$ will be treated here as an effective parameter {cite:p}`KURUM201366`.
 
-Where the subscript p refers to polarization (V or H), Ts denotes the soil temperature and Tc stands for the canopy temperature, $𝜏_p$ represents the nadir vegetation opacity, $\omega_p$ corresponds to the vegetation single scattering albedo ($\omega$), and $r_p$ is the soil reflectivity of a rough surface. The reflectivity is connected to the emissivity ($e_p$) through the relation $e_p = (1 - r_p)$. It must be noted that $\omega_p$ will be treated here as an effective parameter {cite:p}`KURUM201366`.
+According to Beer's law, the overlying canopy layer's transmissivity or vegetation attenuation factor , $\gamma$, is given by $\gamma = \exp(-𝜏 \sec \theta)$. Equation {eq}`TB-tauomega` assumes that vegetation multiple scattering and reflection at the vegetation-air interface are negligible. 
 
-According to Beer's law, the overlying canopy layer's transmissivity or vegetation attenuation factor , $\gamma$, is given by $\gamma = \exp(-𝜏_p \sec \theta)$. Equation {eq}`TB-tauomega` assumes that vegetation multiple scattering and reflection at the vegetation-air interface are negligible. 
-
-Surface roughness is modeled as $r_p  = r^*_p \exp(-H_R)$, where $H_R$ parameterizes the intensity of the roughness effects, $r^*_p$ stands for the reflectivity of a plane surface. Nadir vegetation opacity is related to the total vegetation water content (VWC, in kg/m$^2$) by $\tau_p = b_p·VWC$, with the coefficient $b_p$ dependent on vegetation type and microwave frequency (and polarization) {cite:p}`vandegriend2004`.
-
-The surface reflectance $r_p$ is characterized by the Fresnel equations, which detail the actions of an electromagnetic wave when interacting with a smooth surface. When an electromagnetic wave encounters a surface that separates two media with different dielectric properties (e.g., air and soil), part of the wave's energy is reflected at the surface, and part is transmitted through it. The Fresnel equations are used to calculate the amount of energy reflected based on the incident angle of the wave and the dielectric properties of the involved media. For horizontal polarization, the wave's electric field aligns parallel to the reflecting surface and perpendicular to the propagation direction. In contrast, for vertical polarization, the electric field of the wave has a component perpendicular to the surface. Equations {eq}`rh_theta`{eq}`rv_theta` show the Fresnel equations for both horizontal and vertical polarizations. 
+Surface roughness is modeled as $r_p  = r^*_p \exp(-H_R)\cdot\cos^n(\theta)$, where $H_R$ and $n$ parameterize the intensity of the roughness effects, and $r^*_p$ stands for the reflectivity of a plane surface  {cite:p}`wang1981remote`. The surface reflectance $r^*_p$ is characterized by the Fresnel equations, which detail the actions of an electromagnetic wave when interacting with a smooth surface. When an electromagnetic wave encounters a surface that separates two media with different dielectric properties (e.g., air and soil), part of the wave's energy is reflected at the surface, and part is transmitted through it. The Fresnel equations are used to calculate the amount of energy reflected based on the incident angle of the wave and the dielectric properties of the involved media. For horizontal polarization, the wave's electric field aligns parallel to the reflecting surface and perpendicular to the propagation direction. In contrast, for vertical polarization, the electric field of the wave has a component perpendicular to the surface. Equations {eq}`rh_theta`{eq}`rv_theta` show the Fresnel equations for both horizontal and vertical polarizations. 
 
 ```{math}
 :label: rh_theta
-r_H(\theta) = \left| \frac{\cos\theta - \sqrt{\epsilon - \sin^2\theta}}{\cos\theta + \sqrt{\epsilon - \sin^2\theta}} \right|^2
+r^*_H(\theta) = \left| \frac{\cos\theta - \sqrt{\epsilon - \sin^2\theta}}{\cos\theta + \sqrt{\epsilon - \sin^2\theta}} \right|^2
 ```
 
 ```{math}
 :label: rv_theta
-r_V(\theta) = \left| \frac{\epsilon\cos\theta - \sqrt{\epsilon - \sin^2\theta}}{\epsilon\cos\theta + \sqrt{\epsilon - \sin^2\theta}} \right|^2
+r^*_V(\theta) = \left| \frac{\epsilon\cos\theta - \sqrt{\epsilon - \sin^2\theta}}{\epsilon\cos\theta + \sqrt{\epsilon - \sin^2\theta}} \right|^2
 ```
 
 where $\theta$ represents the CIMR incidence angle, while $\epsilon$ denotes the soil layer's complex dielectric constant.
 
 It is important to note that an increase in soil moisture is accompanied by a proportional increase in the soil dielectric constant ($\epsilon$). For instance, liquid water has a dielectric constant of 80, while dry soil possesses a dielectric constant of 5. Furthermore, it should be acknowledged that a low dielectric constant is not uniquely indicative of dry soil conditions. Frozen soil, regardless of water content, exhibits a dielectric constant similar to that of dry soil. Consequently, a freeze/thaw flag is required to resolve this ambiguity. Since TB is proportional to emissivity for a given surface soil temperature, TB decreases as soil moisture increases. In the CIMR algorithm, $\epsilon$ is expressed as a function of SM, soil clay fraction and soil temperature using the model developed by Mironov {cite:p}`mironov2012`.
 
-This relationship between soil moisture and soil dielectric constant (and consequently microwave emissivity and brightness temperature) establishes the basis for passive remote sensing of soil moisture. With CIMR observations of TB and information on $T_s$ and $T_c$, $H_R$, and $\omega_p$ from ancillary sources, soil moisture (SM) and vegetation optical depth (VOD) can be retrieved. The procedure for this retrieval is detailed in the following section, 'Retrieval Method'.
-
+This relationship between soil moisture and soil dielectric constant (and consequently microwave emissivity and brightness temperature) establishes the basis for passive remote sensing of soil moisture. With CIMR observations of TB and information on $T_s$ and $T_c$, $H_R$, and $\omega$ from ancillary sources, soil moisture (SM) and vegetation optical depth (VOD) can be retrieved.
 
 ## Retrieval Method
 
 Prior to implementing the soil moisture retrieval, a preliminary step is to perform a water body correction to the brightness temperature data for cases where a significant percentage of the grid cells contain open water. As it is well known, brightness temperature values notably decrease when the water fraction increases {cite:p}`Ulaby2014`, leading to an overestimation of the retrieved SM values {cite:p}`ye2015` and inducing artificial seasonal cycles of VOD {cite:p}`bousquet2021`. It is therefore important to correct the CIMR brightness temperatures for the presence of water, to the extent feasible, prior to using them as inputs to the Level-2 Soil Moisture retrieval. This correction needs to be performed using the CIMR Hydrology Target mask ([RD-1] MRD-854), as part of the optimal interpolation or re-sampling process (in the CIMR RGB toolbox). The hydrology target mask will include information from both permanent and transitory water surfaces that shall be identified with the surface water seasonality information provided by the CIMR Surface Water Fraction (SWF) product as well as ancillary information.  
 
-The procedure to acquire soil moisture (SM) and vegetation optical depth (VOD, also denoted as $\tau$) requires the minimization of the cost function F, as shown in {eq}`cost_fun`. The method to minimize F is the Trust Region Reflective (TRR) algorithm {cite:p}`branch1999subspace`.
+The procedure to acquire soil moisture (SM) and vegetation optical depth (VOD, also denoted as $\tau$) from L-band and L-band sharpened TBs requires the minimization of the cost function F, as shown in {eq}`cost_fun`:
 
 ```{math}
 :label: cost_fun
 F(SM, \tau) = \frac{(TB_p^{obs} - TB_p)^2}{\sigma_{TB}^2} + \frac{(\tau^{ini} - \tau)^2}{\sigma_\tau^2}
 ```
 
-where the term $TB_p^\text{obs}$ refers to the observed value, while $\sigma(TB)$ denotes the standard deviation associated with the brightness temperature measurements (a constant value of 1 K is used). Additionally, $TB_p(\theta)$ is the brightness temperature calculated using Equation {eq}`TB-tauomega`. The equation also incorporates a regularization term, where $\tau$ represents the retrieved VOD, $\tau^\text{ini}$ is an a priori estimate calculated from previous runs, and $\sigma_\tau$ is its associated standard deviation computed as shown in Equation {eq}`sigma_tau`.
+where the term $TB_p^\text{obs}$ refers to the observed value, $\sigma(TB)$ denotes the standard deviation associated with the brightness temperature measurements (a constant value of 1 K is initially proposed), and $TB_p(\theta)$ is the brightness temperature calculated using {eq}`TB-tauomega`, where land surface temperature is used to account for the effects of soil and canopy temperature in the forward model. The cost function also incorporates a regularization term, where $\tau$ represents the retrieved VOD, $\tau^\text{ini}$ is an a priori estimate calculated from previous runs, and $\sigma_\tau$ is its associated standard deviation. The method to minimize F is the Trust Region Reflective algorithm {cite:p}`branch1999subspace`, which is a generally robust method that accepts bounds.
 
-```{math}
-:label: sigma_tau
-\sigma_\tau = \min(0.1 + 0.3 \cdot \tau, 0.3) 
-```
+Prior to retrieval of SM, ancillary data will be employed to help to determine whether masks are in effect for strong topography, urban, snow/ice, frozen soil.
 
 
 <!-- An initial constant value of 0.2 m$^3$/m$^3$ is assumed for SM and $\sigma(SM)$, while the value of $\tau_{NAD}$ is set to an initial value calculated from previous runs. The $\sigma(\tau_{NAD})$ is computed as shown in Equation {eq}`sigma_tau`.
@@ -73,6 +65,13 @@ where the term $TB_p^\text{obs}$ refers to the observed value, while $\sigma(TB)
 ## CIMR Level-1b re-sampling approach
 
 The CIMR Level-2 Soil Moisture retrieval algorithm will provide two soil moisture products: the first based on the inversion of L-band only TBs at its native resolution (<60 km, Hydroclimatological), the second one based on the inversion of L-band at an enhanced spatial resolution (~10 to 25 km Hydrometeorological). The enhanced L-band targets an effective mean spatial resolution of 15 km and is based on sharpening techniques that exploit the C-band and X-band channels ({cite:p}`Santi2010`, {cite:p}`Zhang2024`). 
+
+```{figure} /images/Level1b_resampling_gridding.png
+--- 
+name: resampling
+---
+Conceptual flow of Level-1B resampling to exploit CIMR oversampling, multifrequency and nested spatial resolution to meet soil moisture observational requirements.
+```
 
 The CIMR Level-1b re-sampling and re-mapping involves three stages, which are illustrated in Figure {numref}`resampling`. In a first stage, the Level1-b TBs will be remapped on common location using a Backus-Gilbert or Scatterometer Image Reconstruction analysis (at CIMR RGB Toolbox). The objective of this first step is to optimize L-band reconstruction to provide the highest possible spatial resolution at the lowest noise level {cite:p}`Long2019` (TB_L product). In a second stage, which is exclusive to the TB_L_E product, an sharpening algorithm will be applied to combine the 60 km L-band with 15 km C/X-bands to estimate an equivalent 15 km L-band. The effective resolution of the TB_L and TB_L_E products will be evaluated and compared (e.g. as in {cite:p}`Long2023`). In a third stage, both products will be posted on an Earth-based map projection grid. CIMR Level-2 Soil Moisture products with an effective spatial resolution of <60 km (L-band only) and ~15 km (after sharpening using C/X bands) are planned to be projected on an EASE2 grid with a kernel of 3 km (then multiples thereof). The CIMR radiometer is conically scanning and its high degree of oversampling provides flexibility in resampling the data, supporting the use of a finer grid (posting resolution) than the TB effective resolution {cite:p}`Long2023`. At L-band, CIMR TB measurements are collected with an along-scan spacing of approximately 8 km, while there is an overlap of 29 % in the along-track direction (no spacing). In order to preserve as much information as possible as well as to represent the "effective" spatial resolution of each product, gridding resolutions of 9 and 36 km are hence initially proposed for the two soil moisture products. Further gridding resolutions will be considered upon characterization of the tradeoff between noise and spatial resolution of the 2-D gridded images.
 
@@ -131,7 +130,7 @@ More details can be found in [IODD](algorithm_input_output_data_definition.md).
 SubSubsection Text
 -->
 
-### Ancillary data
+### Auxiliary data
 
 Two sets of Land Surface Temperature will be included as ancillary data: the one estimated from CIMR Ka/Ku bands and the one from ECMWF. This will allow for some flexibility in the design and validation phase of the algorithm prototype. 
 
@@ -161,8 +160,8 @@ The static global maps for CIMR H and ω are computed through a weighted method.
 
 Furthermore, a CIMR Hydrology Target mask, applied in Level-2 data processing, provides a ≤1 km resolution and covers both permanent and transitory inland water surfaces. The mask incorporates data from the MERIT Hydro {cite:p}`yamazaki2019merit` and the Global Lakes and Wetlands Database {cite:p}`lehner2004development`, and it will be updated up to four times annually to account for potential seasonal changes. Its calculation involves a previous estimation of the Surface Water Fraction (SWF) data.
 
-The scene flag incorporate information about RFI, proximity to water body, urban, ice/snow, frozen soil, precipitation, medium and strong topographic effects. 
+The scene flag incorporate information about RFI, proximity to water body, urban, ice/snow, frozen soil, precipitation, dense vegetation, medium and strong topographic effects. 
 
-The rest of datasets that complement the ancillary information are the clay fraction (from FAO), the IGBP Land Cover type Classification (from MODIS) and the Digital Elevation Model obtained from the Shuttle Radar Topography Mission (SRTM) {cite:p}`jarvis2006,mialon2008`.
+The rest of datasets that complement the ancillary information are the clay fraction (from FAO), a Land Cover type Classification (e.g. IGBP from MODIS) and a Digital Elevation Model (e.g. from the Shuttle Radar Topography Mission (SRTM) {cite:p}`jarvis2006,mialon2008`).
 
 
