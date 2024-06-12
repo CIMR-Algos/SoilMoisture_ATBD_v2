@@ -17,8 +17,8 @@
 :name: AuxData1
 | Parameter  | Description  | Shape |
 |------------|--------------|-------|
-| LST   | Land Surface Temperature  (from ECMWF)  | (964, 406) |
-| CIMR_LST   | CIMR Land Surface Temperature  | (964, 406) |
+| LST_ECMWF   | ECMWF Land Surface Temperature  (first priority until CIMR LST is tested)  | (964, 406) |
+| LST_CIMR   | CIMR Land Surface Temperature  | (964, 406) |
 | soil_texture   | Clay fraction (from FAO)     | (964, 406) |
 | LCC   | Land Cover type Classification | (964, 406) |
 | albedo  | Vegetation single scattering albedo (from SMOS-IC)  | (964, 406) |
@@ -31,8 +31,8 @@
 :name: AuxData2
 | Parameter  | Description  | Shape |
 |------------|--------------|-------|
-| LST   | Land Surface Temperature  (from ECMWF)  | (3856, 1624) |
-| CIMR_LST   | CIMR Land Surface Temperature  | (3856, 1624) |
+| LST_ECMWF   | ECMWF Land Surface Temperature  (first priority until CIMR LST is tested)   | (3856, 1624) |
+| LST_CIMR   | CIMR Land Surface Temperature  | (3856, 1624) |
 | soil_texture   | Clay fraction (from FAO)     | (3856, 1624) |
 | LCC   | Land Cover type Classification | (3856, 1624) |
 | albedo  | Vegetation single scattering albedo (from SMOS-IC)  | (3856, 1624) |
@@ -71,8 +71,8 @@
 | EASE column index | Column index in EASE2 grid | - | (3856, 1624) |
 | lon | Longitude [0$^{\circ}$, 360$^{\circ}$] | *deg East* | (3856, 1624) |
 | lat | Latitude [90$^{\circ}$S, 90$^{\circ}$N] | *deg North* | (3856, 1624) |
-| SM_E | Enhanced Soil Moisture | *m$^{3}$/m$^{3}$* | (3856, 1624) |
-| VOD_E  | Enhanced Vegetation Optical Depth | - | (3856, 1624) |
+| SM_E | Soil Moisture (enhanced in spatial resolution) | *m$^{3}$/m$^{3}$* | (3856, 1624) |
+| VOD_E  | Vegetation Optical Depth (enhanced in spatial resolution) | - | (3856, 1624) |
 | TB_L_E | Gridded enhanced L-band TB  | *K* | (3856, 1624) |
 | TB_L_E_RMSE | RMSE between enhanced and modeled TB | *K* | (3856, 1624) |
 | scene_flags | Flag to indicate difficult inversion situations | *8-bit flag* | (3856, 1624) |
