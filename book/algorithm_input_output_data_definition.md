@@ -17,7 +17,7 @@
 
 ```{table} Auxiliary Data (36 km grid)
 :name: AuxData1
-| Parameter  | Description  | Shape |
+| Parameter  | Description  | Shape* |
 |------------|--------------|-------|
 | LST_ECMWF   | ECMWF Land Surface Temperature  (first priority until CIMR LST is tested)  | (964, 406) |
 | soil_texture   | Clay fraction (from FAO)     | (964, 406) |
@@ -30,7 +30,7 @@
 
 ```{table} Auxiliary Data (9 km grid)
 :name: AuxData2
-| Parameter  | Description  | Shape |
+| Parameter  | Description  | Shape* |
 |------------|--------------|-------|
 | LST_ECMWF   | ECMWF Land Surface Temperature  (first priority until CIMR LST is tested)   | (3856, 1624) |
 | soil_texture   | Clay fraction (from FAO)     | (3856, 1624) |
@@ -41,6 +41,12 @@
 | hydrology_mask  | CIMR Hydrology Target mask ({doc}`[RD-1] <applicable_ref_docs>`, MRD-854) | (3856, 1624) |
 ```
 
+
+\* Shapes are equivalent to the global EASE2 grids at 36 km and 9 km resolution, respectively. 
+This is the inital proposal for CIMR soil moisture retrievals and corresponds to 
+the current implementation in the later sections of this ATBD. 
+The final grid resolution will be decided based on further tests on the tradeoff between noise and spatial resolution.
+
 ### Input L2 Data
 
 The use of CIMR L2 land surface temperature restrievals (instead of ECMWF land surface temperature data) as 
@@ -49,37 +55,33 @@ auxiliary data source for soil moisture retrievals will be evaluated.
 
 ### Output Data
 
-```{table} Output Data (36 km grid)
+```{table} L2 Processor Output Data (36 km grid)
 :name: OutData
-| Parameter | Description | Units | Shape |
+| Parameter | Description | Units | Shape* |
 |-----------|-------------|-------|-------|
-| time | Time of observation | seconds | (964, 406) |
-| EASE row index | Row index in EASE2 grid | - | (964, 406) |
-| EASE column index | Column index in EASE2 grid | - | (964, 406) |
-| lon | Longitude [0$^{\circ}$, 360$^{\circ}$] | *deg East* | (964, 406) |
-| lat | Latitude [90$^{\circ}$S, 90$^{\circ}$N] | *deg North* | (964, 406) |
 | SM | Soil Moisture | *m$^{3}$/m$^{3}$* | (964, 406) |
 | VOD  | Vegetation Optical Depth | - | (964, 406) |
 | TB_L | Gridded L-band TB | *K* | (964, 406) |
 | TB_L_RMSE | RMSE between measured and modeled TB | *K* | (964, 406) |
 | scene_flags | Flag to indicate difficult inversion situations | *8-bit flag* | (964, 406) |
-| status_flag | Product quality flag | *n/a* | (964, 406) |
+| status_flag | Product status flag | *n/a* | (964, 406) |
 ```
 
 
-```{table} Output Data (9 km grid)
+```{table} L2 Processor Output Data (9 km grid)
 :name: OutData2
-| Parameter | Description | Units | Shape |
+| Parameter | Description | Units | Shape* |
 |-----------|-------------|-------|-------|
-| time | Time of observation | seconds | (3856, 1624) |
-| EASE row index | Row index in EASE2 grid | - | (3856, 1624) |
-| EASE column index | Column index in EASE2 grid | - | (3856, 1624) |
-| lon | Longitude [0$^{\circ}$, 360$^{\circ}$] | *deg East* | (3856, 1624) |
-| lat | Latitude [90$^{\circ}$S, 90$^{\circ}$N] | *deg North* | (3856, 1624) |
-| SM_E | Soil Moisture (enhanced in spatial resolution) | *m$^{3}$/m$^{3}$* | (3856, 1624) |
-| VOD_E  | Vegetation Optical Depth (enhanced in spatial resolution) | - | (3856, 1624) |
+| SM_E | Soil Moisture enhanced | *m$^{3}$/m$^{3}$* | (3856, 1624) |
+| VOD_E  | Vegetation Optical Depth enhanced | - | (3856, 1624) |
 | TB_L_E | Gridded enhanced L-band TB  | *K* | (3856, 1624) |
 | TB_L_E_RMSE | RMSE between enhanced and modeled TB | *K* | (3856, 1624) |
 | scene_flags | Flag to indicate difficult inversion situations | *8-bit flag* | (3856, 1624) |
-| status_flag | Product quality flag | *n/a* | (3856, 1624) |
+| status_flag | Product status flag | *n/a* | (3856, 1624) |
 ```
+
+
+\* Shapes are equivalent to the global EASE2 grids at 36 km and 9 km resolution, respectively. 
+This is the inital proposal for CIMR soil moisture retrievals and corresponds to 
+the current implementation in the later sections of this ATBD. 
+The final grid resolution will be decided based on further tests on the tradeoff between noise and spatial resolution.

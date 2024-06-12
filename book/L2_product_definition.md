@@ -2,11 +2,11 @@
 
 ```{table} Level-2 Soil Moisture product (36 km grid)
 :name: L2product
-| Parameter                 | Description                                                | Units     | Dimensions                      |
+| Parameter                 | Description                                                | Units     | Dimensions*                     |
 |---------------------------|------------------------------------------------------------|-----------|---------------------------------|
 | time     | Time of observation | *seconds* | (964, 406) |
-| EASE row index  | Row index in EASE2 global 36 km grid | - | (964, 406) |
-| EASE column index | Column index in EASE2 global 36 km grid | - | (964, 406) |
+| EASE row index  | Row index in EASE2 grid | - | (964, 406) |
+| EASE column index | Column index in EASE2 grid | - | (964, 406) |
 | lon | Longitude [0$^{\circ}$, 360$^{\circ}$] | *deg East* | (964, 406) |
 | lat | Latitude [90$^{\circ}$S, 90$^{\circ}$N] | *deg North* | (964, 406) |
 | SM             | Soil Moisture | *m$^{3}$/m$^{3}$* | (964, 406) |
@@ -19,11 +19,11 @@
 
 ```{table} Level-2 enhanced Soil Moisture product (9 km grid)
 :name: L2product
-| Parameter                 | Description                                                | Units     | Dimensions                      |
+| Parameter                 | Description                                                | Units     | Dimensions*                     |
 |---------------------------|------------------------------------------------------------|-----------|---------------------------------|
 | time     | Time of observation | *seconds* | (3856, 1624) |
-| EASE row index  | Row index in EASE2 global 9 km grid | - | (3856, 1624) |
-| EASE column index | Column index in EASE2 global 9 km grid | - | (3856, 1624) |
+| EASE row index  | Row index in EASE2 grid | - | (3856, 1624) |
+| EASE column index | Column index in EASE2 grid | - | (3856, 1624) |
 | lon | Longitude [0$^{\circ}$, 360$^{\circ}$] | *deg East* | (3856, 1624) |
 | lat | Latitude [90$^{\circ}$S, 90$^{\circ}$N] | *deg North* | (3856, 1624) |
 | SM_E             | Enhanced Soil Moisture | *m$^{3}$/m$^{3}$* | (3856, 1624) |
@@ -33,3 +33,9 @@
 | scene_flags | Flag to indicate difficult inversion situations | *8-bit flag* | (3856, 1624) |
 | status_flag | Product quality flag | *n/a* | (3856, 1624) |
 ```
+
+
+\* Dimensions are equivalent to the global EASE2 grids at 36 km and 9 km resolution, respectively. 
+This is the inital proposal for CIMR soil moisture retrievals and corresponds to 
+the current implementation in the later sections of this ATBD. 
+The final grid resolution will be decided based on further tests on the tradeoff between noise and spatial resolution.
