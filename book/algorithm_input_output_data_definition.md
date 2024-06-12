@@ -1,9 +1,11 @@
 # Algorithm Input and Output Data Definition (IODD)
 
 
-### Input Data: Level-1
+## Input Data
 
-```{table} Input Data L1
+### Input L1 Data
+
+```{table} Input L1 Data
 :name: InData
 | Parameter  | Description  | Shape |
 |------------|--------------|-------|
@@ -11,14 +13,13 @@
 | L1B NeΔT | Random radiometric uncertainty of the channels | Full swath or swath section <br> (Nscans, Npos) |
 ```
 
-### Input Data: Auxiliary
+### Auxiliary Data
 
-```{table} Input Data Auxiliary (36 km grid)
+```{table} Auxiliary Data (36 km grid)
 :name: AuxData1
 | Parameter  | Description  | Shape |
 |------------|--------------|-------|
 | LST_ECMWF   | ECMWF Land Surface Temperature  (first priority until CIMR LST is tested)  | (964, 406) |
-| LST_CIMR   | CIMR Land Surface Temperature  | (964, 406) |
 | soil_texture   | Clay fraction (from FAO)     | (964, 406) |
 | LCC   | Land Cover type Classification | (964, 406) |
 | albedo  | Vegetation single scattering albedo (from SMOS-IC)  | (964, 406) |
@@ -27,12 +28,11 @@
 | hydrology_mask  | CIMR Hydrology Target mask ({doc}`[RD-1] <applicable_ref_docs>`, MRD-854) | (964, 406) |
 ```
 
-```{table} Input Data Auxiliary (9 km grid)
+```{table} Auxiliary Data (9 km grid)
 :name: AuxData2
 | Parameter  | Description  | Shape |
 |------------|--------------|-------|
 | LST_ECMWF   | ECMWF Land Surface Temperature  (first priority until CIMR LST is tested)   | (3856, 1624) |
-| LST_CIMR   | CIMR Land Surface Temperature  | (3856, 1624) |
 | soil_texture   | Clay fraction (from FAO)     | (3856, 1624) |
 | LCC   | Land Cover type Classification | (3856, 1624) |
 | albedo  | Vegetation single scattering albedo (from SMOS-IC)  | (3856, 1624) |
@@ -41,10 +41,15 @@
 | hydrology_mask  | CIMR Hydrology Target mask ({doc}`[RD-1] <applicable_ref_docs>`, MRD-854) | (3856, 1624) |
 ```
 
+### Input L2 Data
 
-### Output Data: Level-2
+The use of CIMR L2 land surface temperature restrievals (instead of ECMWF land surface temperature data) as 
+auxiliary data source for soil moisture retrievals will be evaluated. 
 
-```{table} Output: L2 Soil Moisture (36 km grid)
+
+### Output Data
+
+```{table} Output Data (36 km grid)
 :name: OutData
 | Parameter | Description | Units | Shape |
 |-----------|-------------|-------|-------|
@@ -62,7 +67,7 @@
 ```
 
 
-```{table} Output: L2 enhanced Soil Moisture (9 km grid)
+```{table} Output Data (9 km grid)
 :name: OutData2
 | Parameter | Description | Units | Shape |
 |-----------|-------------|-------|-------|
