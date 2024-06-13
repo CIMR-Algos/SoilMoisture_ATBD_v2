@@ -19,7 +19,7 @@ Synthetic soil moisture test card at 1 km (upper, native resolution), 9 km (midd
 
 ## Algorithm Performance Metrics (MPEF)
 
-Two algorithm performance metrics are used in the evaluation: The unbiased root mean squared error (ubRMSE) and the bias of soil moisture retrievals with respect to the synthetic reference.
+Two algorithm performance metrics are used in the evaluation: The unbiased root mean squared error (ubRMSE) and the bias of soil moisture retrievals with respect to the synthetic reference, as described in {cite:p}`entekhabi2010b`.
 
 We test the prototype algorithm on four simulated L1B files, which represent distinct CIMR overpasses over the synthetic test card. The L1B files are based on orbit simulations conducted by DEIMOS and the SCEPS project. Each orbit simulator covers one ascending and descending orbit, respectively, leading to a total of four synthetic CIMR L1B files. 
 

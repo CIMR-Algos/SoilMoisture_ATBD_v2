@@ -19,7 +19,7 @@
 :name: AuxData1
 | Parameter  | Description  | Shape* |
 |------------|--------------|-------|
-| LST_ECMWF   | ECMWF Land Surface Temperature  (first priority until CIMR LST is tested)  | (964, 406) |
+| LST_ECMWF   | ECMWF Land Surface Temperature <br> (first priority until CIMR LST is tested)  | (964, 406) |
 | soil_texture   | Clay fraction (from FAO)     | (964, 406) |
 | LCC   | Land Cover type Classification | (964, 406) |
 | albedo  | Vegetation single scattering albedo (from SMOS-IC)  | (964, 406) |
@@ -32,7 +32,7 @@
 :name: AuxData2
 | Parameter  | Description  | Shape* |
 |------------|--------------|-------|
-| LST_ECMWF   | ECMWF Land Surface Temperature  (first priority until CIMR LST is tested)   | (3856, 1624) |
+| LST_ECMWF   | ECMWF Land Surface Temperature <br> (first priority until CIMR LST is tested)   | (3856, 1624) |
 | soil_texture   | Clay fraction (from FAO)     | (3856, 1624) |
 | LCC   | Land Cover type Classification | (3856, 1624) |
 | albedo  | Vegetation single scattering albedo (from SMOS-IC)  | (3856, 1624) |
