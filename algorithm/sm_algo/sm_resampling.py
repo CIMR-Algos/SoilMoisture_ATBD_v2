@@ -103,6 +103,15 @@ def testcard_compute_lu_wf(lu_array, window_size):
 
 def SFIM(l1x, band_lr, band_hr, what, aoi_lr, verbose=True):
 
+    """Smoothing filter-based intensity modulation (SFIM).
+    
+    Algorithm to enhance the spatial resolution of multisensor 
+    satellite data. Proposed by [1], applied to microwaves by [2].
+    
+    [1] Liu, 2000, IJRS, Vol. 21, Issue 18
+    [2] Santi, 2010, IJRS, Vol. 31, Issue 9
+    """
+
     # extract dimensions
     dim1_lr = l1x[band_lr]['lat'].shape[0]
     dim2_lr = l1x[band_lr]['lat'].shape[1]

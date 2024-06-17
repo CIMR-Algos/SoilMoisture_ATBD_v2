@@ -7,16 +7,17 @@ from sklearn.metrics import root_mean_squared_error
 def sm_ret(l1x, params, aux, flag, bounds=None, verbose=True):
 
     def _mironov(f, sm, cf):
-        #  Mironov's soil dielectric model: This function is an 
-        #  adaptation of the dielectric model proposed in [1].
-        #
-        #  The code was adapted to Python by M. Link, 2023,
-        #  retrieved from a MATLAB routine by Steven Chan, 03/2011,
-        #  collected originally from Patricia de Rosnay's Fortran
-        #  code collected in ECMWF's CMEM v3.0.
-        #
-        #  [1] Mironov, et al., 2009, TGRS, Vol. 47, Issue 7.
-        #
+        """"Mironov's soil dielectric model.
+        
+        This function implements the dielectric model proposed in [1].
+        
+        The code was adapted to Python by M. Link, 2023,
+        retrieved from a MATLAB routine by Steven Chan, 03/2011,
+        collected originally from Patricia de Rosnay's Fortran
+        code collected in ECMWF's CMEM v3.0.
+        
+        [1] Mironov, et al., 2009, TGRS, Vol. 47, Issue 7.
+        """
         eps_0 = 8.854e-12
         eps_winf = 4.9
         fHz = f * 1e9
