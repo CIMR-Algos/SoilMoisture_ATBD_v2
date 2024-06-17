@@ -117,7 +117,7 @@ More details can be found in the [IODD](algorithm_input_output_data_definition.m
 
 Two sets of land surface temperature are planned to be included as auxiliary data for CIMR: the one estimated from CIMR Ku/Ka bands and the one from ECMWF. This will allow for some flexibility in the design and validation phase of the algorithm prototype. Until the CIMR land surface temperature retrievals are tested to serve as an input for soil moisture retrievals, the ECMWF dataset remains the first priority as an auxiliary dataset.
 
-The static global maps for CIMR H and ω are computed through a weighted method. This approach takes into consideration the fraction of the MODIS IGBP land cover class that is contained within a given CIMR pixel. The data used for these computations are derived from the IGBP classification as identified in the study conducted by Fernandez-Moran {cite:p}`fernandez-moran2017b`. In Table {ref}`wandH`, different values of ω and $H$ are listed according to land cover type. Based on these criteria, static global maps of ω and $H$ have been produced as part of the ancillary dataset.
+The static global maps for CIMR H and ω are computed through a weighted method. This approach takes into consideration the fraction of the MODIS IGBP land cover class that is contained within a given CIMR pixel. The data used for these computations are derived from the IGBP classification as identified in the study conducted by Fernandez-Moran {cite:p}`fernandez-moran2017b`. In {numref}`wandH`, different values of ω and $H$ are listed according to land cover type. Based on these criteria, static global maps of ω and $H$ have been produced as part of the ancillary dataset.
 
 ```{table} Values of ω and $H$
 :name: wandH

@@ -53,7 +53,7 @@ The use of CIMR L2 land surface temperature restrievals (instead of ECMWF land s
 auxiliary data source for soil moisture retrievals will be evaluated. 
 
 
-### Output Data
+### Output Data  
 
 ```{table} L2 Processor Output Data (36 km grid)
 :name: OutData
@@ -61,10 +61,11 @@ auxiliary data source for soil moisture retrievals will be evaluated.
 |-----------|-------------|-------|-------|
 | SM | Soil Moisture | *m$^{3}$/m$^{3}$* | (964, 406) |
 | VOD  | Vegetation Optical Depth | - | (964, 406) |
-| TB_L | Gridded L-band TB | *K* | (964, 406) |
-| TB_L_RMSE | RMSE between measured and modeled TB | *K* | (964, 406) |
 | scene_flags | Flag to indicate difficult inversion situations | *8-bit flag* | (964, 406) |
 | status_flag | Product status flag | *n/a* | (964, 406) |
+| TBV_L | Gridded L-band TBV | *K* | (964, 406) |
+| TBH_L | Gridded L-band TBH | *K* | (964, 406) |
+| TB_L_RMSE | RMSE between measured and modeled TB | *K* | (964, 406) |
 ```
 
 
@@ -74,10 +75,11 @@ auxiliary data source for soil moisture retrievals will be evaluated.
 |-----------|-------------|-------|-------|
 | SM_E | Soil Moisture enhanced | *m$^{3}$/m$^{3}$* | (3856, 1624) |
 | VOD_E  | Vegetation Optical Depth enhanced | - | (3856, 1624) |
-| TB_L_E | Gridded enhanced L-band TB  | *K* | (3856, 1624) |
-| TB_L_E_RMSE | RMSE between enhanced and modeled TB | *K* | (3856, 1624) |
 | scene_flags | Flag to indicate difficult inversion situations | *8-bit flag* | (3856, 1624) |
 | status_flag | Product status flag | *n/a* | (3856, 1624) |
+| TBV_L_E | Gridded enhanced L-band TBV  | *K* | (3856, 1624) |
+| TBH_L_E | Gridded enhanced L-band TBH  | *K* | (3856, 1624) |
+| TB_L_E_RMSE | RMSE between enhanced and modeled TB | *K* | (3856, 1624) |
 ```
 
 
