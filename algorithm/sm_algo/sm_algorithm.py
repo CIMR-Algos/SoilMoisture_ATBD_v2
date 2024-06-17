@@ -159,10 +159,10 @@ def sm_ret(l1x, params, aux, flag, bounds=None, verbose=True):
             j_aux = j - aoi[2]
 
             # Water fraction critical level (no retrieval attempted)
-            if flag['Water Fraction'][i_aux, j_aux] > params['wf_th']:
+            if flag['Water Fraction'][i_aux, j_aux] > 0.5:
                 flag_status[i, j] = 1
 
-            elif flag['Water Fraction'][i_aux, j_aux] <= params['wf_th']:
+            elif flag['Water Fraction'][i_aux, j_aux] <= 0.5:
 
                 # initialize flag arrays to zero (retrieval attempted)
                 flag_scene[i, j] = 0
