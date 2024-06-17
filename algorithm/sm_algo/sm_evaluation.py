@@ -204,8 +204,10 @@ def plot_sm(plotdata, title, grid, plot_range, colormap=None,
     plt.title(title)
     plt.tick_params(which='both', size=0, labelsize=0)
     cbar = plt.colorbar(location='bottom', pad=0.05)
-    cbar.set_label('(m³/m³)', labelpad=15)
-
+    if ('SM' in title) or ('Soil Moisture' in title):
+        cbar.set_label('(m³/m³)', labelpad=15)
+    if ('VOD' in title) or ('Vegetation Optical Depth' in title):
+        cbar.set_label('(-)', labelpad=15)
     
     # draw AOIs in black boxes
     _drawaois(aois, 'k-', 2)
