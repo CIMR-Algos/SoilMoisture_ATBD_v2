@@ -116,10 +116,14 @@ def plot_tc(plotdata, title, grid, plot_range, colormap=None, zoom=False):
     plt.tick_params(which='both', size=0, labelsize=0)
     cbar = plt.colorbar(location='bottom', pad=0.05)
     
-    # add labels to colorbar for land use (hard coded)
+    # add labels and ticks to colorbar (hard coded)
     if title == 'Land Use':
         cbar.set_ticks(ticks_lu, labels=leg_lu, rotation=40)
-        
+    if (title == 'Soil Moisture') or ('Testcard' in title):
+        cbar.set_label('(m³/m³)', labelpad=15)
+    if 'TB' in title:
+        cbar.set_label('(K)', labelpad=15)
+
     # draw AOIs
     _drawaois(aois, 'k-', 2)
 
@@ -138,7 +142,8 @@ def _plot_l1x(l1x, band, what, plot_range, colormap):
                cmap=colormap)
     _drawaois(aois, 'k-', 2)
     plt.tick_params(which='both', size=0, labelsize=0)
-    plt.colorbar(location='bottom', pad=0.05)
+    cbar = plt.colorbar(location='bottom', pad=0.05)
+    cbar.set_label('(K)', labelpad=15)
 
 
 def plot_l1x(files, filenames, bands, what, whatname, plot_range, colormap):
@@ -159,7 +164,7 @@ def plot_l1x(files, filenames, bands, what, whatname, plot_range, colormap):
                     filename = filenames[k]
                     loc = file[band][w].shape[1] / 100.
                     plt.text(loc * 0.6, -loc * 1.1, filename)
-    plt.subplots_adjust(wspace=0.25, hspace=-0.05)
+    plt.subplots_adjust(wspace=0.25, hspace=0.05)
 
 
 def plot_sm(plotdata, title, grid, plot_range, colormap=None, 
@@ -198,7 +203,9 @@ def plot_sm(plotdata, title, grid, plot_range, colormap=None,
                cmap=cmap)
     plt.title(title)
     plt.tick_params(which='both', size=0, labelsize=0)
-    plt.colorbar(location='bottom', pad=0.05)
+    cbar = plt.colorbar(location='bottom', pad=0.05)
+    cbar.set_label('(m³/m³)', labelpad=15)
+
     
     # draw AOIs in black boxes
     _drawaois(aois, 'k-', 2)
@@ -248,7 +255,8 @@ def plot_sm_diff(reference, plotdata, title, grid, plot_range, colormap,
                cmap=colormap)
     plt.title(title)
     plt.tick_params(which='both', size=0, labelsize=0)
-    plt.colorbar(location='bottom', pad=0.05)
+    cbar = plt.colorbar(location='bottom', pad=0.05)
+    cbar.set_label('(m³/m³)', labelpad=15)
     
     # draw AOIs in black boxes
     _drawaois(aois, 'k-', 2)
