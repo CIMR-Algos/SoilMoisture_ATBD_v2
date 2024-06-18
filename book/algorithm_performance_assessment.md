@@ -2,11 +2,11 @@
 
 This chapter presents a performance assessment of the prototype soil moisture retrieval algorithm based on end-to-end simulations of a synthetic reference scenario. The full python code used in the algorithm and evaluation can be found in the [SM_ATBD_v2 Github Repository](https://github.com/CIMR-Algos/SoilMoisture_ATBD_v2/tree/main/algorithm).
 
-## L1 E2ES Demonstration Reference Scenario definition
+## Reference Scenario definition
 
 A synthetic soil moisture test card was created to serve as a testbed for the soil moisture retrieval algorithm.
 
-The test card has a spatial resolution of 1 km, which is nested within the global 9 km and 36 km EASE2 grids. At L-, C-, and X-bands, the brightness temperature signatures of the test card are based on numerical simulations of a discrete radiative transfer model (Tor Vergata model) {cite:p}`ferrazzoli2002simulating,guerriero2016band`. At Ku- and Ka-bands, brightness temperature signatures are based on forward simulations of the tau-omega model (not used in this prototype) {cite:p}`Mo1982`. Five land use classes are considered: Bare soil, grassland, cropland, mixed, and forest. The mixed class assumes an homogeneous mix of grassland, cropland, and forest.
+The test card has a spatial resolution of 1 km, which is nested within the global 9 km and 36 km EASE2 grids. At L-, C-, and X-bands, the brightness temperature signatures are based on numerical simulations of a discrete radiative transfer model (Tor Vergata model) {cite:p}`ferrazzoli2002simulating,guerriero2016band`. At Ku- and Ka-bands, brightness temperature signatures are based on forward simulations of the tau-omega model (not used in this prototype) {cite:p}`Mo1982`. Five land use classes are considered: Bare soil, grassland, cropland, mixed, and forest. The mixed class assumes an homogeneous mix of grassland, cropland, and forest.
 
 
 
@@ -14,18 +14,18 @@ The test card has a spatial resolution of 1 km, which is nested within the globa
 --- 
 name: algo_fig1
 ---
-Synthetic soil moisture test card at 1 km (upper, native resolution), 9 km (middle, aggregated) and 36 km (lower, aggregated). Columns indicate the dominant land use, average soil moisture content, and L-band brightness temperatures at V- and H-polarization, respectively. Brightness temperatures at C-, X-, Ku-, Ka-bands are not shown for brevity.
+Synthetic soil moisture test card at 1 km (top, native resolution), 9 km (middle, aggregated) and 36 km (bottom, aggregated). Columns indicate the dominant land use, average soil moisture content, and L-band brightness temperatures at V- and H-polarization, respectively. Brightness temperatures at C-, X-, Ku-, Ka-bands are not shown for brevity.
 ```
 
 {numref}`algo_fig1` shows the synthetic test card for 1 km (native resolution), 9 km, and 36 km resolutions. The soil moisture fields at 9 km and 36 km resolutions will be used as a reference for the performance evaluation. Four areas of interest (AOIs) are indicated by black boxes. These areas indicate four distinct land use classes that contain identical soil moisture patterns.
 
-## Algorithm Performance Metrics (MPEF)
+## Performance Metrics
 
 Two algorithm performance metrics are used in the evaluation: The unbiased root mean squared error (ubRMSE) and the bias of soil moisture retrievals with respect to the synthetic reference. These metrics correspond to standard performance metrics for soil moisture retrievals {cite:p}`entekhabi2010b`.
 
 We test the prototype algorithm on four simulated L1B files, which represent distinct CIMR overpasses. The L1B files are based on orbit simulations conducted by DEIMOS and the SCEPS project. Each orbit simulator covers one ascending and descending orbit, respectively. 
 
-## Test Results using Demonstration Reference Scenario
+## Prototype Algorithm Results
 
 ### Regridding
 
@@ -61,14 +61,14 @@ We find that soil moisture patterns are captured well across all land use types.
 --- 
 name: algo_fig4
 ---
-Soil moisture and vegetation optical depth (VOD) retrieval results of the prototype algorithm at the 36 km resolution. The results are based on gridded L-band TBs. 
+Soil moisture and vegetation optical depth (VOD) retrieval results of the prototype algorithm at the 36 km resolution. 
 ```
 
 ```{figure} /images/algo_fig5.png
 --- 
 name: algo_fig5
 ---
-Soil moisture and vegetation optical depth (VOD) retrieval results of the prototype algorithm at the 9 km resolution. The results are based on gridded L-band TBs that are sharpened by means of higher resolution C-band TBs. 
+Soil moisture and vegetation optical depth (VOD) retrieval results of the prototype algorithm at the 9 km resolution.  
 ```
 
 ## Algorithm Performance Assessment
@@ -83,14 +83,14 @@ Two additional observations apply to 9 km retievals in {numref}`algo_fig7`: Firs
 --- 
 name: algo_fig6
 ---
-Soil moisture retrieval results of the prototype algorithm at the 36 km resolution (based on L-band TBs, upper row). Errors with respect to the synthetic reference, aggregated to the same resolution (middle row). Retrieval scene flags that indicate uncertain retrievals (lower row).
+Soil moisture retrieval results of the prototype algorithm at the 36 km resolution (top row). Errors with respect to the synthetic reference, aggregated to the same resolution (middle row). Retrieval scene flags that indicate uncertain retrievals (bottom row).
 ```
 
 ```{figure} /images/algo_fig7.png
 --- 
 name: algo_fig7
 ---
-Soil moisture retrieval results of the prototype algorithm at the 9 km resolution (based on L-band and C-band TBs, upper row). Errors with respect to the synthetic reference, aggregated to the same resolution (middle row). Retrieval scene flags that indicate uncertain retrievals (lower row).
+Soil moisture retrieval results of the prototype algorithm at the 9 km resolution (top row). Errors with respect to the synthetic reference, aggregated to the same resolution (middle row). Retrieval scene flags that indicate uncertain retrievals (bottom row).
 ```
 
 {numref}`algo_fig8` shows a more detailed view of the 9 km retrievals in the AOIs. We compare the soil moisture reference at the 9 km grid (left) with L2 retrievals at the 36 km grid (middle) and 9 km grid (right). This aims to illustrate the added value of 9 km retrievals compared to 36 km retrievals, assuming reference soil moisture patterns at 9 km resolution.
@@ -102,7 +102,7 @@ As expected, 9 km retrievals generally improve the representation of soil moistu
 --- 
 name: algo_fig8
 ---
-Detailed view of 9 km retrievals compared to 36 km retrievals. Errors are computed based on reference soil moisture patterns aggregated to the 9 km grid.
+Comparison of 9 km and 36 km retrievals. Top row: Test card aggregated to the 9 km grid (left), DEVALGO retrievals at the 9 km grid (middle), DEVALGO retrievals at the 36 km grid (right). Bottomw row: Errors with respect to the test card at the 9 km grid.
 ```
 
 Finally, ubRMSE and bias metrics are displayed in {numref}`algo_fig9` and {numref}`algo_fig10`, respectively. We assess four land use classes: Bare soil, grassland, cropland, and mixed. These classes correspond to vegetation water contents (VWC) of 0 kg/m², 0.2 kg/m², 1.9 kg/m², 4.6 kg/m², respectively. Forest regions show a vegetation water content of 11.7 kg/m² and are not considered in the evaluation. The metrics are calculated for AOIs containing identical soil moisture patterns, which are indicated as black boxes in {numref}`algo_fig4` to {numref}`algo_fig8`. 
