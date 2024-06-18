@@ -13,7 +13,7 @@ Copernicus Imaging Microwave Radiometer
     The Copernicus Imaging Microwave Radiometer is a Microwave Radiometer which launch is planned by ESA in 2029.
 
 Equal Area Scalable Earth v2
-    Equal area projection grid definition based on a Lambert Azimuthal projection and a WGS84 datum. Defined in {cite}`brodzik/etal:2012`.
+    Equal area projection grid definition based on a Lambert Azimuthal projection and a WGS84 datum. Defined in {cite}`brodzik2012`.
 
 Dual Channel Algorithm
     Algorithm used in SMAP to retrieve simultaneously two parameters (soil moisture and vegetation optical depth).

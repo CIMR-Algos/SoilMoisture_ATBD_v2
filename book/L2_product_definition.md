@@ -6,7 +6,7 @@ The main content of the L2 files are the gridded soil moisture and vegetation op
 
 
 ```{table} Level-2 Soil Moisture product (36 km grid)
-:name: L2product
+:name: L2product36km
 | Parameter                 | Description                                                | Units     | Dimensions*                     |
 |---------------------------|------------------------------------------------------------|-----------|---------------------------------|
 | time     | Time of observation | *seconds* | (964, 406) |
@@ -25,7 +25,7 @@ The main content of the L2 files are the gridded soil moisture and vegetation op
 ```
 
 ```{table} Level-2 enhanced Soil Moisture product (9 km grid)
-:name: L2product
+:name: L2product9km
 | Parameter                 | Description                                                | Units     | Dimensions*                     |
 |---------------------------|------------------------------------------------------------|-----------|---------------------------------|
 | time     | Time of observation | *seconds* | (3856, 1624) |
