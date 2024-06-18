@@ -49,7 +49,7 @@ cmap_flags = colors.ListedColormap([[1, 1, 1],
                                     [0.8, 0.9, 1], 
                                     [0.7, 0.75, 1], 
                                     [0.75, 1, 0.7]])
-leg_flag = ['No Flag', 'Water Fract', 'Coastline', 'Dense Veg.']
+leg_flag = ['No Flag', 'Inland Water', 'Coastline', 'Dense Veg.']
 plt_range_flags = [0, 4]
 
 # load 'colormaps.py' module if available
