@@ -34,6 +34,9 @@ MODIS
 MT-DCA
   Multi-Temporal Dual Channel Algorithm
 
+MMVI
+  Microwave Vegetation Indices
+
 NASA
   National Aeronautics and Space Administration
 
