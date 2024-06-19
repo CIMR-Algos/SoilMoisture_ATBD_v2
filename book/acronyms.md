@@ -35,7 +35,7 @@ MT-DCA
   Multi-Temporal Dual Channel Algorithm
 
 MMVI
-  Microwave Vegetation Indices
+  Multifrequency Microwave Vegetation Indices
 
 NASA
   National Aeronautics and Space Administration
@@ -45,6 +45,7 @@ NDVI
 
 RTM
   Radiative Transfer Model
+
 RFI
   Radio Frequency Interference
 
