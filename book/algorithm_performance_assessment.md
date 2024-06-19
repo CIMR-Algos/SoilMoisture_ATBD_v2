@@ -83,14 +83,14 @@ Two additional observations apply to 9 km retievals in {numref}`algo_fig7`: Firs
 --- 
 name: algo_fig6
 ---
-Soil moisture retrieval results of the prototype algorithm at the 36 km resolution (top row). Errors with respect to the synthetic reference, aggregated to the same resolution (middle row). Retrieval scene flags that indicate uncertain retrievals (bottom row).
+Soil moisture retrieval results of the prototype algorithm at the 36 km resolution (top row). Difference with respect to the synthetic reference, aggregated to the same resolution (middle row). Retrieval scene flags that indicate uncertain retrievals (bottom row).
 ```
 
 ```{figure} /images/algo_fig7.png
 --- 
 name: algo_fig7
 ---
-Soil moisture retrieval results of the prototype algorithm at the 9 km resolution (top row). Errors with respect to the synthetic reference, aggregated to the same resolution (middle row). Retrieval scene flags that indicate uncertain retrievals (bottom row).
+Soil moisture retrieval results of the prototype algorithm at the 9 km resolution (top row). Difference with respect to the synthetic reference, aggregated to the same resolution (middle row). Retrieval scene flags that indicate uncertain retrievals (bottom row).
 ```
 
 {numref}`algo_fig8` shows a more detailed view of the 9 km retrievals in the AOIs. We compare the soil moisture reference at the 9 km grid (left) with L2 retrievals at the 36 km grid (middle) and 9 km grid (right). This aims to illustrate the added value of 9 km retrievals compared to 36 km retrievals, assuming reference soil moisture patterns at 9 km resolution.
@@ -102,7 +102,7 @@ As expected, 9 km retrievals generally improve the representation of soil moistu
 --- 
 name: algo_fig8
 ---
-Comparison of 9 km and 36 km retrievals. Top row: Test card aggregated to the 9 km grid (left), DEVALGO retrievals at the 36 km grid (middle), DEVALGO retrievals at the 9 km grid (right). Bottomw row: Errors with respect to the test card at the 9 km grid.
+Comparison of 9 km and 36 km retrievals. Top row: Test card aggregated to the 9 km grid (left), DEVALGO retrievals at the 36 km grid (middle), DEVALGO retrievals at the 9 km grid (right). Bottomw row: Difference with respect to the test card at the 9 km grid.
 ```
 
 Finally, ubRMSE and bias metrics are displayed in {numref}`algo_fig9` and {numref}`algo_fig10`, respectively. We assess four land use classes: Bare soil, grassland, cropland, and mixed. These classes correspond to vegetation water contents (VWC) of 0 kg/m², 0.2 kg/m², 1.9 kg/m², 4.6 kg/m², respectively. Forest regions show a vegetation water content of 11.7 kg/m² and are not considered in the evaluation. The metrics are calculated for AOIs containing identical soil moisture patterns, which are indicated as black boxes in {numref}`algo_fig4` to {numref}`algo_fig8`. 
