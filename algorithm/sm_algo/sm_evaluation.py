@@ -15,10 +15,10 @@ plim_36 = np.array([82, 120, 463, 501])
 plim_09 = plim_36 * 4
 
 # Zoomed plot limits within global EASE grids
-plim_36_zoom = np.array([103, 120, 463, 501-11])
+plim_36_zoom = np.array([103, 120, 463, 490])
 plim_09_zoom = plim_36_zoom * 4
 plim_01_zoom = plim_36_zoom * 36
-plim_tc_36_zoom = np.array([21, 21+17, 0, 501-463-11])
+plim_tc_36_zoom = np.array([21, 21+17, 0, 490-463])
 plim_tc_09_zoom = plim_tc_36_zoom * 4
 plim_tc_01_zoom = plim_tc_36_zoom * 36
 
@@ -119,7 +119,7 @@ def plot_tc(plotdata, title, grid, plot_range, colormap=None, zoom=False):
     # add labels and ticks to colorbar (hard coded)
     if title == 'Land Use':
         cbar.set_ticks(ticks_lu, labels=leg_lu, rotation=40)
-    if (title == 'Soil Moisture') or ('Testcard' in title):
+    if (title == 'Soil Moisture') or ('Testcard' in title) or ('REF' in title):
         cbar.set_label('(m³/m³)', labelpad=15)
     if 'TB' in title:
         cbar.set_label('(K)', labelpad=15)
@@ -250,7 +250,7 @@ def plot_sm_diff(reference, plotdata, title, grid, plot_range, colormap,
         raise Exception('Mismatch of data and reference plot limits')
     
     # difference between reference and data
-    difference = reference_plim - plotdata_plim
+    difference = plotdata_plim - reference_plim
     
     # plot
     plt.imshow(difference, vmin=plot_range[0], vmax=plot_range[1], 
@@ -351,7 +351,7 @@ def bias_aoi(reference, data, grid):
     for i, aoi in enumerate(aois):
         data_aoi = data_plim[aoi[3]:aoi[2], aoi[0]:aoi[1]]
         reference_aoi = reference[aoi[3]:aoi[2], aoi[0]:aoi[1]]
-        bias[i] = np.nanmean(reference_aoi) - np.nanmean(data_aoi)
+        bias[i] = np.nanmean(data_aoi) - np.nanmean(reference_aoi)
         
     return bias
 

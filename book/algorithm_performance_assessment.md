@@ -75,9 +75,11 @@ Soil moisture and vegetation optical depth (VOD) retrieval results of the protot
 
 We evaluate the prototype algorithm retrievals against the synthetic reference in {numref}`algo_fig6` and {numref}`algo_fig7`. 
 
-We find that the soil moisture fields are generally in good agreement with the synthetic reference ({numref}`algo_fig1`). This is also true fo the AOIs (black boxes), indicating that soil moisture patterns are captured across different spatial scales and land use classes. The largest errors occur near the coastlines, which is expected due to spillover effects of the ocean TB signatures, and at the edge of the DEIMOS scenes, which is an artifact of the background field used in the L1B simulations. Minor biases occur for forest regions, which is expected due to the heavy masking of the soil signal by the dense vegetation. SCEPS scenes show effects of instrument noise (not considered in DEIMOS), which is particularly visible for forest retrievals. Overall, barring minor differences across orbit simulators, the prototype algorithm consistently captures soil moisture patterns across land use classes and overpasses.
+We find that the soil moisture fields are generally in good agreement with the synthetic reference in {numref}`algo_fig1`. The soil moisture patterns in the AOIs (black boxes) are well captured, indicating that soil moisture retrievals are consistent across different spatial scales and land use classes. Soil moisture retrievals within the AOIs show no systematic biases across the soil moisture range, with the exception of the mixed land use class (bottom left), which shows a dry bias for wet soil moisture conditions. Biases in the AOIs are further discussed in {numref}`algo_fig9` and {numref}`algo_fig10`.
 
-Two additional observations apply to 9 km retievals in {numref}`algo_fig7`: First, vertical edge effects are visible in the northeastern corner of the test card, which is an artifact resulting from the sharp land cover transitions in the synthetic test card. Second, additional error patterns are visible within the AOIs compared to 36 km retrievals, which is expected from the higher resolution of the synthetic reference. A more detailed view of the 9 km retrievals in the AOIs is given in {numref}`algo_fig8`.
+Several observations apply to explain the error patterns throughout the test card. The largest errors occur near the coastlines, which is expected due to spillover effects from ocean TBs. A land-water correction of TBs is planned for CIMR but is not applied in this study. Large errors also occur at the edge of the DEIMOS scenes, which is a spillover effect from the background field used in the L1B simulations. A slight wet bias is visible for the bare soil areas of the testcard that represent very dry soil conditions. These areas serve to depict a strong TB contrast between dry soil and the adjacent ocean. It is expected that these biases could be reduced by calibrating the roughness parameters, which is deliberately not conducted for the synthetic dataset assessed here. Notable biases occur also for forest regions, which is expected due to the heavy masking of the soil signal by the dense vegetation. The two SCEPS scenes show effects of instrument noise particularly for forest retrievals (instrument noise is not considered in the DEIMOS scenes), which is attributed to the same effect. Overall, barring minor differences across orbit simulators, the prototype algorithm captures soil moisture patterns consistently across land use classes and overpasses.
+
+Two additional observations apply to 9 km retrievals in {numref}`algo_fig7`: First, vertical edge effects are visible in the northeastern corner of the test card, which is an artifact resulting from the sharp land cover transitions in the synthetic test card. Second, additional error patterns are visible within the AOIs compared to 36 km retrievals, which is expected from the higher resolution of the synthetic reference. A more detailed view of the 9 km retrievals in the AOIs is given in {numref}`algo_fig8`.
 
 ```{figure} /images/algo_fig6.png
 --- 
@@ -93,23 +95,25 @@ name: algo_fig7
 Soil moisture retrieval results of the prototype algorithm at the 9 km resolution (top row). Difference with respect to the synthetic reference, aggregated to the same resolution (middle row). Retrieval scene flags that indicate uncertain retrievals (bottom row).
 ```
 
-{numref}`algo_fig8` shows a more detailed view of the 9 km retrievals in the AOIs. We compare the soil moisture reference at the 9 km grid (left) with L2 retrievals at the 36 km grid (middle) and 9 km grid (right). This aims to illustrate the added value of 9 km retrievals compared to 36 km retrievals, assuming reference soil moisture patterns at 9 km resolution.
+{numref}`algo_fig8` shows a more detailed view of the 36 km and 9 km retrievals in the AOIs. 
 
-As expected, 9 km retrievals generally improve the representation of soil moisture patterns at the 9 km scale (compared to retrievals at 36 km). The improvement is particularly pronounced for bare soil (bottom right AOI) and grassland (top right AOI). This is expected as the C-band signal from the soil gets increasingly masked with increasing vegetation cover. Comparable results are obtained for X-band (not shown). Note that the synthetic test card assessed here does not show spatial land cover variability at the 9 km scale, which limits the available brightness temperature variability to be captured by the sharpening algorithm. It is expected that the added value of the sharpening would increase further for scenes that include spatial land cover heterogeneity.
+At the 36 km grid, soil moisture patterns are reasonably captured by the retrievals. Note that the retrievals do not capture the full spatial dynamic range of the reference in all cases (i.e., the wettest pixel is not fully resolved), which is expected as the L-band footprint of CIMR is significantly larger than the 36 km grid, and a simple Gaussian regridding was applied in this prototype implementation. By exploiting the oversampling of CIMR, it is expected that more advanced regridding techniques can further improve the capabilities to capture spatial patterns at the 36 km scale. For the mixed land use class (bottom left AOI), soil moisture retrievals show a dry bias for wet soil moisture conditions, as was mentioned earlier. This is likely related to vegetation masking of the soil signal, which further reduces the dynamic range of the observed TBs. 
+
+At the 9 km grid, the high resolution reference soil moisture patterns are captured particularly well for bare soil (bottom right AOI) and grassland (top right AOI). This is expected as the C-band signal from the soil gets increasingly masked with increasing vegetation cover. By design of the SFIM algorithm, biases in the 36 km retrievals are expected to carry over to the 9 km retrievals, such that the dry bias for the mixed class is also observed here. Note that the synthetic test card assessed here does not show spatial land cover variability at the 9 km scale, which limits the available brightness temperature variability to be captured by the sharpening algorithm. It is expected that the added value of the sharpening would increase further for scenes that include spatial land cover heterogeneity, particularly for land use classes with enhanced vegetation cover. The results are based on sharpening of L-band TBs with C-band TBs. Comparable results are obtained for X-band TBs (not shown).
 
 
 ```{figure} /images/algo_fig8.png
 --- 
 name: algo_fig8
 ---
-Comparison of 9 km and 36 km retrievals. Top row: Test card aggregated to the 9 km grid (left), DEVALGO retrievals at the 36 km grid (middle), DEVALGO retrievals at the 9 km grid (right). Bottomw row: Difference with respect to the test card at the 9 km grid.
+Comparison of 36 km (top row) and 9 km (bottom row) retrievals. AOIs in black boxes depict bare soil, grassland, cropland, and mixed land use (counterclockwise, from the bottom right).
 ```
 
 Finally, ubRMSE and bias metrics are displayed in {numref}`algo_fig9` and {numref}`algo_fig10`, respectively. We assess four land use classes: Bare soil, grassland, cropland, and mixed. These classes correspond to vegetation water contents (VWC) of 0 kg/m², 0.2 kg/m², 1.9 kg/m², 4.6 kg/m², respectively. Forest regions show a vegetation water content of 11.7 kg/m² and are not considered in the evaluation. The metrics are calculated for AOIs containing identical soil moisture patterns, which are indicated as black boxes in {numref}`algo_fig4` to {numref}`algo_fig8`. 
 
-We find that the prototype algorithm achieves an ubRMSE smaller than 0.04 m³/m³ for 36 km retrievals and between 0.035 - 0.045 m³/m³ for 9 km retrievals. Errors generally increase with increasing vegetation cover, in accordance with expectations. Biases are overall low. The largest biases occur in the mixed class, which is likely explained by the influence of forest signatures. Both the ubRMSE and bias metrics show a high level of consistency across overpasses.
+We find that the prototype algorithm achieves an ubRMSE smaller than 0.04 m³/m³ for 36 km retrievals and between 0.035 - 0.045 m³/m³ for 9 km retrievals. Errors generally increase with increasing vegetation cover, in accordance with expectations. Biases are overall low. The largest biases, occurring in the mixed class, do not exceed 0.01 m³/m³. For all classes, the ubRMSE and bias metrics show a high level of consistency across overpasses.
 
-Note that the performance assessment metrics are achieved without parameter calibration: The soil roughness (H) and single scattering albedo (⍵) parameters follow strictly the values proposed in {numref}`wandH` and are not calibrated to provide an optimal fit for the simulated brightness temperature signatures (Note that the ⍵ parameter was adjusted for forest retrievals to avoid biased retrievals. Forest retrievals are not part of the performance metrics calculation). It is expected that the performance metrics could be further improved if the algorithm parameters were specifically tuned to the synthetic TB simulations.
+Note that the performance assessment metrics are achieved without parameter calibration: The soil roughness (H) and single scattering albedo (⍵) parameters follow strictly the values proposed in {numref}`wandH` and are not calibrated to provide an optimal fit for the simulated brightness temperature signatures (Note that the ⍵ parameter was adjusted for forest retrievals to enable retrievals despite the excessive vegetation cover. Forest retrievals are not part of the performance metrics calculation). It is expected that the performance metrics could be further improved if the algorithm parameters were specifically tuned to the synthetic TB simulations.
 
 ```{figure} /images/algo_fig9.png
 --- 
@@ -125,9 +129,11 @@ name: algo_fig10
 ubRMSE and bias metrics for soil moisture retrievals at the 9 km scale.
 ```
 
-**Overall, the results provide a promising outlook on the prototype SM retrieval algorithm for CIMR.** The key results are summarized below:
+**Overall, the results provide a promising outlook on the prototype SM retrieval algorithm for CIMR.** 
+
+The key results for the AOIs, which are the target of the assessment, are summarized below:
 - At the 36 km scale, the algorithm shows an ubRMSE < 0.04 m³/m³.
 - At the 9 km scale, the algorithm shows an ubRMSE between 0.035 - 0.045 m³/m³. 
-- Biases are overall low.
+- Biases are overall low and do not exceed 0.01 m³/m³.
 - The results are consistent across overpasses. 
 - All metrics are achieved without parameter calibration.
