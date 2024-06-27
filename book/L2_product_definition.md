@@ -44,6 +44,6 @@ The main content of the L2 files are the gridded soil moisture and vegetation op
 
 
 \* Dimensions are equivalent to the global EASE2 grids at 36 km and 9 km resolution, respectively. 
-This is the inital proposal for CIMR soil moisture retrievals and corresponds to 
+This is the initial proposal for CIMR soil moisture retrievals and corresponds to 
 the current implementation in the later sections of this ATBD. 
 The final grid resolution will be decided based on further tests on the tradeoff between noise and spatial resolution.

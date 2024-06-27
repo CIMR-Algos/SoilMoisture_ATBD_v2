@@ -1,7 +1,6 @@
 # Introduction, purpose and scope
 
-The purpose of this Algorithm Theoretical Baseline Document (ATBD) is to present the procedure that will be used in the Copernicus Imaging Microwave Radiometer (CIMR) mission to derive Soil Moisture (SM) products from the brightness temperatures (TB) measured from the CIMR radiometer. Initially, the historical background of passive microwave remote sensing for soil moisture is provided, along with the justification for the chosen algorithm. As detailed in the Level-2 product definition section, the output product will contain data structured on a geographical grid (EAE2, Equal Area Cylindrical projection). 
-<!---This grid configuration is determined by the Level 1c grid parameters, defined by the CIMR Level 1b re-sampling approach.-->
+The purpose of this Algorithm Theoretical Baseline Document (ATBD) is to present the procedure that will be used in the Copernicus Imaging Microwave Radiometer (CIMR) mission to derive Soil Moisture (SM) products from the brightness temperatures (TB) measured from the CIMR radiometer. Initially, the historical background of passive microwave remote sensing for soil moisture is provided, along with the justification for the chosen algorithm. As detailed in the Level-2 product definition section, the output product will contain data structured on a geographical grid (EASE2, Equal Area Cylindrical projection). 
 
 The procedure for extracting soil moisture information from CIMR TB observations employs the tau-omega model, widely used in the passive microwave soil moisture community. The proposed algorithm is based on the SMOS-IC algorithm for SMOS and the Multi-Temporal Dual Channel Algorithm for SMAP. This design has been adapted to the particular characteristics of CIMR.
 

@@ -6,49 +6,49 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Algorithm Performance Assessment (Version 2 ATBD) &#8212; CIMR DEVALGO ATBD Template</title>
+    <title>Algorithm Performance Assessment &#8212; CIMR DEVALGO ATBD Template</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="_static/styles.css?v=3437f865" />
     <link rel="stylesheet" type="text/css" href="_static/watermark.css?v=80f188f4" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=5eb1bb1e"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -98,7 +98,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <script>DOCUMENTATION_OPTIONS.pagename = 'algorithm_performance_assessment';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Version 2 ATBD: Roadmap for future ATBD development" href="roadmap.html" />
+    <link rel="next" title="Roadmap for future ATBD development" href="roadmap.html" />
     <link rel="prev" title="Algorithm Input and Output Data Definition (IODD)" href="algorithm_input_output_data_definition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -109,27 +109,23 @@ commentsRunWhenDOMLoaded(addUtterances);
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -151,8 +147,13 @@ commentsRunWhenDOMLoaded(addUtterances);
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -176,6 +177,8 @@ commentsRunWhenDOMLoaded(addUtterances);
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -197,7 +200,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -243,7 +246,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -252,14 +255,14 @@ commentsRunWhenDOMLoaded(addUtterances);
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -352,10 +355,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -363,14 +366,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -381,7 +384,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Algorithm Performance Assessment (Version 2 ATBD)</h1>
+    <h1>Algorithm Performance Assessment</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -391,14 +394,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-e2es-demonstration-reference-scenario-picasso-scene-definition">L1 E2ES Demonstration Reference Scenario (Picasso) scene definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-performance-metrics-mpef">Algorithm Performance Metrics (MPEF)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-results-using-demonstration-reference-scenario">Test Results using Demonstration Reference Scenario</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-scenario-definition">Reference Scenario definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics">Performance Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prototype-algorithm-results">Prototype Algorithm Results</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regridding">Regridding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soil-moisture-retrieval-results">Soil Moisture Retrieval Results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soil-moisture-retrieval">Soil Moisture Retrieval</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-performance-assessment-using-demonstration-reference-scenario">Algorithm Performance Assessment using Demonstration Reference Scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Algorithm Performance Assessment</a></li>
 </ul>
             </nav>
         </div>
@@ -410,36 +413,36 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="algorithm-performance-assessment-version-2-atbd">
-<h1>Algorithm Performance Assessment (Version 2 ATBD)<a class="headerlink" href="#algorithm-performance-assessment-version-2-atbd" title="Link to this heading">#</a></h1>
-<p>This chapter presents a performance assessment of the prototype soil moisture retrieval algorithm based on end-to-end simulations of a synthetic reference scenario. The full python code used in the algorithm and evaluation can be found in the <a class="reference external" href="https://github.com/CIMR-Algos/SoilMoisture_ATBD_v2/tree/main/algorithm">\algorithm folder of the SM_ATBD_v2 Github Repository</a>.</p>
-<section id="l1-e2es-demonstration-reference-scenario-picasso-scene-definition">
-<h2>L1 E2ES Demonstration Reference Scenario (Picasso) scene definition<a class="headerlink" href="#l1-e2es-demonstration-reference-scenario-picasso-scene-definition" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="algorithm-performance-assessment">
+<h1>Algorithm Performance Assessment<a class="headerlink" href="#algorithm-performance-assessment" title="Link to this heading">#</a></h1>
+<p>This chapter presents a performance assessment of the prototype soil moisture retrieval algorithm based on end-to-end simulations of a synthetic reference scenario. The full python code used in the algorithm and evaluation can be found in the <a class="reference external" href="https://github.com/CIMR-Algos/SoilMoisture_ATBD_v2/tree/main/algorithm">SM_ATBD_v2 Github Repository</a>.</p>
+<section id="reference-scenario-definition">
+<h2>Reference Scenario definition<a class="headerlink" href="#reference-scenario-definition" title="Link to this heading">#</a></h2>
 <p>A synthetic soil moisture test card was created to serve as a testbed for the soil moisture retrieval algorithm.</p>
-<p>The test card has a spatial resolution of 1 km, which is nested within the global 9 km and 36 km EASE2 grids. At L-, C-, and X-bands, the brightness temperature signatures of the test card are based on numerical simulations of a discrete radiative transfer model (Tor Vergata model) <span id="id1">[<a class="reference internal" href="references.html#id47" title="Paolo Ferrazzoli, Leila Guerriero, and J-P Wigneron. Simulating l-band emission of forests in view of future satellite applications. IEEE Transactions on Geoscience and Remote Sensing, 40(12):2700–2708, 2002.">Ferrazzoli <em>et al.</em>, 2002</a>, <a class="reference internal" href="references.html#id48" title="Leila Guerriero, Paolo Ferrazzoli, Cristina Vittucci, Rachid Rahmoune, Matteo Aurizzi, and Alessio Mattioni. L-band passive and active signatures of vegetated soil: simulations with a unified model. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 9(6):2520–2531, 2016.">Guerriero <em>et al.</em>, 2016</a>]</span>. At Ku- and Ka-bands, brightness temperature signatures are based on forward simulations of the tau-omega model (not used in this prototype) <span id="id2">[<a class="reference internal" href="references.html#id44" title="T Mo, B J Choudhury, T J Schmugge, J R Wang, and T J Jackson. A model for microwave emission from vegetation-covered fields. J. Geophys. Res., 87(C13):11229 – 11237, 1982. doi:10.1029/JC087iC13p11229.">Mo <em>et al.</em>, 1982</a>]</span>. Five land use classes are considered: Bare soil, grassland, cropland, mixed, and forest. The mixed class assumes an homogeneous mix of grassland, cropland, and forest.</p>
+<p>The test card has a spatial resolution of 1 km, which is nested within the global 9 km and 36 km EASE2 grids. At L-, C-, and X-bands, the brightness temperature signatures are based on numerical simulations of a discrete radiative transfer model (Tor Vergata model) <span id="id1">[<a class="reference internal" href="references.html#id50" title="Paolo Ferrazzoli, Leila Guerriero, and J-P Wigneron. Simulating L-band emission of forests in view of future satellite applications. IEEE Transactions on Geoscience and Remote Sensing, 40(12):2700–2708, 2002.">Ferrazzoli <em>et al.</em>, 2002</a>, <a class="reference internal" href="references.html#id51" title="Leila Guerriero, Paolo Ferrazzoli, Cristina Vittucci, Rachid Rahmoune, Matteo Aurizzi, and Alessio Mattioni. L-band passive and active signatures of vegetated soil: Simulations with a unified model. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 9(6):2520–2531, 2016.">Guerriero <em>et al.</em>, 2016</a>]</span>. At Ku- and Ka-bands, brightness temperature signatures are based on forward simulations of the tau-omega model (not used in this prototype) <span id="id2">[<a class="reference internal" href="references.html#id47" title="T Mo, B J Choudhury, T J Schmugge, J R Wang, and T J Jackson. A model for microwave emission from vegetation-covered fields. J. Geophys. Res., 87(C13):11229 – 11237, 1982. doi:10.1029/JC087iC13p11229.">Mo <em>et al.</em>, 1982</a>]</span>. Five land use classes are considered: Bare soil, grassland, cropland, mixed, and forest. The mixed class assumes an homogeneous mix of grassland, cropland, and forest.</p>
 <figure class="align-default" id="algo-fig1">
 <img alt="_images/algo_fig1.png" src="_images/algo_fig1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Synthetic soil moisture test card at 1 km (upper, native resolution), 9 km (middle, aggregated) and 36 km (lower, aggregated). Columns indicate the dominant land use, average soil moisture content, and L-band brightness temperatures at V- and H-polarization, respectively. Brightness temperatures at C-, X-, Ku-, Ka-bands are not shown for brevity.</span><a class="headerlink" href="#algo-fig1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Synthetic soil moisture test card at 1 km (top, native resolution), 9 km (middle, aggregated) and 36 km (bottom, aggregated). Columns indicate the dominant land use, average soil moisture content, and L-band brightness temperatures at V- and H-polarization, respectively. Brightness temperatures at C-, X-, Ku-, Ka-bands are not shown for brevity.</span><a class="headerlink" href="#algo-fig1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><a class="reference internal" href="#algo-fig1"><span class="std std-numref">Fig. 5</span></a> shows the synthetic test card for 1 km (native resolution), 9 km, and 36 km resolutions. The soil moisture fields at 9 km and 36 km resolutions will be used as a reference for the performance evaluation. Four areas of interest (AOIs) are indicated by black boxes. These areas indicate four distinct land use classes that contain identical soil moisture patterns.</p>
 </section>
-<section id="algorithm-performance-metrics-mpef">
-<h2>Algorithm Performance Metrics (MPEF)<a class="headerlink" href="#algorithm-performance-metrics-mpef" title="Link to this heading">#</a></h2>
-<p>Two algorithm performance metrics are used in the evaluation: The unbiased root mean squared error (ubRMSE) and the bias of soil moisture retrievals with respect to the synthetic reference.</p>
-<p>We test the prototype algorithm on four simulated L1B files, which represent distinct CIMR overpasses over the synthetic test card. The L1B files are based on orbit simulations conducted by DEIMOS and the SCEPS project. Each orbit simulator covers one ascending and descending orbit, respectively, leading to a total of four synthetic CIMR L1B files.</p>
+<section id="performance-metrics">
+<h2>Performance Metrics<a class="headerlink" href="#performance-metrics" title="Link to this heading">#</a></h2>
+<p>Two algorithm performance metrics are used in the evaluation: The unbiased root mean squared error (ubRMSE) and the bias of soil moisture retrievals with respect to the synthetic reference. These metrics correspond to standard performance metrics for soil moisture retrievals <span id="id3">[<a class="reference internal" href="references.html#id13" title="Dara Entekhabi, Rolf H Reichle, Randal D Koster, and Wade T Crow. Performance Metrics for Soil Moisture Retrievals and Application Requirements. J. Hydrometeorol., 11(3):832–840, 2010. doi:10.1175/2010JHM1223.1.">Entekhabi <em>et al.</em>, 2010</a>]</span>.</p>
+<p>We test the prototype algorithm on four simulated L1B files, which represent distinct CIMR overpasses. The L1B files are based on orbit simulations conducted by DEIMOS and the SCEPS project. Each orbit simulator covers one ascending and descending orbit, respectively.</p>
 </section>
-<section id="test-results-using-demonstration-reference-scenario">
-<h2>Test Results using Demonstration Reference Scenario<a class="headerlink" href="#test-results-using-demonstration-reference-scenario" title="Link to this heading">#</a></h2>
+<section id="prototype-algorithm-results">
+<h2>Prototype Algorithm Results<a class="headerlink" href="#prototype-algorithm-results" title="Link to this heading">#</a></h2>
 <section id="regridding">
 <h3>Regridding<a class="headerlink" href="#regridding" title="Link to this heading">#</a></h3>
-<p>The purpose of regridding is to move from L1B TB signatures, provided in swath geometry, to gridded TB signatures, posted on a global EASE2 grid. In a first step, we grid L-band TBs to the 36 km global EASE2 grid, using a Gaussian regridding (Note: More advanced gridding techniques, such as the Backus-Gilbert optimal interpolation technique, are planned to be implemented in a separate toolbox). In a second step, we sharpen the gridded L-band TBs to the 9 km EASE2 grid. The sharpening is achieved by applying the smoothing filter-based intensity modulation technique (SFIM) <span id="id3">[<a class="reference internal" href="references.html#id26" title="E Santi. An application of the SFIM technique to enhance the spatial resolution of spaceborne microwave radiometers. Int. J. Remote Sens., 31(9):2419–2428, 2010. URL: https://doi.org/10.1080/01431160903005725, doi:10.1080/01431160903005725.">Santi, 2010</a>]</span>, using L-band TBs at the 36 km grid and C-band TBs at the 36 km and 9 km grids as inputs.</p>
+<p>The purpose of regridding is to move from L1B TBs, provided in swath geometry, to gridded TBs, posted on a global EASE2 grid. In a first step, we grid L-band TBs to the 36 km global EASE2 grid, using a Gaussian regridding. We also grid C-band TBs to the 9 km grid using the same technique (Note: More advanced gridding techniques, such as the Backus-Gilbert optimal interpolation technique, are planned to be implemented in a separate toolbox). In a second step, we sharpen the gridded L-band TBs to the 9 km EASE2 grid, applying the smoothing filter-based intensity modulation technique (SFIM) <span id="id4">[<a class="reference internal" href="references.html#id29" title="E Santi. An application of the SFIM technique to enhance the spatial resolution of spaceborne microwave radiometers. Int. J. Remote Sens., 31(9):2419–2428, 2010. URL: https://doi.org/10.1080/01431160903005725.">Santi, 2010</a>]</span>. The sharpening procedure takes lower-resolution L-band TBs (36 km grid) and higher-resolution C-band TBs (9 km grid) as inputs.</p>
 <div class="math notranslate nohighlight">
 \[ 
-TB_L(9 km) = \frac{TB_L(36 km)}{TB_C(36 km)} TB_C(9 km).
+TB_L(9 km) = \frac{TB_L(36 km)}{TB_C(36 km)} TB_C(9 km),
 \]</div>
-<p>Should C-band TBs be affected by radio frequency interference (RFI), the same technique can also be applied using X-band TBs, leading to comparable results (not shown).</p>
+<p>where <span class="math notranslate nohighlight">\(TB_C(36 km)\)</span> is the aggregation of <span class="math notranslate nohighlight">\(TB_C(9 km)\)</span> to the 36 km grid. Should C-band TBs be affected by radio frequency interference (RFI), the same technique can also be applied using X-band TBs, leading to comparable results (not shown).</p>
 <figure class="align-default" id="algo-fig2">
 <img alt="_images/algo_fig2.png" src="_images/algo_fig2.png" />
 <figcaption>
@@ -453,56 +456,54 @@ TB_L(9 km) = \frac{TB_L(36 km)}{TB_C(36 km)} TB_C(9 km).
 </figcaption>
 </figure>
 </section>
-<section id="soil-moisture-retrieval-results">
-<h3>Soil Moisture Retrieval Results<a class="headerlink" href="#soil-moisture-retrieval-results" title="Link to this heading">#</a></h3>
-<p>We apply the prototype soil moisture retrieval algorithm the gridded L-band TB signatures at 36 km and 9 km. The results are shown in <a class="reference internal" href="#algo-fig4"><span class="std std-numref">Fig. 8</span></a> and <a class="reference internal" href="#algo-fig5"><span class="std std-numref">Fig. 9</span></a>, respectively. In addition to soil moisture retrievals, we also show outputs for vegetation optical depth (VOD), noting that VOD is not a target variable of the algorithm and will not be subject to performance evaluation. We find that soil moisture patterns are captured well across all land use types. VOD retrievals correspond to expected patterns of different land use classes, noting that cropland and grassland are almost transparent at L-band for the test card scenario considered here. A more detailed assessment of the results is given in the next section.</p>
+<section id="soil-moisture-retrieval">
+<h3>Soil Moisture Retrieval<a class="headerlink" href="#soil-moisture-retrieval" title="Link to this heading">#</a></h3>
+<p>We apply the prototype soil moisture retrieval algorithm to the gridded L-band TBs. The results for the 36 km and 9 km grids are shown in <a class="reference internal" href="#algo-fig4"><span class="std std-numref">Fig. 8</span></a> and <a class="reference internal" href="#algo-fig5"><span class="std std-numref">Fig. 9</span></a>, respectively. We also show outputs for vegetation optical depth (VOD), noting that VOD is not a target variable of the algorithm and will not be part of the performance evaluation.</p>
+<p>We find that soil moisture patterns are captured well across all land use types. VOD retrievals correspond to expected patterns of different land use classes, noting that cropland and grassland are almost transparent at L-band for the test card scenario considered here. A more detailed assessment of the results is given in the next section.</p>
 <figure class="align-default" id="algo-fig4">
 <img alt="_images/algo_fig4.png" src="_images/algo_fig4.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Soil moisture and vegetation optical depth (VOD) retrieval results of the prototype algorithm at the 36 km resolution. The results are based on gridded L-band TBs.</span><a class="headerlink" href="#algo-fig4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Soil moisture and vegetation optical depth (VOD) retrieval results of the prototype algorithm at the 36 km resolution.</span><a class="headerlink" href="#algo-fig4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="algo-fig5">
 <img alt="_images/algo_fig5.png" src="_images/algo_fig5.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Soil moisture and vegetation optical depth (VOD) retrieval results of the prototype algorithm at the 9 km resolution. The results are based on gridded L-band TBs that are sharpened by means of higher resolution C-band TBs.</span><a class="headerlink" href="#algo-fig5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Soil moisture and vegetation optical depth (VOD) retrieval results of the prototype algorithm at the 9 km resolution.</span><a class="headerlink" href="#algo-fig5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 </section>
-<section id="algorithm-performance-assessment-using-demonstration-reference-scenario">
-<h2>Algorithm Performance Assessment using Demonstration Reference Scenario<a class="headerlink" href="#algorithm-performance-assessment-using-demonstration-reference-scenario" title="Link to this heading">#</a></h2>
-<p>We evaluate the prototype algorithm retrievals against the synthetic reference in <a class="reference internal" href="#algo-fig6"><span class="std std-numref">Fig. 10</span></a> and <a class="reference internal" href="#algo-fig7"><span class="std std-numref">Fig. 11</span></a>. Several observations can be made:</p>
-<ul class="simple">
-<li><p>Errors within the AOIs (black boxes) are generally low, indicating that soil moisture patterns are captured across different land use classes.</p></li>
-<li><p>The largest errors occur at coastlines, which is expected due to spillover effects of waterbody TB signatures.</p></li>
-<li><p>Biases occur for forest regions, which is expected given the dense vegetation.</p></li>
-<li><p>DEIMOS scenes show enhanced errors at the top and left corner of the scene. These errors are related to spillover effects of the background field used in the L1B orbit simulations and are not related to the algorithm or processing steps.</p></li>
-<li><p>SCEPS scenes show effects of instrument noise (not considered in DEIMOS), which is particularly visible for forest retrievals.</p></li>
-<li><p>Barring minor differences across orbit simulators, the retrieval results are consistent across overpasses.</p></li>
-</ul>
-<p>Two additional observations apply only to 9 km retievals: First, vertical edge effects are visible in the northeastern corner of the test card, which is an artifact resulting from the sharp land cover transitions in the synthetic test card. Second, note that the 9 km retrievals are evaluated against 9 km soil moisture patterns, such that additional error patterns are visible within the AOIs compared to 36 km retrievals. A more detailed view of these patterns is given in <a class="reference internal" href="#algo-fig8"><span class="std std-numref">Fig. 12</span></a>.</p>
+<section id="id5">
+<h2>Algorithm Performance Assessment<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>We evaluate the prototype algorithm retrievals against the synthetic reference in <a class="reference internal" href="#algo-fig6"><span class="std std-numref">Fig. 10</span></a> and <a class="reference internal" href="#algo-fig7"><span class="std std-numref">Fig. 11</span></a>.</p>
+<p>We find that the soil moisture fields are generally in good agreement with the synthetic reference in <a class="reference internal" href="#algo-fig1"><span class="std std-numref">Fig. 5</span></a>. The soil moisture patterns in the AOIs (black boxes) are well captured, indicating that soil moisture retrievals are consistent across different spatial scales and land use classes. Soil moisture retrievals within the AOIs show no systematic biases across the soil moisture range, with the exception of the mixed land use class (bottom left), which shows a dry bias for wet soil moisture conditions. Biases in the AOIs are further discussed in <a class="reference internal" href="#algo-fig9"><span class="std std-numref">Fig. 13</span></a> and <a class="reference internal" href="#algo-fig10"><span class="std std-numref">Fig. 14</span></a>.</p>
+<p>Several observations apply to explain the error patterns throughout the test card. The largest errors occur near the coastlines, which is expected due to spillover effects from ocean TBs. A land-water correction of TBs is planned for CIMR but is not applied in this study. Large errors also occur at the edge of the DEIMOS scenes, which is a spillover effect from the background field used in the L1B simulations. A slight wet bias is visible for the bare soil areas of the testcard that represent very dry soil conditions. These areas serve to depict a strong TB contrast between dry soil and the adjacent ocean. It is expected that these biases could be reduced by calibrating the roughness parameters, which is deliberately not conducted for the synthetic dataset assessed here. Notable biases occur also for forest regions, which is expected due to the heavy masking of the soil signal by the dense vegetation. The two SCEPS scenes show effects of instrument noise particularly for forest retrievals (instrument noise is not considered in the DEIMOS scenes), which is attributed to the same effect. Overall, barring minor differences across orbit simulators, the prototype algorithm captures soil moisture patterns consistently across land use classes and overpasses.</p>
+<p>Two additional observations apply to 9 km retrievals in <a class="reference internal" href="#algo-fig7"><span class="std std-numref">Fig. 11</span></a>: First, vertical edge effects are visible in the northeastern corner of the test card, which is an artifact resulting from the sharp land cover transitions in the synthetic test card. Second, additional error patterns are visible within the AOIs compared to 36 km retrievals, which is expected from the higher resolution of the synthetic reference. A more detailed view of the 9 km retrievals in the AOIs is given in <a class="reference internal" href="#algo-fig8"><span class="std std-numref">Fig. 12</span></a>.</p>
 <figure class="align-default" id="algo-fig6">
 <img alt="_images/algo_fig6.png" src="_images/algo_fig6.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Soil moisture retrieval results of the prototype algorithm at the 36 km resolution (based on L-band TBs, upper row). Errors with respect to the synthetic reference, aggregated to the same resolution (middle row). Retrieval scene flags that indicate uncertain retrievals (lower row).</span><a class="headerlink" href="#algo-fig6" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Soil moisture retrieval results of the prototype algorithm at the 36 km resolution (top row). Difference with respect to the synthetic reference, aggregated to the same resolution (middle row). Retrieval scene flags that indicate uncertain retrievals (bottom row).</span><a class="headerlink" href="#algo-fig6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="algo-fig7">
 <img alt="_images/algo_fig7.png" src="_images/algo_fig7.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Soil moisture retrieval results of the prototype algorithm at the 9 km resolution (based on L-band and C-band TBs, upper row). Errors with respect to the synthetic reference, aggregated to the same resolution (middle row). Retrieval scene flags that indicate uncertain retrievals (lower row).</span><a class="headerlink" href="#algo-fig7" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Soil moisture retrieval results of the prototype algorithm at the 9 km resolution (top row). Difference with respect to the synthetic reference, aggregated to the same resolution (middle row). Retrieval scene flags that indicate uncertain retrievals (bottom row).</span><a class="headerlink" href="#algo-fig7" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>A more detailed view of the 9 km retrievals is given in <a class="reference internal" href="#algo-fig8"><span class="std std-numref">Fig. 12</span></a>. We compare the soil moisture reference at 9 km grid (left row) with L2 retrievals at the 36 km (middle row) and 9 km (right row) grids. This aims to illustrate the added value of 9 km retrievals compared to 36 km retrievals, assuming reference soil moisture patterns at 9 km resolution.</p>
-<p>As expected, 9 km retrievals generally improve the representation of soil moisture patterns at the 9 km scale (compared to retrievals at 36 km). The improvement is particularly pronounced for bare soil (bottom right AOI) and grassland (top right AOI). This is expected as the C-band signal from the soil gets increasingly masked with increasing vegetation cover. Comparable results are obtained for X-band signals (not shown). Note that the synthetic test card assessed here does not show spatial land cover variability at the 9 km scale, which limits the available brightness temperature variability to be captured by the sharpening algorithm. It is expected that the added value of the sharpening would increase further for scenes that include spatial land cover heterogeneity.</p>
+<p><a class="reference internal" href="#algo-fig8"><span class="std std-numref">Fig. 12</span></a> shows a more detailed view of the 36 km and 9 km retrievals in the AOIs.</p>
+<p>At the 36 km grid, soil moisture patterns are reasonably captured by the retrievals. Note that the retrievals do not capture the full spatial dynamic range of the reference in all cases (i.e., the wettest pixel is not fully resolved), which is expected as the L-band footprint of CIMR is significantly larger than the 36 km grid, and a simple Gaussian regridding was applied in this prototype implementation. By exploiting the oversampling of CIMR, it is expected that more advanced regridding techniques can further improve the capabilities to capture spatial patterns at the 36 km scale. For the mixed land use class (bottom left AOI), soil moisture retrievals show a dry bias for wet soil moisture conditions, as was mentioned earlier. This is likely related to vegetation masking of the soil signal, which further reduces the dynamic range of the observed TBs.</p>
+<p>At the 9 km grid, the high resolution reference soil moisture patterns are captured particularly well for bare soil (bottom right AOI) and grassland (top right AOI). This is expected as the C-band signal from the soil gets increasingly masked with increasing vegetation cover. By design of the SFIM algorithm, biases in the 36 km retrievals are expected to carry over to the 9 km retrievals, such that the dry bias for the mixed class is also observed here. Note that the synthetic test card assessed here does not show spatial land cover variability at the 9 km scale, which limits the available brightness temperature variability to be captured by the sharpening algorithm. It is expected that the added value of the sharpening would increase further for scenes that include spatial land cover heterogeneity, particularly for land use classes with increased vegetation cover. The results are based on sharpening of L-band TBs with C-band TBs. Comparable results are obtained for X-band TBs (not shown).</p>
 <figure class="align-default" id="algo-fig8">
 <img alt="_images/algo_fig8.png" src="_images/algo_fig8.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Detailed view of 9 km retrievals compared to 36 km retrievals. Errors are computed based on reference soil moisture patterns aggregated to the 9 km grid.</span><a class="headerlink" href="#algo-fig8" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Comparison of 36 km (top row) and 9 km (bottom row) retrievals. AOIs in black boxes depict bare soil, grassland, cropland, and mixed land use (counterclockwise, from the bottom right).</span><a class="headerlink" href="#algo-fig8" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Finally, ubRMSE and bias metrics are displayed in <a class="reference internal" href="#algo-fig9"><span class="std std-numref">Fig. 13</span></a> and <a class="reference internal" href="#algo-fig10"><span class="std std-numref">Fig. 14</span></a>. The metrics are calculated for identical soil moisture patterns retrieved over four land use classes: Bare soil, grassland, cropland, and mixed. These classes correspond to vegetation water content (VWC) values of 0 kg/m², 0.2 kg/m², 2.0 kg/m², 4.6 kg/m², respectively. Forest regions show a vegetation water content of 11.7 kg/m² and are not considered in the evaluation. The exact areas of interest (AOIs) over which the metrics are computed are indicated in black boxes in <a class="reference internal" href="#algo-fig4"><span class="std std-numref">Fig. 8</span></a> to <a class="reference internal" href="#algo-fig8"><span class="std std-numref">Fig. 12</span></a>.</p>
+<p>Finally, ubRMSE and bias metrics are displayed in <a class="reference internal" href="#algo-fig9"><span class="std std-numref">Fig. 13</span></a> and <a class="reference internal" href="#algo-fig10"><span class="std std-numref">Fig. 14</span></a>, respectively. We assess four land use classes: Bare soil, grassland, cropland, and mixed. These classes correspond to vegetation water contents (VWC) of 0 kg/m², 0.2 kg/m², 1.9 kg/m², 4.6 kg/m², respectively. Forest regions show a vegetation water content of 11.7 kg/m² and are not considered in the evaluation. The metrics are calculated for AOIs containing identical soil moisture patterns, which are indicated as black boxes in <a class="reference internal" href="#algo-fig4"><span class="std std-numref">Fig. 8</span></a> to <a class="reference internal" href="#algo-fig8"><span class="std std-numref">Fig. 12</span></a>.</p>
+<p>We find that the prototype algorithm achieves an ubRMSE smaller than 0.04 m³/m³ for 36 km retrievals and between 0.035 - 0.045 m³/m³ for 9 km retrievals. Errors generally increase with increasing vegetation cover, in accordance with expectations. Biases are overall low. The largest biases, occurring in the mixed class, do not exceed 0.01 m³/m³. For all classes, the ubRMSE and bias metrics show a high level of consistency across overpasses.</p>
+<p>Note that the performance assessment metrics are achieved without parameter calibration: The soil roughness (H) and single scattering albedo (⍵) parameters follow strictly the values proposed in <a class="reference internal" href="baseline_algorithm_definition.html#wandh"><span class="std std-numref">Table 3</span></a> and are not calibrated to provide an optimal fit for the simulated brightness temperature signatures (Note that the ⍵ parameter was adjusted for forest retrievals to enable retrievals despite the excessive vegetation cover. Forest retrievals are not part of the performance metrics calculation). It is expected that the performance metrics could be further improved if the algorithm parameters were specifically tuned to the synthetic TB simulations.</p>
 <figure class="align-default" id="algo-fig9">
 <img alt="_images/algo_fig9.png" src="_images/algo_fig9.png" />
 <figcaption>
@@ -515,15 +516,15 @@ TB_L(9 km) = \frac{TB_L(36 km)}{TB_C(36 km)} TB_C(9 km).
 <p><span class="caption-number">Fig. 14 </span><span class="caption-text">ubRMSE and bias metrics for soil moisture retrievals at the 9 km scale.</span><a class="headerlink" href="#algo-fig10" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>We summarize the results of the performance evaluation below:</p>
+<p><strong>Overall, the results provide a promising outlook on the prototype SM retrieval algorithm for CIMR.</strong></p>
+<p>The key results for the AOIs, which are the target of the assessment, are summarized below:</p>
 <ul class="simple">
 <li><p>At the 36 km scale, the algorithm shows an ubRMSE &lt; 0.04 m³/m³.</p></li>
-<li><p>At the 9 km scale, the algorithm shows an ubRMSE between 0.035-0.045 m³/m³.</p></li>
-<li><p>Errors generally increase with increasing vegetation cover, in accordance with expectations.</p></li>
-<li><p>Biases are overall low.</p></li>
+<li><p>At the 9 km scale, the algorithm shows an ubRMSE between 0.035 - 0.045 m³/m³.</p></li>
+<li><p>Biases are overall low and do not exceed 0.01 m³/m³.</p></li>
 <li><p>The results are consistent across overpasses.</p></li>
+<li><p>All metrics are achieved without parameter calibration.</p></li>
 </ul>
-<p><strong>Noting that the algorithm parameters have not been calibrated prior to the evaluation, the results provide a promising outlook on the prototype SM retrieval algorithm for CIMR.</strong></p>
 </section>
 </section>
 
@@ -554,7 +555,7 @@ TB_L(9 km) = \frac{TB_L(36 km)}{TB_C(36 km)} TB_C(9 km).
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -571,7 +572,7 @@ TB_L(9 km) = \frac{TB_L(36 km)}{TB_C(36 km)} TB_C(9 km).
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Version 2 ATBD: Roadmap for future ATBD development</p>
+        <p class="prev-next-title">Roadmap for future ATBD development</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -591,14 +592,14 @@ TB_L(9 km) = \frac{TB_L(36 km)}{TB_C(36 km)} TB_C(9 km).
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-e2es-demonstration-reference-scenario-picasso-scene-definition">L1 E2ES Demonstration Reference Scenario (Picasso) scene definition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-performance-metrics-mpef">Algorithm Performance Metrics (MPEF)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-results-using-demonstration-reference-scenario">Test Results using Demonstration Reference Scenario</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-scenario-definition">Reference Scenario definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics">Performance Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prototype-algorithm-results">Prototype Algorithm Results</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regridding">Regridding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soil-moisture-retrieval-results">Soil Moisture Retrieval Results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soil-moisture-retrieval">Soil Moisture Retrieval</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-performance-assessment-using-demonstration-reference-scenario">Algorithm Performance Assessment using Demonstration Reference Scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Algorithm Performance Assessment</a></li>
 </ul>
   </nav></div>
 
@@ -648,8 +649,8 @@ ESA is not responsible in any way for the content of this document.
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

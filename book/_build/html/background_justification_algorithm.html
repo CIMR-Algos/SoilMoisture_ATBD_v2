@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Background and justification of selected algorithm &#8212; CIMR DEVALGO ATBD Template</title>
   
@@ -14,41 +14,41 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="_static/styles.css?v=3437f865" />
     <link rel="stylesheet" type="text/css" href="_static/watermark.css?v=80f188f4" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=5eb1bb1e"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -109,27 +109,23 @@ commentsRunWhenDOMLoaded(addUtterances);
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -151,8 +147,13 @@ commentsRunWhenDOMLoaded(addUtterances);
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -176,6 +177,8 @@ commentsRunWhenDOMLoaded(addUtterances);
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -197,7 +200,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -224,8 +227,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l1"><a class="reference internal" href="L2_product_definition.html">Level-2 product definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="baseline_algorithm_definition.html">Baseline Algorithm Definition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algorithm_input_output_data_definition.html">Algorithm Input and Output Data Definition (IODD)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algorithm_performance_assessment.html">Algorithm Performance Assessment (Version 2 ATBD)</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="algorithm_performance_assessment.html">Algorithm Performance Assessment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap for future ATBD development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="annex.html">Annex</a></li>
@@ -244,7 +246,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -253,14 +255,14 @@ commentsRunWhenDOMLoaded(addUtterances);
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -353,10 +355,10 @@ commentsRunWhenDOMLoaded(addUtterances);
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -364,14 +366,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -411,17 +413,17 @@ document.write(`
 <h1>Background and justification of selected algorithm<a class="headerlink" href="#background-and-justification-of-selected-algorithm" title="Link to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>Soil moisture is a crucial part of the Earth’s water cycle and it has been monitored for agricultural purposes, water supply management, climate forecasting, forest fire prediction and land-atmosphere interactions <span id="id1">[<a class="reference internal" href="references.html#id9" title="W. Dorigo, W. Wagner, C. Albergel, and others. Esa cci soil moisture for improved earth system understanding: state-of-the art and future directions. Remote Sensing of Environment, 203:185-215, 2017. doi:10.1016/j.rse.2017.07.001.">Dorigo <em>et al.</em>, 2017</a>]</span>. Soil moisture is defined as the amount of water held in the soil, and relates to precipitation, evaporation, and plant uptake <span id="id2">[<a class="reference internal" href="references.html#id10" title="S. I. Seneviratne, T. Corti, E. L. Davin, and others. Investigating soil moisture–climate interactions in a changing climate: a review. Earth-Science Reviews, 99:125-161, 2010. doi:10.1016/j.earscirev.2010.02.004.">Seneviratne <em>et al.</em>, 2010</a>]</span>. Changes in soil moisture can have substantial impacts on agricultural productivity, forest and the general ecosystem health.</p>
-<p>Soil moisture was identified as an essential climate variable (ECV) by the Global Climate Observing System (GCOS), due to its importance for understanding and monitoring changes in the Earth’s climate system. Soil moisture estimation over large areas and long periods is challenging due to its spatial and temporal variability. However, remote sensing technologies have revolutionized the ability to measure soil moisture over large areas, which has facilitated numerous applications in several fields, including hydrology, agriculture, and climate modeling <span id="id3">[<a class="reference internal" href="references.html#id11" title="D. Entekhabi, E. G. Njoku, P. E. O'Neill, and others. The soil moisture active passive (smap) mission. Proceedings of the IEEE, 98:704-716, 2010. doi:10.1109/JPROC.2010.2043918.">Entekhabi <em>et al.</em>, 2010</a>]</span>.</p>
-<p>Accurate and timely measurements of soil moisture are crucial for improving our understanding of the Earth’s climate system and its associated processes <span id="id4">[<a class="reference internal" href="references.html#id12" title="H. Vereecken, J. A. Huisman, H. Bogena, and others. On the value of soil moisture measurements in vadose zone hydrology: a review. Water Resources Research, 2008. doi:10.1029/2008WR006829.">Vereecken <em>et al.</em>, 2008</a>]</span>. For instance, monitoring soil moisture can help predict droughts, floods, and landslides, which can save lives and reduce economic losses. It can also help optimize water management and irrigation practices, leading to increased agricultural productivity and efficiency. Furthermore, soil moisture data can improve weather and climate forecasting by improving the accuracy of precipitation estimates and address priority questions on climate change by identifying patterns and trends that affect the Earth’s climate <span id="id5">[<a class="reference internal" href="references.html#id13" title="R. D. Koster, P. A. Dirmeyer, Z. Guo, and others. Regions of strong coupling between soil moisture and precipitation. Science, 305:1138-1140, 2004. doi:10.1126/science.1100217.">Koster <em>et al.</em>, 2004</a>]</span>.</p>
-<p>Passive remote sensing of soil moisture is a technique used to estimate soil moisture content over large areas and at high temporal resolution <span id="id6">[<a class="reference internal" href="references.html#id17" title="Yann H Kerr, Philippe Waldteufel, Jean-Pierre Wigneron, Jean Martinuzzi, Jordi Font, and Michel Berger. Soil moisture retrieval from space: the soil moisture and ocean salinity (smos) mission. IEEE Transactions on Geoscience and Remote Sensing, 39(8):1729–1735, 2001.">Kerr <em>et al.</em>, 2001</a>]</span>. Passive microwave sensors are used to measure the natural thermal radiation emitted from the soil surface. The intensity of this radiation varies depending on the dielectric properties and temperature of the target medium, which in the case of the near surface soil layer, is influenced by the amount of moisture present in the near surface soil layer. The low microwave frequencies at L-band (~1 GHz) have additional benefits for soil moisture measurement: the atmosphere is almost entirely transparent, making it possible to sense soil moisture regardless of weather conditions and signals from the underlying soil can be transmitted through thin vegetation layers.</p>
+<p>Soil moisture is a crucial part of the Earth’s water cycle and it has been monitored for agricultural purposes, water supply management, climate forecasting, forest fire prediction and land-atmosphere interactions <span id="id1">[<a class="reference internal" href="references.html#id10" title="W. Dorigo, W. Wagner, C. Albergel, and others. ESA CCI Soil Moisture for improved Earth system understanding: State-of-the art and future directions. Remote Sensing of Environment, 203:185-215, 2017. doi:10.1016/j.rse.2017.07.001.">Dorigo <em>et al.</em>, 2017</a>]</span>. Soil moisture is defined as the amount of water held in the soil, and relates to precipitation, evaporation, and plant uptake <span id="id2">[<a class="reference internal" href="references.html#id11" title="S. I. Seneviratne, T. Corti, E. L. Davin, and others. Investigating soil moisture–climate interactions in a changing climate: a review. Earth-Science Reviews, 99:125-161, 2010. doi:10.1016/j.earscirev.2010.02.004.">Seneviratne <em>et al.</em>, 2010</a>]</span>. Changes in soil moisture can have substantial impacts on agricultural productivity, forest and the general ecosystem health.</p>
+<p>Soil moisture was identified as an essential climate variable (ECV) by the Global Climate Observing System (GCOS), due to its importance for understanding and monitoring changes in the Earth’s climate system. Soil moisture estimation over large areas and long periods is challenging due to its spatial and temporal variability. However, remote sensing technologies have revolutionized the ability to measure soil moisture over large areas, which has facilitated numerous applications in several fields, including hydrology, agriculture, and climate modeling <span id="id3">[<a class="reference internal" href="references.html#id12" title="D. Entekhabi, E. G. Njoku, P. E. O'Neill, and others. The Soil Moisture Active Passive (SMAP) mission. Proceedings of the IEEE, 98:704-716, 2010. doi:10.1109/JPROC.2010.2043918.">Entekhabi <em>et al.</em>, 2010</a>]</span>.</p>
+<p>Accurate and timely measurements of soil moisture are crucial for improving our understanding of the Earth’s climate system and its associated processes <span id="id4">[<a class="reference internal" href="references.html#id15" title="H. Vereecken, J. A. Huisman, H. Bogena, and others. On the value of soil moisture measurements in vadose zone hydrology: a review. Water Resources Research, 2008. doi:10.1029/2008WR006829.">Vereecken <em>et al.</em>, 2008</a>]</span>. For instance, monitoring soil moisture can help predict droughts, floods, and landslides, which can save lives and reduce economic losses. It can also help optimize water management and irrigation practices, leading to increased agricultural productivity and efficiency. Furthermore, soil moisture data can improve weather and climate forecasting by improving the accuracy of precipitation estimates and address priority questions on climate change by identifying patterns and trends that affect the Earth’s climate <span id="id5">[<a class="reference internal" href="references.html#id16" title="R. D. Koster, P. A. Dirmeyer, Z. Guo, and others. Regions of strong coupling between soil moisture and precipitation. Science, 305:1138-1140, 2004. doi:10.1126/science.1100217.">Koster <em>et al.</em>, 2004</a>]</span>.</p>
+<p>Passive remote sensing of soil moisture is a technique used to estimate soil moisture content over large areas and at high temporal resolution <span id="id6">[<a class="reference internal" href="references.html#id20" title="Yann H Kerr, Philippe Waldteufel, Jean-Pierre Wigneron, Jean Martinuzzi, Jordi Font, and Michel Berger. Soil moisture retrieval from space: The Soil Moisture and Ocean Salinity (SMOS) mission. IEEE Transactions on Geoscience and Remote Sensing, 39(8):1729–1735, 2001.">Kerr <em>et al.</em>, 2001</a>]</span>. Passive microwave sensors are used to measure the natural thermal radiation emitted from the soil surface. The intensity of this radiation varies depending on the dielectric properties and temperature of the target medium, which in the case of the near surface soil layer, is influenced by the amount of moisture present in the near surface soil layer. The low microwave frequencies at L-band (~1 GHz) have additional benefits for soil moisture measurement: the atmosphere is almost entirely transparent, making it possible to sense soil moisture regardless of weather conditions and signals from the underlying soil can be transmitted up tp moderate vegetation layers.</p>
 </section>
 <section id="historical-heritage">
 <h2>Historical heritage<a class="headerlink" href="#historical-heritage" title="Link to this heading">#</a></h2>
-<p>The history of passive remote sensing for soil moisture estimation dates back to the 1960s. During this period , researchers began to look at ways of using microwaves to measure water content in the soil. The first successful experiments used a single-channel microwave radiometer to measure the brightness temperature of the surface of the Earth. This data was then used to calculate the soil moisture content <span id="id7">[<a class="reference internal" href="references.html#id14" title="Thomas J. Schmugge. Remote sensing of soil moisture: recent advances. IEEE Transactions on Geoscience and Remote Sensing, GE-21(3):336-344, 1983. doi:10.1109/TGRS.1983.350563.">Schmugge, 1983</a>]</span>. In the 1970s and 1980s, the number of channels of the radiometer was increased and more sophisticated models were developed to better measure soil moisture. This included the use of multiple frequency bands and polarimetric techniques to better characterize the soil moisture.</p>
-<p>In 1978, both Nimbus-7 and the short-lived Seasat were launched, each equipped with the Scanning Multichannel Microwave Radiometer (SMMR) instrument. SMMR, a 10-channel instrument operating at frequencies between 6.6 and 37 GHz, achieved spatial resolutions ranging from approximately 150 km to 30 km. It acted as a precursor to the Advanced Microwave Scanning Radiometer (AMSR) and its subsequent version, AMSR2 <span id="id8">[<a class="reference internal" href="references.html#id15" title="E.G. Njoku and Li Li. Retrieval of land surface parameters using passive microwave measurements at 6-18 ghz. IEEE Transactions on Geoscience and Remote Sensing, 37(1):79-93, 1999. doi:10.1109/36.739125.">Njoku and Li, 1999</a>]</span>. AMSR was launched in 2002 and it has been used for soil moisture estimation as well as other applications such as sea ice concentration and snow depth. It is the predecessor of the Advanced Microwave Scanning Radiometer 2 (AMSR2), launched  in 2012 onboard the GCOM-W1 satellite <span id="id9">[<a class="reference internal" href="references.html#id16" title="Banghai Wu, Yu Wang, Cheng-Zhi Zou, Rui Li, Shi Liu, Guosheng Liu, and Yunfei Fu. A fundamental climate data record derived from amsr-e, mwri, and amsr2. IEEE Transactions on Geoscience and Remote Sensing, 58(8):5450-5461, 2020. doi:10.1109/TGRS.2020.2966055.">Wu <em>et al.</em>, 2020</a>]</span>.</p>
+<p>The history of passive remote sensing for soil moisture estimation dates back to the 1960s. During this period , researchers began to look at ways of using microwaves to measure water content in the soil. The first successful experiments used a single-channel microwave radiometer to measure the brightness temperature of the surface of the Earth. This data was then used to calculate the soil moisture content <span id="id7">[<a class="reference internal" href="references.html#id17" title="Thomas J. Schmugge. Remote sensing of soil moisture: recent advances. IEEE Transactions on Geoscience and Remote Sensing, GE-21(3):336-344, 1983. doi:10.1109/TGRS.1983.350563.">Schmugge, 1983</a>]</span>. In the 1970s and 1980s, the number of channels of the radiometer was increased and more sophisticated models were developed to better measure soil moisture. This included the use of multiple frequency bands and polarimetric techniques to better characterize the soil moisture.</p>
+<p>In 1978, both Nimbus-7 and the short-lived Seasat were launched, each equipped with the Scanning Multichannel Microwave Radiometer (SMMR) instrument. SMMR, a 10-channel instrument operating at frequencies between 6.6 and 37 GHz, achieved spatial resolutions ranging from approximately 150 km to 30 km. It acted as a precursor to the Advanced Microwave Scanning Radiometer (AMSR) and its subsequent version, AMSR2 <span id="id8">[<a class="reference internal" href="references.html#id18" title="E.G. Njoku and Li Li. Retrieval of land surface parameters using passive microwave measurements at 6-18 ghz. IEEE Transactions on Geoscience and Remote Sensing, 37(1):79-93, 1999. doi:10.1109/36.739125.">Njoku and Li, 1999</a>]</span>. AMSR was launched in 2002 and it has been used for soil moisture estimation as well as other applications such as sea ice concentration and snow depth. It is the predecessor of the Advanced Microwave Scanning Radiometer 2 (AMSR2), launched  in 2012 onboard the GCOM-W1 satellite <span id="id9">[<a class="reference internal" href="references.html#id19" title="Banghai Wu, Yu Wang, Cheng-Zhi Zou, Rui Li, Shi Liu, Guosheng Liu, and Yunfei Fu. A Fundamental Climate Data Record Derived from AMSR-E, MWRI, and AMSR2. IEEE Transactions on Geoscience and Remote Sensing, 58(8):5450-5461, 2020. doi:10.1109/TGRS.2020.2966055.">Wu <em>et al.</em>, 2020</a>]</span>.</p>
 <p>Passive remote sensing for soil moisture estimation has gone through several iterations, with advances in hardware and software technology allowing for more accurate and precise measurements. Today, passive remote sensing is one of the most widely used methods for soil moisture estimation, with satellites, aircraft, and ground-based instruments all contributing to its knowledge.</p>
-<p>Observations from the CIMR (Copernicus Imaging Microwave Radiometer) mission will potentially offer continuity to the brightness temperature and soil moisture measurements obtained from ESA’s SMOS (Soil Moisture Ocean Salinity) <span id="id10">[<a class="reference internal" href="references.html#id17" title="Yann H Kerr, Philippe Waldteufel, Jean-Pierre Wigneron, Jean Martinuzzi, Jordi Font, and Michel Berger. Soil moisture retrieval from space: the soil moisture and ocean salinity (smos) mission. IEEE Transactions on Geoscience and Remote Sensing, 39(8):1729–1735, 2001.">Kerr <em>et al.</em>, 2001</a>]</span> and NASA’s SMAP (Soil Moisture Active Passive) <span id="id11">[<a class="reference internal" href="references.html#id11" title="D. Entekhabi, E. G. Njoku, P. E. O'Neill, and others. The soil moisture active passive (smap) mission. Proceedings of the IEEE, 98:704-716, 2010. doi:10.1109/JPROC.2010.2043918.">Entekhabi <em>et al.</em>, 2010</a>]</span> and Aquarius missions. This continuity also extends to the data from AMSR and AMSR2 instruments.</p>
+<p>Observations from the CIMR (Copernicus Imaging Microwave Radiometer) mission will potentially offer continuity to the brightness temperature and soil moisture measurements obtained from ESA’s SMOS (Soil Moisture Ocean Salinity) <span id="id10">[<a class="reference internal" href="references.html#id20" title="Yann H Kerr, Philippe Waldteufel, Jean-Pierre Wigneron, Jean Martinuzzi, Jordi Font, and Michel Berger. Soil moisture retrieval from space: The Soil Moisture and Ocean Salinity (SMOS) mission. IEEE Transactions on Geoscience and Remote Sensing, 39(8):1729–1735, 2001.">Kerr <em>et al.</em>, 2001</a>]</span> and NASA’s SMAP (Soil Moisture Active Passive) <span id="id11">[<a class="reference internal" href="references.html#id12" title="D. Entekhabi, E. G. Njoku, P. E. O'Neill, and others. The Soil Moisture Active Passive (SMAP) mission. Proceedings of the IEEE, 98:704-716, 2010. doi:10.1109/JPROC.2010.2043918.">Entekhabi <em>et al.</em>, 2010</a>]</span> and Aquarius missions. This continuity also extends to the data from AMSR and AMSR2 instruments.</p>
 </section>
 <section id="physical-approach">
 <h2>Physical approach<a class="headerlink" href="#physical-approach" title="Link to this heading">#</a></h2>
@@ -432,18 +434,18 @@ document.write(`
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Contributions to the Top Of Atmosphere (TOA) brigthness temperature [from SMOS ATBD, ref. 12 and SMAP ATBD, Figure 2]</span><a class="headerlink" href="#figure-1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The passive microwave radiometry community typically use the zeroth-order solution to the radiative transfer equation (known as the tau-omega model <span id="id12">[<a class="reference internal" href="references.html#id44" title="T Mo, B J Choudhury, T J Schmugge, J R Wang, and T J Jackson. A model for microwave emission from vegetation-covered fields. J. Geophys. Res., 87(C13):11229 – 11237, 1982. doi:10.1029/JC087iC13p11229.">Mo <em>et al.</em>, 1982</a>]</span>) to simultaneously characterize surface and vegetation emission. It takes into account the impact of a layer of vegetation covering the soil, which affects the emission of the soil and adds to the overall radiative flux its own emission. The process of obtaining soil moisture and microwave vegetation parameters from CIMR TB observations involves inverting this model in two different configurations. In the first configuration, the tau-omega model will be inverted twice: one to estimate soil moisture and VOD from L-band TBs at its native resolution (~60 km), and a second one to estimate soil moisture and VOD from L-band TBs sharpened with C/X-bands (~15 km). In the second configuration, the SM estimates at ~15 km will be used as an initial guess to invert the tau-omega model three times and estimate time-dynamic vegetation attenuation and scattering from CIMR 1) L-band sharpened TBs, 2) C-band TBs and 3) X-band TBs.</p>
+<p>The passive microwave radiometry community typically use the zeroth-order solution to the radiative transfer equation (known as the tau-omega model <span id="id12">[<a class="reference internal" href="references.html#id47" title="T Mo, B J Choudhury, T J Schmugge, J R Wang, and T J Jackson. A model for microwave emission from vegetation-covered fields. J. Geophys. Res., 87(C13):11229 – 11237, 1982. doi:10.1029/JC087iC13p11229.">Mo <em>et al.</em>, 1982</a>]</span>) to simultaneously characterize surface and vegetation emission. It takes into account the impact of a layer of vegetation covering the soil, which affects the emission of the soil and adds to the overall radiative flux its own emission. The process of obtaining soil moisture and microwave vegetation parameters from CIMR TB observations involves inverting this model in two different configurations. In the first configuration, the tau-omega model will be inverted twice: one to estimate soil moisture and VOD from L-band TBs at its native resolution (~60 km), and a second one to estimate soil moisture and VOD from L-band TBs sharpened with C/X-band TBs (~15 km).</p>
 </section>
 <section id="justification-of-selected-algorithm">
 <h2>Justification of selected algorithm<a class="headerlink" href="#justification-of-selected-algorithm" title="Link to this heading">#</a></h2>
-<p>In this section, we justify the selection of our proposed algorithm, which is founded on the SMOS-IC algorithm for SMOS <span id="id13">[<a class="reference internal" href="references.html#id19" title="Jean-Pierre Wigneron, Yann Kerr, Philippe Waldteufel, Kontar Saleh, Maria-Jose Escorihuela, Philippe Richaume, Paolo Ferrazzoli, Patricia de Rosnay, Robert Gurney, Jean-Christophe Calvet, and others. L-band microwave emission of the biosphere (l-meb) model: description and calibration against experimental data sets over crop fields. Remote Sensing of Environment, 107:639–655, 2007.">Wigneron <em>et al.</em>, 2007</a>, <a class="reference internal" href="references.html#id20" title="R. Fernandez-Moran, A. Al-Yaari, A. Mialon, A. Mahmoodi, A. Al Bitar, G. De Lannoy, N. Rodriguez-Fernandez, E. Lopez-Baeza, Y. Kerr, and J.-P. Wigneron. Smos-ic: an alternative smos soil moisture and vegetation optical depth product. Remote Sensing, 9:457, 2017. doi:10.3390/rs9050457.">Fernandez-Moran <em>et al.</em>, 2017</a>]</span> and the Multi-Temporal Dual Channel Algorithm for SMAP <span id="id14">[<a class="reference internal" href="references.html#id24" title="Alexandra G. Konings, María Piles, Kathrina Rötzer, Kaighin A. McColl, Steven K. Chan, and Dara Entekhabi. Vegetation optical depth and scattering albedo retrieval using time series of dual-polarized L-band radiometer observations. Remote Sens. Environ., 2016. doi:10.1016/j.rse.2015.11.009.">Konings <em>et al.</em>, 2016</a>, <a class="reference internal" href="references.html#id25" title="Alexandra G. Konings, Maria Piles, Narendra Das, and Dara Entekhabi. L-band vegetation optical depth and effective scattering albedo estimation from SMAP. Remote Sensing of Environment, 198:460-470, 2017. doi:https://doi.org/10.1016/j.rse.2017.06.037.">Konings <em>et al.</em>, 2017</a>]</span>. This algorithm makes use of both H-polarized and V-polarized TB observations to estimate soil moisture and vegetation optical depth or vegetation opacity, <span class="math notranslate nohighlight">\(𝜏\)</span> at L-band. The choice of this band is attributed to its ability to penetrate deeper into vegetation, providing more accurate measurements. Thus, in the presence of dense biomass, the transmissivity decays in a lower extent for L-band (1.4 GHz), as compared to higher frequencies: C-band (6 GHz), and X-band (10 GHz) frequencies, also sensitive to soil moisture but to a lesser extent. Various factors, including vegetation biomass, cloud liquid water, soil moisture, surface roughness, and integrated water vapour, influence the TB differently across each CIMR band, as illustrated in the referenced figure (<a class="reference internal" href="#tbsens"><span class="std std-numref">Fig. 2</span></a>). Considering that the highest sensitivity is observed at the L-band (<span id="id15">[<a class="reference internal" href="references.html#id45" title="Moritz Link, Matthias Drusch, and Klaus Scipal. Soil moisture information content in SMOS, SMAP, AMSR2, and ASCAT level-1 data over selected in situ sites. IEEE Geoscience and Remote Sensing Letters, 17(7):1213–1217, 2019.">Link <em>et al.</em>, 2019</a>]</span>), this provides insight into why both SMOS and SMAP utilize L-band sensors for global soil moisture estimation under a range of vegetation conditions. It must be noted that measuring soil moisture at L-band has the added benefit of capturing microwave emission from deeper within the soil, typically around 5 cm, whereas C- and X-band emissions primarily originate from a thinner layer. This is feasible due to the relationship between soil moisture and soil permittivity and the connection between soil permittivity and soil emissivity. For that, the passive microwave remote sensing community has developed numerous soil dielectric models in recent decades, which, despite their differences, commonly utilize soil moisture, soil texture, and frequency. Well-known examples include Dobson, Wang &amp; Schmugge, and Mironov. For this project, we opted for the Mironov model due to its flexibility and strong performance when utilizing the soil’s clay percentage as the sole ancillary data <span id="id16">[<a class="reference internal" href="references.html#id18" title="Arnaud Mialon, Philippe Richaume, Delphine Leroux, Simone Bircher, Ahmad Al Bitar, Thierry Pellarin, Jean-Pierre Wigneron, and Yann H. Kerr. Comparison of dobson and mironov dielectric models in the smos soil moisture retrieval algorithm. IEEE Transactions on Geoscience and Remote Sensing, 53(6):3084 – 3094, 2015. Cited by: 53. doi:10.1109/TGRS.2014.2368585.">Mialon <em>et al.</em>, 2015</a>]</span>.</p>
+<p>In this section, we justify the selection of our proposed algorithm, which is founded on the SMOS-IC algorithm for SMOS <span id="id13">[<a class="reference internal" href="references.html#id22" title="Jean-Pierre Wigneron, Yann Kerr, Philippe Waldteufel, Kontar Saleh, Maria-Jose Escorihuela, Philippe Richaume, Paolo Ferrazzoli, Patricia de Rosnay, Robert Gurney, Jean-Christophe Calvet, and others. L-band Microwave Emission of the Biosphere (L-MEB) Model: Description and calibration against experimental data sets over crop fields. Remote Sensing of Environment, 107:639–655, 2007.">Wigneron <em>et al.</em>, 2007</a>, <a class="reference internal" href="references.html#id23" title="R. Fernandez-Moran, A. Al-Yaari, A. Mialon, A. Mahmoodi, A. Al Bitar, G. De Lannoy, N. Rodriguez-Fernandez, E. Lopez-Baeza, Y. Kerr, and J.-P. Wigneron. SMOS-IC: An Alternative SMOS Soil Moisture and Vegetation Optical Depth Product. Remote Sensing, 9:457, 2017. doi:10.3390/rs9050457.">Fernandez-Moran <em>et al.</em>, 2017</a>]</span> and the Multi-Temporal Dual Channel Algorithm for SMAP <span id="id14">[<a class="reference internal" href="references.html#id27" title="Alexandra G. Konings, María Piles, Kathrina Rötzer, Kaighin A. McColl, Steven K. Chan, and Dara Entekhabi. Vegetation optical depth and scattering albedo retrieval using time series of dual-polarized L-band radiometer observations. Remote Sens. Environ., 2016. doi:10.1016/j.rse.2015.11.009.">Konings <em>et al.</em>, 2016</a>, <a class="reference internal" href="references.html#id28" title="Alexandra G. Konings, Maria Piles, Narendra Das, and Dara Entekhabi. L-band vegetation optical depth and effective scattering albedo estimation from SMAP. Remote Sensing of Environment, 198:460-470, 2017. doi:https://doi.org/10.1016/j.rse.2017.06.037.">Konings <em>et al.</em>, 2017</a>]</span>. This algorithm makes use of both H-polarized and V-polarized TB observations to estimate soil moisture and vegetation optical depth or vegetation opacity, <span class="math notranslate nohighlight">\(𝜏\)</span> at L-band. The choice of this band is attributed to its ability to penetrate deeper into vegetation, providing more accurate measurements. Thus, in the presence of dense biomass, the transmissivity decays in a lower extent for L-band (1.4 GHz), as compared to higher frequencies: C-band (6 GHz), and X-band (10 GHz) frequencies, also sensitive to soil moisture but to a lesser extent. Various factors, including vegetation biomass, cloud liquid water, soil moisture, surface roughness, and integrated water vapour, influence the TB differently across each CIMR band, as illustrated in the referenced figure (<a class="reference internal" href="#tbsens"><span class="std std-numref">Fig. 2</span></a>). Considering that the highest sensitivity is observed at the L-band (<span id="id15">[<a class="reference internal" href="references.html#id48" title="Moritz Link, Matthias Drusch, and Klaus Scipal. Soil moisture information content in SMOS, SMAP, AMSR2, and ASCAT level-1 data over selected in situ sites. IEEE Geoscience and Remote Sensing Letters, 17(7):1213–1217, 2019.">Link <em>et al.</em>, 2019</a>]</span>), this provides insight into why both SMOS and SMAP utilize L-band sensors for global soil moisture estimation under a range of vegetation conditions. It must be noted that measuring soil moisture at L-band has the added benefit of capturing microwave emission from deeper within the soil, typically around 5 cm, whereas C- and X-band emissions primarily originate from a thinner layer. This is feasible due to the relationship between soil moisture and soil permittivity and the connection between soil permittivity and soil emissivity. For that, the passive microwave remote sensing community has developed numerous soil dielectric models in recent decades, which, despite their differences, commonly utilize soil moisture, soil texture, and frequency. Well-known examples include Dobson, Wang &amp; Schmugge, and Mironov. For this project, we opted for the Mironov model due to its flexibility and strong performance when utilizing the soil’s clay percentage as the sole ancillary data <span id="id16">[<a class="reference internal" href="references.html#id21" title="Arnaud Mialon, Philippe Richaume, Delphine Leroux, Simone Bircher, Ahmad Al Bitar, Thierry Pellarin, Jean-Pierre Wigneron, and Yann H. Kerr. Comparison of Dobson and Mironov dielectric models in the SMOS soil moisture retrieval algorithm. IEEE Transactions on Geoscience and Remote Sensing, 53(6):3084 – 3094, 2015. Cited by: 53. doi:10.1109/TGRS.2014.2368585.">Mialon <em>et al.</em>, 2015</a>]</span>.</p>
 <figure class="align-default" id="tbsens">
 <img alt="_images/TB_sensitivity.png" src="_images/TB_sensitivity.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Sensitivity of TB to different factors across CIMR bands (adapted from <span id="id17">[<a class="reference internal" href="references.html#id32" title="Y. H. Kerr. Optimal choice for miras frequencies: scientific requirements. Technical Report, CESBIO, Toulouse, 1996. Project MMS MIRAS N° CCM3.">Kerr, 1996</a>]</span>)</span><a class="headerlink" href="#tbsens" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Sensitivity of TB to different factors across CIMR bands (adapted from <span id="id17">[<a class="reference internal" href="references.html#id35" title="Y. H. Kerr. Optimal choice for MIRAS frequencies: Scientific requirements. Technical Report, CESBIO, Toulouse, 1996. Project MMS MIRAS N° CCM3.">Kerr, 1996</a>]</span>)</span><a class="headerlink" href="#tbsens" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>It is important to note that at L-band, another parameter of interest, <span class="math notranslate nohighlight">\(𝜏\)</span>, can be retrieved. <span class="math notranslate nohighlight">\(𝜏\)</span> quantifies the attenuation of L-band microwave radiation by the vegetation canopy. While vegetation is typically studied using optical or infrared frequencies, the longer wavelengths of L-band sensors allow radiation to penetrate the canopy more effectively. As a result, <span class="math notranslate nohighlight">\(𝜏\)</span> can be linked to a variety of vegetation attributes, such as forest height, vegetation structure, water content, sap flow, and leaf fall. Furthermore, some vegetation indices, like the Leaf Area Index (LAI) and the Normalized Difference Vegetation Index (NDVI), can also be correlated with <span class="math notranslate nohighlight">\(𝜏\)</span>. Notably, several studies have emphasized the substantial influence of soil roughness on the retrieved <span class="math notranslate nohighlight">\(𝜏\)</span> values at both local and regional scales <span id="id18">[<a class="reference internal" href="references.html#id27" title="J.P. Grant, J.P. Wigneron, R.A.M. De Jeu, H. Lawrence, A. Mialon, P. Richaume, A. Al Bitar, M. Drusch, M.J.E. van Marle, Y. Kerr, and others. Comparison of smos and amsr-e vegetation optical depth to four modis-based vegetation indices. Remote Sensing of Environment, 172:87–100, 2016. doi:.">Grant <em>et al.</em>, 2016</a>, <a class="reference internal" href="references.html#id21" title="R. Fernandez-Moran, J.-P. Wigneron, G. De Lannoy, E. Lopez-Baeza, M. Parrens, A. Mialon, A. Mahmoodi, A. Al-Yaari, S. Bircher, A. Al Bitar, and others. A new calibration of the effective scattering albedo and soil roughness parameters in the smos sm retrieval algorithm. International Journal of Applied Earth Observation and Geoinformation, 62:27–38, 2017. doi:10.1016/j.jag.2017.05.013.">Fernandez-Moran <em>et al.</em>, 2017</a>]</span>.</p>
+<p>It is important to note that during the soil moisture retrieval, another parameter of interest, <span class="math notranslate nohighlight">\(𝜏\)</span>, can be retrieved. <span class="math notranslate nohighlight">\(𝜏\)</span> quantifies the attenuation of L-band microwave radiation by the vegetation canopy. While vegetation is typically studied using optical or infrared frequencies, the longer wavelengths of L-band sensors allow radiation to penetrate the canopy more effectively. As a result, <span class="math notranslate nohighlight">\(𝜏\)</span> can be linked to a variety of vegetation attributes, such as forest height, vegetation structure, water content, sap flow, and leaf fall. Furthermore, some vegetation indices, like the Leaf Area Index (LAI) and the Normalized Difference Vegetation Index (NDVI), can also be correlated with <span class="math notranslate nohighlight">\(𝜏\)</span>. Notably, several studies have emphasized the substantial influence of soil roughness on the retrieved <span class="math notranslate nohighlight">\(𝜏\)</span> values at both local and regional scales <span id="id18">[<a class="reference internal" href="references.html#id30" title="J.P. Grant, J.P. Wigneron, R.A.M. De Jeu, H. Lawrence, A. Mialon, P. Richaume, A. Al Bitar, M. Drusch, M.J.E. van Marle, Y. Kerr, and others. Comparison of SMOS and AMSR-E vegetation optical depth to four MODIS-based vegetation indices. Remote Sensing of Environment, 172:87–100, 2016. doi:.">Grant <em>et al.</em>, 2016</a>, <a class="reference internal" href="references.html#id24" title="R. Fernandez-Moran, J.-P. Wigneron, G. De Lannoy, E. Lopez-Baeza, M. Parrens, A. Mialon, A. Mahmoodi, A. Al-Yaari, S. Bircher, A. Al Bitar, and others. A new calibration of the effective scattering albedo and soil roughness parameters in the SMOS SM retrieval algorithm. International Journal of Applied Earth Observation and Geoinformation, 62:27–38, 2017. doi:10.1016/j.jag.2017.05.013.">Fernandez-Moran <em>et al.</em>, 2017</a>]</span>.</p>
 </section>
 </section>
 
@@ -474,7 +476,7 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -564,8 +566,8 @@ ESA is not responsible in any way for the content of this document.
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,9 +1,11 @@
 # Algorithm Input and Output Data Definition (IODD)
 
 
-### Input data
+## Input Data
 
-```{table} Input Data
+### Input L1 Data
+
+```{table} Input L1 Data
 :name: InData
 | Parameter  | Description  | Shape |
 |------------|--------------|-------|
@@ -11,42 +13,77 @@
 | L1B NeΔT | Random radiometric uncertainty of the channels | Full swath or swath section <br> (Nscans, Npos) |
 ```
 
-### Output data
+### Auxiliary Data
 
-```{table} Output Data
-:name: OutData
-| Parameter | Description | Units | Shape |
-|-----------|-------------|-------|-------|
-| lon | Longitude [0$^{\circ}$, 360$^{\circ}$] | *deg East* | EASE2 grid <br> (nx,ny) |
-| lat | Latitude [90$^{\circ}$S, 90$^{\circ}$N] | *deg North* | EASE2 grid <br> (nx,ny) |
-| time | Sensing time of L-band | *ms* | EASE2 grid <br> (nx,ny) |
-| TB_L | L1b Brightness Temperature at L-band | *K* | EASE2 grid <br> (nx,ny) |
-| TB_L_E | L1b Enhanced Brightness Temperature at L-band | *K* | EASE2 grid <br> (nx,ny) |
-| SM | Soil Moisture | *m$^{3}$/m$^{3}$* | EASE2 grid <br> (nx,ny) |
-| SM_E | Enhanced Soil Moisture | *m$^{3}$/m$^{3}$* | EASE2 grid <br> (nx,ny) |
-| VOD  | Vegetation Optical Depth | - | EASE2 grid <br> (nx,ny) |
-| VOD_E  | Enhanced Vegetation Optical Depth | - | EASE2 grid <br> (nx,ny) |
-| albedo | Vegetation single scattering albedo | - | EASE2 grid <br> (nx,ny) |
-| EASE row index | Row index in EASE2 grid | - | EASE2 grid <br> (nx,ny) |
-| EASE column index | Column index in EASE2 grid | - | EASE2 grid <br> (nx,ny) |
-| TB_L_RMSE | RMSE between measured and modeled TB | *K* | EASE2 grid <br> (nx,ny) |
-| TB_L_E_RMSE | RMSE between enhanced and modeled TB | *K* | EASE2 grid <br> (nx,ny) |
-| scene_flags | Flag to indicate difficult inversion situations | *8-bit flag* | EASE2 grid <br> (nx,ny) |
-| status_flag | Product quality flag | *n/a* | EASE2 grid <br> (nx,ny) |
-```
-
-### Auxiliary data
-
-```{table} Auxiliary data
-:name: AuxData
-| Parameter  | Description  | Shape |
+```{table} Auxiliary Data (36 km grid)
+:name: AuxData1
+| Parameter  | Description  | Shape* |
 |------------|--------------|-------|
-| LST   | Land Surface Temperature  (from ECMWF)  |  EASE2 grid <br> (nx,ny) |
-| CIMR_LST   | CIMR Land Surface Temperature  |  EASE2 grid <br> (nx,ny) |
-| soil_texture   | Clay fraction (from FAO)     |  EASE2 grid <br> (nx,ny) |
-| LCC   | Land Cover type Classification |   EASE2 grid <br> (nx,ny) |
-| albedo  | Vegetation single scattering albedo (from SMOS-IC)  |  EASE2 grid <br> (nx,ny) |
-| H   | Surface roughness information (from SMOS-IC)  |  EASE2 grid <br> (nx,ny) |
-| DEM  | Digital Elevation Model     | EASE2 grid <br> (nx,ny) |
-| hydrology_mask  | CIMR Hydrology Target mask ({doc}`[RD-1] <applicable_ref_docs>`, MRD-854) |  EASE2 grid <br> (nx,ny) |
+| LST_ECMWF   | ECMWF Land Surface Temperature <br> (first priority until CIMR LST is tested)  | (964, 406) |
+| soil_texture   | Clay fraction (from FAO)     | (964, 406) |
+| LCC   | Land Cover type Classification | (964, 406) |
+| albedo  | Vegetation single scattering albedo (from SMOS-IC)  | (964, 406) |
+| H   | Surface roughness information (from SMOS-IC)  | (964, 406) |
+| DEM  | Digital Elevation Model     | (964, 406) |
+| hydrology_mask  | CIMR Hydrology Target mask ({doc}`[RD-1] <applicable_ref_docs>`, MRD-854) | (964, 406) |
 ```
+
+```{table} Auxiliary Data (9 km grid)
+:name: AuxData2
+| Parameter  | Description  | Shape* |
+|------------|--------------|-------|
+| LST_ECMWF   | ECMWF Land Surface Temperature <br> (first priority until CIMR LST is tested)   | (3856, 1624) |
+| soil_texture   | Clay fraction (from FAO)     | (3856, 1624) |
+| LCC   | Land Cover type Classification | (3856, 1624) |
+| albedo  | Vegetation single scattering albedo (from SMOS-IC)  | (3856, 1624) |
+| H   | Surface roughness information (from SMOS-IC)  | (3856, 1624) |
+| DEM  | Digital Elevation Model     | (3856, 1624) |
+| hydrology_mask  | CIMR Hydrology Target mask ({doc}`[RD-1] <applicable_ref_docs>`, MRD-854) | (3856, 1624) |
+```
+
+
+\* Shapes are equivalent to the global EASE2 grids at 36 km and 9 km resolution, respectively. 
+This is the inital proposal for CIMR soil moisture retrievals and corresponds to 
+the current implementation in the later sections of this ATBD. 
+The final grid resolution will be decided based on further tests on the tradeoff between noise and spatial resolution.
+
+### Input L2 Data
+
+The use of CIMR L2 land surface temperature restrievals (instead of ECMWF land surface temperature data) as 
+auxiliary data source for soil moisture retrievals will be evaluated. 
+
+
+### Output Data  
+
+```{table} L2 Processor Output Data (36 km grid)
+:name: OutData
+| Parameter | Description | Units | Shape* |
+|-----------|-------------|-------|-------|
+| SM | Soil Moisture | *m$^{3}$/m$^{3}$* | (964, 406) |
+| VOD  | Vegetation Optical Depth | - | (964, 406) |
+| scene_flags | Flag to indicate difficult inversion situations | *8-bit flag* | (964, 406) |
+| status_flag | Product status flag | *n/a* | (964, 406) |
+| TBV_L | Gridded L-band TBV | *K* | (964, 406) |
+| TBH_L | Gridded L-band TBH | *K* | (964, 406) |
+| TB_L_RMSE | RMSE between measured and modeled TB | *K* | (964, 406) |
+```
+
+
+```{table} L2 Processor Output Data (9 km grid)
+:name: OutData2
+| Parameter | Description | Units | Shape* |
+|-----------|-------------|-------|-------|
+| SM_E | Soil Moisture enhanced | *m$^{3}$/m$^{3}$* | (3856, 1624) |
+| VOD_E  | Vegetation Optical Depth enhanced | - | (3856, 1624) |
+| scene_flags | Flag to indicate difficult inversion situations | *8-bit flag* | (3856, 1624) |
+| status_flag | Product status flag | *n/a* | (3856, 1624) |
+| TBV_L_E | Gridded enhanced L-band TBV  | *K* | (3856, 1624) |
+| TBH_L_E | Gridded enhanced L-band TBH  | *K* | (3856, 1624) |
+| TB_L_E_RMSE | RMSE between enhanced and modeled TB | *K* | (3856, 1624) |
+```
+
+
+\* Shapes are equivalent to the global EASE2 grids at 36 km and 9 km resolution, respectively. 
+This is the initial proposal for CIMR soil moisture retrievals and corresponds to 
+the current implementation in the later sections of this ATBD. 
+The final grid resolution will be decided based on further tests on the tradeoff between noise and spatial resolution.
