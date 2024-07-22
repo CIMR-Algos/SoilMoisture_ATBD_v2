@@ -20,6 +20,10 @@ authors:
     family-names: Piles
     email: maria.piles@uv.es
     affiliation: University of Valencia
+  - given-names: Andres
+    family-names: Terrer-Gomez
+    email: andres.terrer@uv.es
+    affiliation: University of Valencia
 repository-code: 'https://github.com/CIMR-Algos/SoilMoisture_ATBD'
 url: >-
   https://cimr-algos.github.io/SoilMoisture_ATBD/intro.html
