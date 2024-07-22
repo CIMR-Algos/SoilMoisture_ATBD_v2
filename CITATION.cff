@@ -16,13 +16,13 @@ authors:
     family-names: Link
     affiliation: University of Valencia
     email: moritz.link@uv.es
-  - given-names: María	
-    family-names: Piles
-    email: maria.piles@uv.es
-    affiliation: University of Valencia
   - given-names: Andres
     family-names: Terrer-Gomez
     email: andres.terrer@uv.es
+    affiliation: University of Valencia
+  - given-names: María	
+    family-names: Piles
+    email: maria.piles@uv.es
     affiliation: University of Valencia
 repository-code: 'https://github.com/CIMR-Algos/SoilMoisture_ATBD'
 url: >-
