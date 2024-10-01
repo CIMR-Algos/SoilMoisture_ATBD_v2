@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: CIMR DEVALGO ATBD Template
-author: CIMR DEVALGO team
+author: Roberto Fernandez-Moran*, Moritz Link*, María Piles (*equal contribution)
 logo: logo.jpg
 
 # Force re-execution of notebooks on each build.
@@ -17,7 +17,6 @@ latex:
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
-  - cryoS.bib
   - references.bib
 
 # Format the citation style
