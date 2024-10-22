@@ -180,6 +180,7 @@ book/_build/*
 book/_build/html/.buildinfo
 book/_build/html/objects.inv  # If not using intersphinx
 book/_build/html/_sources/
+book/_build/html/_static/locales/
 
 # VS Code settings
 .vscode/
