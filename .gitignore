@@ -171,3 +171,15 @@ data/*
 
 # colormaps.py file
 **/colormaps.py
+
+# Ignore everything in _build except html
+book/_build/*
+!book/_build/html/
+
+# Exclude unnecessary build files
+book/_build/html/.buildinfo
+book/_build/html/objects.inv  # If not using intersphinx
+book/_build/html/_sources/
+
+# VS Code settings
+.vscode/
