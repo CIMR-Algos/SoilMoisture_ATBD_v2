@@ -55,8 +55,8 @@ def resample(l1b, bands, area_defs, what, method, params=None, verbose=False):
         _l1x_dict['_band'] = '{}-band'.format(band)
         _l1x_dict['_type'] = 'l1x grid'
         _l1x_dict['_grid'] = area_def.name
-        _l1x_dict['lat'] = area_def.get_lonlats()[0]
-        _l1x_dict['lon'] = area_def.get_lonlats()[1]
+        _l1x_dict['lat'] = area_def.get_lonlats()[1]
+        _l1x_dict['lon'] = area_def.get_lonlats()[0]
         for iw, w in enumerate(what,):
             _l1x_dict[w] = _l1x_stack[:, :, iw].reshape(area_def.shape)
 
@@ -101,12 +101,11 @@ def testcard_compute_lu_wf(lu_array, window_size):
     return lu, wf
 
 
-def SFIM(l1x, band_lr, band_hr, what, aoi_lr, verbose=True):
+def sharpen(l1x, band_lr, band_hr, what, aoi_lr, verbose=True):
 
-    """Smoothing filter-based intensity modulation (SFIM).
-    
-    Algorithm to enhance the spatial resolution of multisensor 
-    satellite data. Proposed by [1], applied to microwaves by [2].
+    """
+    Simple sharpening algorithm, similar to the smoothing filter-based 
+    intensity modulation (SFIM) [1, 2].
     
     [1] Liu, 2000, IJRS, Vol. 21, Issue 18
     [2] Santi, 2010, IJRS, Vol. 31, Issue 9
@@ -127,7 +126,7 @@ def SFIM(l1x, band_lr, band_hr, what, aoi_lr, verbose=True):
         factor = int(factor_rows)
         if verbose:
             print('')
-            print('SFIM downscaling')
+            print('Sharpening')
             print('band low resolution  = {}-band'.format(band_lr))
             print('band high resolution = {}-band'.format(band_hr))
             print('downscaling factor   = {}'.format(factor))
