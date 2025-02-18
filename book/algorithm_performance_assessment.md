@@ -1,6 +1,6 @@
 # Algorithm Performance Assessment
 
-This chapter presents a performance assessment of the prototype soil moisture retrieval algorithm based on end-to-end simulations of a synthetic reference scenario. The full python code used in the algorithm and evaluation can be found in the [SM_ATBD_v2 Github Repository](https://github.com/CIMR-Algos/SoilMoisture_ATBD_v2).
+This chapter presents a performance assessment of the prototype soil moisture retrieval algorithm based on end-to-end simulations of a synthetic reference scenario.
 
 ## Reference Scenario definition
 
@@ -139,3 +139,9 @@ The key results for the AOIs, which are the target of the assessment, are summar
 - Biases are overall low and do not exceed 0.01 m³/m³.
 - The results are consistent across overpasses. 
 - All metrics are achieved without parameter calibration.
+
+
+## Acknowledgements
+
+Paolo Ferrazzoli and Leila Guerriero are acknowledged for providing the code 
+of the Tor Vergata model and helpful discussions on the forward simulations.
