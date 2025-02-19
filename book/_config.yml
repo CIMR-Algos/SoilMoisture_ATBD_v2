@@ -35,6 +35,7 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
+  announcement: "This ATBD was developed in the CIMR DEVALGO project. It is being further developed in the <a href=\"https://github.com/CIMR-L2PAD\"style='color: #87CEEB;'>CIMR L2PAD</a> project."
   use_issues_button: false
   use_repository_button: true
   extra_footer: |
